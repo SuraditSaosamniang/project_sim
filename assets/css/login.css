@@ -1,7 +1,9 @@
 /* General Styling for Login Page */
 body {
     background-color: #f1f4f8; /* Slightly cooler light background */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Mitr', sans-serif;
+    font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
     margin: 0;
     padding: 0;
 }
@@ -23,7 +25,7 @@ body {
 h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #212427; /* Professional Dark Blue */
+    color: #424242; /* Professional Dark Blue */
     margin-bottom: 20px;
     font-weight: 600; /* Slightly heavier font weight */
 }
@@ -40,30 +42,42 @@ h2 {
     padding: 15px;
     font-size: 1rem;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 100%;
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right side */
+    width: calc(100% - 50px); /* Adjust width to fit with input-group-text */
     margin-bottom: 20px;
     transition: all 0.3s ease;
-    background-color: #f9f9f9; /* Subtle background for inputs */
+    background-color: #e9f1f7; /* Updated background color to match other elements */
 }
 
 /* Focus States for Inputs */
 .form-control:focus {
     border-color: #1b406e; /* Highlight border with primary color */
     box-shadow: 0 0 8px rgba(27, 64, 110, 0.3); /* Soft glow around inputs */
-    background-color: #ffffff; /* Clear background when focused */
+    background-color: #d0e7f9; /* Change background color when focused */
 }
 
 /* Remember me checkbox */
 .form-check-label {
     font-size: 1rem;
-    color: #333333;
+    color: #424242;
 }
 
 .form-check-input {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    background-color: #f7f2f2; /* Set background color */
+    border: 1px solid #424242; /* Set border color */
+}
+
+.form-check-input:hover {
+    cursor: pointer;
+    color: #76a9e7 !important; /* Change color on hover */
+}
+
+.form-check-input:checked {
+    background-color: #76a9e7; /* Change background color when checked */
+    border-color: #418eeb; /* Change border color when checked */
 }
 
 /* Submit Button */
@@ -91,8 +105,8 @@ h2 {
 /* Error Message Styling */
 p {
     text-align: center;
-    color: #ff4d4d; /* Red for error messages */
-    font-size: 1rem;
+    color: #424242; /* Red for error messages */
+    font-size: 1.2rem;
     margin-top: 10px;
 }
 
@@ -131,4 +145,38 @@ p {
         transform: translateY(0);
     }
 }
+
+/* Styling for input group icons */
+.input-group-text {
+    background-color: #e9f1f7; /* Match the background color of the input fields */
+    border: 1px solid #ddd; /* Match the border color of the input fields */
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left side */
+    color: #333333; /* Darker text for better readability */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    padding: 0 15px; /* Add padding for better spacing */
+    height: 40px; /* Ensure the height matches the input field */
+    width: 45px; /* Set a fixed width for consistency */
+}
+
+.input-group-text i {
+    font-size: 1.25rem; /* Increase icon size */
+    color: #1b406e; /* Primary color for icons */
+}
+
+/* Styling for input fields */
+.input-group .form-control {
+    background-color: #e9f1f7 !important; /* New background color */
+    border: 1px solid #ddd !important; /* Match the border color of the input fields */
+    border-radius: 4px; /* Rounded corners */
+    padding: 0 10px; /* Add padding for better spacing */
+    height: 40px; /* Ensure the height matches the input field */
+    line-height: normal; /* Adjust line-height for consistent appearance */
+}
+
+
+
+
+
 

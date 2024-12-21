@@ -49,29 +49,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> <!-- Add Bootstrap Icons -->
     <link href="assets/css/login.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Login</h2>
+        <h2 style="-webkit-text-stroke: 0.7px">Login</h2>
+        <p style="-webkit-text-stroke: 0.7px">System for uploading Slab data files</p>
         <?php if (isset($error)) echo "<p>$error</p>"; ?>
         
         <!-- ฟอร์ม Login -->
         <form action="login.php" method="POST">
-            <div class="mb-3 mt-3">
-                <label for="username" class="form-label">User Name:</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+            <div class="mb-1 mt-1">
+                <label for="username" class="form-label" style="-webkit-text-stroke: 0.7px">User Name:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"style="-webkit-text-stroke: 0.5px"></i></span>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+            <div class="mb-1">
+                <label for="password" class="form-label"style="-webkit-text-stroke: 0.7px">Password:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"style="-webkit-text-stroke: 0.5px"></i></span>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                </div>
             </div>
             <div class="form-check mb-3">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                </label>
+                <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                <label class="form-check-label" for="remember"style="-webkit-text-stroke: 0.5px">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary w-100" style="-webkit-text-stroke: 0.5px">Submit</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

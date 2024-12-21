@@ -81,7 +81,7 @@ if ($sort === 'name') {
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">Form for uploading CSV files</span>
+                    <span class="fw-bold custom-text">System for uploading CSV files</span>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -138,6 +138,7 @@ if ($sort === 'name') {
             <div class="card shadow-sm">
                 <div class="card-header bg-gradient text-black text-center p-4">
                     <h2 class="card-title mb-2">Preview Data</h2>
+                    <p class="card-subtitle text-black mb-2"><?= htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="card-subtitle text-black">Check the file information before uploading.</p>
                 </div>
                 <div class="card-body">
@@ -240,16 +241,21 @@ if ($sort === 'name') {
                 <div class="container">
                     <div class="row">
                         <!-- Footer Branding -->
-                        <div class="row">
-                            <div class="col-md-6 text-center text-md-start">
-                                <h5 class="fw-bold text-dark-custom">File Manager</h5>
-                                <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
-                                <p class="text-dark-custom small mb-0">&copy; 2024 File Manager. All Rights Reserved.</p>
-                            </div>
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            <h5 class="fw-bold text-dark-custom">File Manager</h5>
+                            <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
+                            <p class="text-dark-custom small mb-0">&copy; 2024 System for uploading CSV files. All Rights Reserved.</p>
+                        </div>
+                        <!-- Social Media Icons -->
+                        <div class="col-md-6 text-center text-md-end">
+                            <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
-            </footer> 
+            </footer>
         </div>                                 
     </div>   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
