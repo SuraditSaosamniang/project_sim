@@ -1,0 +1,134 @@
+/* General Styling for Login Page */
+body {
+    background-color: #f1f4f8; /* Slightly cooler light background */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centering and Styling the Container */
+.container {
+    max-width: 600px; /* Smaller width for a more compact look */
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fffefe;
+    border-radius: 15px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Space from top */
+    border-top: 5px solid #3c7cca;/* Top border for extra style */
+    border-bottom: 5px solid #3c7cca; /* Bottom border for extra style */
+
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #212427; /* Professional Dark Blue */
+    margin-bottom: 20px;
+    font-weight: 600; /* Slightly heavier font weight */
+}
+
+/* Form Fields */
+.form-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333333; /* Darker text for better readability */
+    margin-bottom: 8px;
+}
+
+.form-control {
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9; /* Subtle background for inputs */
+}
+
+/* Focus States for Inputs */
+.form-control:focus {
+    border-color: #1b406e; /* Highlight border with primary color */
+    box-shadow: 0 0 8px rgba(27, 64, 110, 0.3); /* Soft glow around inputs */
+    background-color: #ffffff; /* Clear background when focused */
+}
+
+/* Remember me checkbox */
+.form-check-label {
+    font-size: 1rem;
+    color: #333333;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Submit Button */
+.btn {
+    background-color: #76a9e7;
+    color: #ffffff;
+    border: 1px solid #418eeb;
+    font-size: 1.1rem;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight:500; /* Bold text for emphasis */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #325994; /* Darker shade on hover */
+    color: #1a1818;
+    opacity: 0.95;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Error Message Styling */
+p {
+    text-align: center;
+    color: #ff4d4d; /* Red for error messages */
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Adjust font size on smaller screens */
+    }
+
+    .form-control {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    /* Slightly reduce the width for mobile */
+    .container {
+        width: 90%;
+    }
+}
+
+/* Adding a subtle animation to form elements */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
