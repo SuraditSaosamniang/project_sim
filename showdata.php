@@ -63,7 +63,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <span class="nav-link text-muted fw-bold">
+                        <span class="nav-link text-user fw-bold">
                             <i class="bi bi-person-circle"></i> 
                             <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
                         </span>
@@ -99,6 +99,13 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
         dropdownMenu.addEventListener('mouseleave', () => {
             const dropdown = bootstrap.Dropdown.getInstance(dropdownToggle); // ใช้ Bootstrap API
             dropdown.hide(); // ซ่อน Dropdown
+        });
+
+        // ปรับตำแหน่ง Dropdown ให้ตรงกับปุ่ม Menu
+        dropdownToggle.addEventListener('click', () => {
+            const rect = dropdownToggle.getBoundingClientRect();
+            dropdownMenu.style.left = `${rect.left}px`;
+            dropdownMenu.style.top = `${rect.bottom}px`;
         });
     </script>
     

@@ -67,17 +67,17 @@ h2 {
     height: 20px;
     margin-right: 10px;
     background-color: #f7f2f2; /* Set background color */
-    border: 1px solid #424242; /* Set border color */
+    border: 2px solid #ccc; /* Set border color */
 }
 
 .form-check-input:hover {
     cursor: pointer;
-    color: #76a9e7 !important; /* Change color on hover */
+    color: #5c86b4 !important; /* Change color on hover */
 }
 
 .form-check-input:checked {
-    background-color: #76a9e7; /* Change background color when checked */
-    border-color: #418eeb; /* Change border color when checked */
+    background-color: #5c86b4; /* Change background color when checked */
+    border-color: #5c86b4; /* Change border color when checked */
 }
 
 /* Submit Button */
@@ -162,7 +162,7 @@ p {
 
 .input-group-text i {
     font-size: 1.25rem; /* Increase icon size */
-    color: #1b406e; /* Primary color for icons */
+    color: #212529bf; /* Primary color for icons */
 }
 
 /* Styling for input fields */

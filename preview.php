@@ -86,7 +86,7 @@ if ($sort === 'name') {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <span class="nav-link text-muted fw-bold">
+                            <span class="nav-link text-user fw-bold">
                                 <i class="bi bi-person-circle"style="-webkit-text-stroke: 0.7px"></i> 
                                 <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
                             </span>
@@ -245,13 +245,6 @@ if ($sort === 'name') {
                             <h5 class="fw-bold text-dark-custom">File Manager</h5>
                             <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
                             <p class="text-dark-custom small mb-0">&copy; 2024 System for uploading CSV files. All Rights Reserved.</p>
-                        </div>
-                        <!-- Social Media Icons -->
-                        <div class="col-md-6 text-center text-md-end">
-                            <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>

@@ -14,31 +14,38 @@ date_default_timezone_set('Asia/Bangkok');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
+        // ตรวจสอบว่ามีการอัปโหลดไฟล์
         if (isset($_FILES['uploads']) && !empty($_FILES['uploads']['name'])) {
             $fileTmpName = $_FILES['uploads']['tmp_name'];
             $fileExt = strtolower(pathinfo($_FILES['uploads']['name'], PATHINFO_EXTENSION));
 
+             // ตรวจสอบประเภทไฟล์
             if ($fileExt !== 'csv') {
                 throw new Exception('Please upload a valid CSV file.');
             }
 
+            // ตรวจสอบขนาดไฟล์ (ไม่เกิน 10MB) //
             if ($_FILES['uploads']['size'] > 10 * 1024 * 1024) {
                 throw new Exception('File size exceeds 10MB limit.');
             }
 
+            // สร้างชื่อไฟล์ใหม่
             $customFileName = isset($_POST['fileName']) ? trim($_POST['fileName']) : 'default_filename';
             $newFileName = $customFileName . '.' . $fileExt;
             $uploadDir = 'C:/laragon/www/uploads/';
 
+            // ตรวจสอบและสร้างไดเรกทอรีหากไม่มี
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0777, true);
             }
 
+            // ตรวจสอบการเขียนทับ
             $newFilePath = $uploadDir . $newFileName;
             if (file_exists($newFilePath) && !isset($_POST['overwrite'])) {
                 throw new Exception('A file with the same name already exists. You can choose to overwrite it.');
             }
 
+            // ย้ายไฟล์ที่อัปโหลด
             if (!move_uploaded_file($fileTmpName, $newFilePath)) {
                 throw new Exception('Failed to upload the file.');
             }
@@ -58,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// ดึงรายการไฟล์ที่อัปโหลด
 $uploadedFiles = [];
 $uploadDir = 'C:/laragon/www/uploads/';
 if (is_dir($uploadDir)) {
@@ -72,7 +80,7 @@ if (is_dir($uploadDir)) {
     }
 }
 // ตรวจสอบค่า 'sort' ที่ส่งมา
-$sortOption = $_GET['sort'] ?? 'name'; // ค่าดีฟอลต์เป็น 'name'
+$sortOption = $_GET['sort'] ?? 'name';
 
 // ฟังก์ชันเรียงลำดับไฟล์
 usort($uploadedFiles, function ($a, $b) use ($sortOption) {
@@ -87,12 +95,9 @@ usort($uploadedFiles, function ($a, $b) use ($sortOption) {
     }
 });
 
-
-
 if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = null; // กำหนดค่าเริ่มต้น
+    $_SESSION['username'] = null;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +108,6 @@ if (!isset($_SESSION['username'])) {
     <title>File Manager</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
 </head>
 <body>
@@ -111,72 +115,65 @@ if (!isset($_SESSION['username'])) {
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container-lg">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="upload.php">
                 <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
                 <span class="fw-bold custom-text">Form for uploading CSV files</span>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <span class="nav-link text-muted fw-bold">
-                            <i class="bi bi-person-circle" style="-webkit-text-stroke: 0.7px"></i> 
+                        <span class="nav-link text-user fw-bold">
+                            <i class="bi bi-person-circle" style="-webkit-text-stroke: 0.7px"></i>
                             <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
                         </span>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link text-logout" href="login.php">
-                        <i class="bi bi-box-arrow-right"style="-webkit-text-stroke: 0.7px" ></i> Logout
-                    </a>
-
+                        <a class="nav-link text-logout" href="login.php">
+                            <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-    <!-- Upload Section -->
-    <div class="container my-3">
-        <!-- Display Upload Status Message -->
-        <?php if (isset($_SESSION['status']) && isset($_SESSION['message'])): ?>
-            <div class="alert <?= $_SESSION['status'] === 'success' ? 'alert-success' : 'alert-danger' ?> alert-dismissible fade show" role="alert">
-                <?= htmlspecialchars($_SESSION['message']) ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <?php unset($_SESSION['status'], $_SESSION['message']); ?>
-        <?php endif; ?>
 
-        <!-- Upload Section -->
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h2 class="card-title text-center mb-4">Upload Your File</h2>
-                <form method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="fileUpload" class="form-label">Select File <span class="text-muted">(CSV only)</span></label>
-                        <input type="file" class="form-control" name="uploads" id="fileUpload" accept=".csv" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="fileName" class="form-label">Custom File Name</label>
-                        <input type="text" class="form-control" name="fileName" id="fileName" placeholder="Enter file name" required>
-                    </div>
-                    <!-- Checkbox Input -->
-                    <div class="form-check-wrapper">
-                        <form method="get">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="overwrite" id="overwrite">
-                                <label class="form-check-label" for="overwrite">Overwrite Existing Files</label>
-                            </div>
-                        </form>
-                    </div>
-                    <button type="submit" class="btn btn-custom w-100">
-                        <i class="bi bi-upload" style="-webkit-text-stroke: 0.7px"></i> Upload
-                    </button>
-                </form>
-            </div>
+<!-- Upload Section -->
+<div class="container my-3">
+    <?php if (isset($_SESSION['status']) && isset($_SESSION['message'])): ?>
+        <div class="alert <?= $_SESSION['status'] === 'success' ? 'alert-success' : 'alert-danger' ?> alert-dismissible fade show mt-4" role="alert">
+            <?= htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php unset($_SESSION['status'], $_SESSION['message']); ?>
+    <?php endif; ?>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Upload Your File</h2>
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="fileUpload" class="form-label">Select File <span class="text-muted">(CSV only)</span></label>
+                    <input type="file" class="form-control" name="uploads" id="fileUpload" accept=".csv" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fileName" class="form-label">Custom File Name</label>
+                    <input type="text" class="form-control" name="fileName" id="fileName" placeholder="Enter file name" required>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="overwrite" id="overwrite">
+                    <label class="form-check-label" for="overwrite">Overwrite Existing Files</label>
+                </div>
+                <button type="submit" class="btn btn-custom w-100 mt-3">
+                    <i class="bi bi-upload" style="-webkit-text-stroke: 0.7px"></i> Upload
+                </button>
+            </form>
         </div>
     </div>
+</div>
 
-    <!-- Uploaded Files Section -->
-    <div class="container my-5">
+<!-- Uploaded Files Section -->
+<div class="container my-5">
         <div class="card shadow-sm" style="margin-top: 20px;">
             <div class="card-body">
                 <h3 class="card-title text-center mb-4">Uploaded Files</h3>
@@ -308,4 +305,4 @@ if (!isset($_SESSION['username'])) {
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>                                
+</html>

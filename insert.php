@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // บันทึกข้อมูลการอัปโหลดลงใน upload_logs
         $insertLogStmt = $conn->prepare(
-            "INSERT INTO upload_logs (user, file_name, upload_date, record_count, ip_address ) 
+            "INSERT INTO upload_logs (User, Filename, Date, Records, IP_Address ) 
              VALUES (?, ?, NOW(), ?, ?)"
         );
         $insertLogStmt->execute([
