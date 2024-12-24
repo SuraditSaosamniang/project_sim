@@ -31,6 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // สร้างชื่อไฟล์ใหม่
             $customFileName = isset($_POST['fileName']) ? trim($_POST['fileName']) : 'default_filename';
+
+            // ตรวจสอบชื่อไฟล์สำหรับอักขระพิเศษ
+            if (preg_match('/[\/:*?"<>|]/', $customFileName)) {
+                throw new Exception('File name contains invalid characters.');
+            }
+
             $newFileName = $customFileName . '.' . $fileExt;
             $uploadDir = 'C:/laragon/www/uploads/';
 
@@ -98,6 +104,7 @@ usort($uploadedFiles, function ($a, $b) use ($sortOption) {
 if (!isset($_SESSION['username'])) {
     $_SESSION['username'] = null;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -119,6 +126,9 @@ if (!isset($_SESSION['username'])) {
                 <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
                 <span class="fw-bold custom-text">Form for uploading CSV files</span>
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -159,6 +169,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Custom File Name</label>
                     <input type="text" class="form-control" name="fileName" id="fileName" placeholder="Enter file name" required>
+                    <small class="form-text text-characters">Avoid special characters like /:*?"<>|.</small>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="overwrite" id="overwrite">

@@ -1,13 +1,11 @@
-/* General Table Styling */
-
+/* General Styling */
 body {
     background-color: #ececeb;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Poppins', sans-serif, 'Kanit', sans-serif;
     font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
 }
 
-
+/* Table Styling */
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -57,20 +55,13 @@ table tbody td {
     color: #424242;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .table-container {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    .table th, .table td {
-        font-size: 0.85rem;
-    }
-
-    .btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
+/* Card Styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden; /* Ensure content doesn't overflow the border radius */
+    background-color: #ffffff; /* White background for card */
 }
 
 .card-header {
@@ -85,7 +76,6 @@ table tbody td {
     color: #424242; /* เปลี่ยนสีข้อความของ card-subtitle */
 }
 
-
 .card-title {
     font-size: 1.8rem; /* Larger title font size */
     font-weight: 600; /* Semi-bold font */
@@ -97,22 +87,11 @@ table tbody td {
     color: #424242; /* Lighter text for subtitle */
 }
 
-/* Shadow for Card */
-.card {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    overflow: hidden; /* Ensure content doesn't overflow the border radius */
-    background-color: #ffffff; /* White background for card */
+.card-body {
+    color: #424242;
 }
 
-.text-black {
-    color: #424242 !important
-}
-
-
-
-/* Custom Button Styles */
+/* Button Styling */
 .btn {
     transition: all 0.2s ease;
 }
@@ -126,6 +105,7 @@ table tbody td {
     color: #ffffff; /* Ensure text is visible */
     border: 1px solid #1450ac; /* Button border */
 }
+
 .btn-custom:hover {
     background: #3869b3;
     opacity: 0.9; /* Subtle hover effect */
@@ -137,6 +117,7 @@ table tbody td {
     color: #424242; /* Ensure text is visible */
     border: 1px solid #5c86b4; /* Button border */
 }
+
 .btn-preview:hover {
     color: #ececec;
     background: #93b6dc;
@@ -146,9 +127,10 @@ table tbody td {
 .btn-delete {
     font-weight: bold;
     background-color: #365d9b;
-    color:#424242;/* Ensure text is visible */
+    color: #424242; /* Ensure text is visible */
     border: 1px solid #1e5697; /* Button border */
 }
+
 .btn-delete:hover {
     color: #ececec;
     background: #26466d;
@@ -161,6 +143,7 @@ table tbody td {
     font-weight: bold;
     border: 1px solid #114785; /* Button border */
 }
+
 .btn-insert:hover {
     background: #3b71b3;
     opacity: 1; /* Fix invalid value */
@@ -172,6 +155,7 @@ table tbody td {
     color: #424242; /* Ensure text is visible */
     border: 1px solid #93b6dc; /* Button border */
 }
+
 .btn-refresh:hover {
     background: #3b71b3 !important;
     color: #ffffff;
@@ -184,14 +168,14 @@ table tbody td {
     color: #424242; /* Ensure text is visible */
     border: 1px solid #9bd2ff; /* Button border */
 }
+
 .btn-back:hover {
     background: #1d518c;
     color: #ffffff;
     opacity: 1; /* Fix invalid value */
 }
 
-
-
+/* Pagination Styling */
 .pagination {
     display: flex;
     justify-content: center;
@@ -248,7 +232,7 @@ table tbody td {
     border-bottom-right-radius: 50px;
 }
 
-/* CSS สำหรับการจัดวางข้อความจำนวนหน้า */
+/* Page Info Styling */
 .page-info {
     display: inline-block;
     padding: 8px 12px;
@@ -268,8 +252,7 @@ table tbody td {
     transform: scale(1.05); /* เอฟเฟกต์ zoom เมื่อ hover */
 }
 
-
-/* General Navbar Styling */
+/* Navbar Styling */
 .navbar {
     background: linear-gradient(45deg, #bbd9fa, #6c9feb); /* พื้นหลังไล่สี */
     color: white;
@@ -278,20 +261,20 @@ table tbody td {
 }
 
 .navbar-brand {
-    color:  hsl(214, 7%, 19%); /* Branding color */
+    color: hsl(214, 7%, 19%); /* Branding color */
     font-size: 1.25rem; /* Larger font size for branding */
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color:  hsl(214, 7%, 19%); /* Darker blue on hover */
+    color: hsl(214, 7%, 19%); /* Darker blue on hover */
     transform: translateY(-2px); /* Slight lift effect */
 }
 
 .navbar-nav .nav-link {
     font-size: 1rem;
-    color:  hsl(214, 7%, 19%); /* Dark text for better readability */
+    color: hsl(214, 7%, 19%); /* Dark text for better readability */
     font-weight: 500;
     padding: 8px 15px; /* Improved padding for better click targets */
     transition: all 0.3s ease;
@@ -313,65 +296,55 @@ table tbody td {
 }
 
 .navbar-nav .nav-link.text-user:hover {
-    color:  hsl(214, 7%, 19%);   /* Darker color on hover */ 
+    color: hsl(214, 7%, 19%); /* Darker color on hover */
     transform: translateY(-2px); /* Lift effect */
 }
 
 /* Logout Link */
-.navbar-nav .nav-item .nav-link.text-logout{
+.navbar-nav .nav-item .nav-link.text-logout {
     font-size: 1.08rem;
     font-weight: 600;
     color: #212529BF; /* Bootstrap's red color for logout */
     transition: all 0.3s ease;
 }
 
-.navbar-nav .nav-item .nav-link.text-logout:hover{
-    color:  hsl(214, 7%, 19%); /* Darker black when hovered */
+.navbar-nav .nav-item .nav-link.text-logout:hover {
+    color: hsl(214, 7%, 19%); /* Darker black when hovered */
     transform: translateY(-2px); /* Lift effect */
 }
 
-/* Logout Link */
-.navbar-nav .nav-item .nav-link.text-showdata{
+/* Show Data Link */
+.navbar-nav .nav-item .nav-link.text-showdata {
     font-size: 1.08rem;
     font-weight: 600;
     color: #212529BF; /* Bootstrap's red color for logout */
     transition: all 0.3s ease;
 }
 
-.navbar-nav .nav-item .nav-link.text-showdata:hover{
-    color:  hsl(214, 7%, 19%); /* Darker red when hovered */
+.navbar-nav .nav-item .nav-link.text-showdata:hover {
+    color: hsl(214, 7%, 19%); /* Darker red when hovered */
     transform: translateY(-2px); /* Lift effect */
 }
 
-.navbar-nav .nav-item .nav-link.text-home{
+/* Home Link */
+.navbar-nav .nav-item .nav-link.text-home {
     font-size: 1.08rem;
     font-weight: 600;
     color: #212529BF; /* Bootstrap's red color for logout */
     transition: all 0.3s ease;
 }
 
-.navbar-nav .nav-item .nav-link.text-home:hover{
-    color:  hsl(214, 7%, 19%); /* Darker red when hovered */
+.navbar-nav .nav-item .nav-link.text-home:hover {
+    color: hsl(214, 7%, 19%); /* Darker red when hovered */
     transform: translateY(-2px); /* Lift effect */
 }
 
-/* Mobile and Small Screen Styling */
-@media (max-width: 768px) {
-    .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Slightly smaller text for smaller screens */
-    }
-
-    .navbar-collapse {
-        padding-top: 10px;
-    }
-}
-
-/* Styling for the Text (span) */
+/* Custom Text Styling */
 .custom-text {
     font-size: 1.5rem; /* Larger font size for the text */
     font-weight: 700; /* Bold weight for emphasis */
-    color:  #424242;/* Set color to #21130d */
-    letter-spacing:0.5px; /*ightly spread letters for a modern look */
+    color: #424242; /* Set color to #21130d */
+    letter-spacing: 0.5px; /* Slightly spread letters for a modern look */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     text-transform: capitalize; /* Ensure that words start with uppercase */
     display: inline-block; /* Allow additional spacing and transforms */
@@ -379,55 +352,11 @@ table tbody td {
 
 /* Hover Effect */
 .custom-text:hover {
-    color: hsl(214, 7%, 19%);/* Slightly darker shade of the original color on hover */
+    color: hsl(214, 7%, 19%); /* Slightly darker shade of the original color on hover */
     transform: translateY(-3px); /* Slight lift effect on hover */
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-    .custom-text {
-        font-size: 1.25rem; /* Smaller font size on mobile */
-        letter-spacing: 0.8px; /* Reduce letter spacing slightly on smaller screens */
-    }
-}
-
-
-.card {
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.card-header {
-    background: linear-gradient(135deg, #1d518c, #052555);
-    color: white;
-}
-.card-body {
-    color: #424242;
-}
-.table {
-    border-collapse: separate;
-    border-spacing: 0;
-}
-.table th, .table td {
-    text-align: center;
-    vertical-align: middle;
-}
-.pagination .page-link {
-    border: #0b0d0f;
-    border-radius: 30px;
-    color: #7a7c7e;
-}
-.pagination .page-item.active .page-link {
-    background-color: #cad4dd;
-    color: rgb(117, 110, 110);
-}
-.btn:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-    transition: all 0.3s ease;
-}
-
+/* Footer Styling */
 .footer {
     background: linear-gradient(45deg, #bbd9fa, #6c9feb); /* พื้นหลังไล่สี */
     border-top: 3px solid #c2e8ff; /* เพิ่มขอบบนสีสัน */
@@ -454,12 +383,13 @@ table tbody td {
     transition: color 0.3s ease-in-out;
 }
 
+/* Row Styling */
 .row {
     font-family: 'Poppins', sans-serif;
     font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
 }
 
-
+/* Button Group Styling */
 .button-group {
     display: flex;
     justify-content: center; /* Align buttons in the center */
@@ -467,6 +397,7 @@ table tbody td {
     margin: 20px 0; /* Add top and bottom margin */
 }
 
+/* Refresh Button Styling */
 .btn-refresh {
     background-color: #95dee7; /* Custom background */
     border: 1px solid #7cb1db; /* Border color */
@@ -477,6 +408,7 @@ table tbody td {
     opacity: 0.9; /* Slight hover effect */
 }
 
+/* Back Button Styling */
 .btn-back {
     background-color: #cbdfe0; /* Custom background */
     border: 1px solid #70bad5; /* Border color */
@@ -487,6 +419,7 @@ table tbody td {
     opacity: 0.9; /* Slight hover effect */
 }
 
+/* Success Button Styling */
 .btn-success {
     background-color: #2f537f;
     color: #ffffff; /* Ensure text is visible */
@@ -498,6 +431,7 @@ table tbody td {
     opacity: 1; /* Fix invalid value */
 }
 
+/* Total Records Container Styling */
 .total-records-container {
     display: flex;
     justify-content: flex-end;
@@ -519,7 +453,7 @@ table tbody td {
     border-color: #ced4da;
 }
 
-/* Alert Style */
+/* Alert Styling */
 .alert {
     position: fixed;
     top: 10%;
@@ -575,57 +509,59 @@ table tbody td {
     transform: scale(1.1); /* Slight zoom effect on close button */
 }
 
-.my-5{
+/* Margin Styling */
+.my-5 {
     margin-top: 20px;
 }
 
-.file-data {  
-    color: #424242 !important;          /* สีข้อความ */
-    font-size: 16px !important;          /* ขนาดฟอนต์ */
-    padding: 10px !important;            /* เพิ่มระยะห่างภายในเซลล์ */
-    text-align: left !important;       /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
-    white-space: nowrap !important;      /* ป้องกันไม่ให้ข้อความแตกบรรทัด */
-    overflow: hidden !important;         /* ป้องกันการแสดงผลของข้อความที่ยาวเกิน */
-    text-overflow: ellipsis !important;  /* การใช้ "..." หากข้อความยาวเกินไป */
-    display: table-cell !important;       /* ใช้ table-cell เพื่อจัดข้อความให้อยู่กึ่งกลาง */
+/* File Data Styling */
+.file-data {
+    color: #424242 !important; /* สีข้อความ */
+    font-size: 16px !important; /* ขนาดฟอนต์ */
+    padding: 10px !important; /* เพิ่มระยะห่างภายในเซลล์ */
+    text-align: left !important; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+    white-space: nowrap !important; /* ป้องกันไม่ให้ข้อความแตกบรรทัด */
+    overflow: hidden !important; /* ป้องกันการแสดงผลของข้อความที่ยาวเกิน */
+    text-overflow: ellipsis !important; /* การใช้ "..." หากข้อความยาวเกินไป */
+    display: table-cell !important; /* ใช้ table-cell เพื่อจัดข้อความให้อยู่กึ่งกลาง */
 }
 
-/* จัดวางฟอร์มชิดขอบขวาและจัดระเบียบ */
+/* Form Wrapper Styling */
 .form-wrapper {
-    display: flex;                /* ใช้ Flexbox */
-    justify-content: flex-end;    /* ชิดขอบขวา */
-    align-items: center;          /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    width: 100%;                  /* ขยายความกว้างเต็มพื้นที่ */
-    margin-bottom: 10px;          /* เว้นช่องว่างด้านล่าง */
-    padding-right: 15px;          /* เว้นขอบขวาให้สวยงาม */
-    box-sizing: border-box;       /* ให้ padding รวมอยู่ในขนาด */
+    display: flex; /* ใช้ Flexbox */
+    justify-content: flex-end; /* ชิดขอบขวา */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    width: 100%; /* ขยายความกว้างเต็มพื้นที่ */
+    margin-bottom: 10px; /* เว้นช่องว่างด้านล่าง */
+    padding-right: 15px; /* เว้นขอบขวาให้สวยงาม */
+    box-sizing: border-box; /* ให้ padding รวมอยู่ในขนาด */
 }
 
 /* จัดสไตล์ label ให้สวยงาม */
 .form-wrapper label {
-    margin-right: 10px;           /* ระยะห่างจาก select */
-    font-weight: 600;             /* ทำตัวหนา */
-    font-size: 16px;              /* ขนาดตัวอักษรเหมาะสม */
-    color: #424242;                  /* สีข้อความเข้มขึ้น */
+    margin-right: 10px; /* ระยะห่างจาก select */
+    font-weight: 600; /* ทำตัวหนา */
+    font-size: 16px; /* ขนาดตัวอักษรเหมาะสม */
+    color: #424242; /* สีข้อความเข้มขึ้น */
 }
 
 /* ปรับสไตล์ select ให้ดูทันสมัย */
 .form-wrapper select {
-    width: auto;                  /* ขนาดพอดีกับเนื้อหา */
-    padding: 6px 12px;            /* เพิ่มพื้นที่ภายใน */
-    font-size: 14px;              /* ขนาดตัวอักษร */
-    border: 1px solid #ccc;       /* ขอบสีเทา */
-    border-radius: 4px;           /* ขอบโค้งเล็กน้อย */
-    background-color: #fff;       /* พื้นหลังสีขาว */
-    color: #424242;                  /* สีข้อความ */
-    cursor: pointer;              /* เมาส์แสดง pointer */
+    width: auto; /* ขนาดพอดีกับเนื้อหา */
+    padding: 6px 12px; /* เพิ่มพื้นที่ภายใน */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    border: 1px solid #ccc; /* ขอบสีเทา */
+    border-radius: 4px; /* ขอบโค้งเล็กน้อย */
+    background-color: #fff; /* พื้นหลังสีขาว */
+    color: #424242; /* สีข้อความ */
+    cursor: pointer; /* เมาส์แสดง pointer */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบาๆ */
     transition: all 0.2s ease-in-out; /* เพิ่มอนิเมชัน */
 }
 
 /* เพิ่มเอฟเฟกต์ hover ให้กับ select */
 .form-wrapper select:hover {
-    border-color: #424242;        /* เปลี่ยนสีขอบเมื่อ hover */
+    border-color: #424242; /* เปลี่ยนสีขอบเมื่อ hover */
     box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
 }
 
@@ -724,6 +660,7 @@ table tbody td {
 }
 
 .text-muted {
+    text-shadow: 2px 2px 5px #a59e9e;
     margin-top: 2px;
     color: #615f5f!important;
     font-weight: bold; /* Makes the text bold */
@@ -731,6 +668,15 @@ table tbody td {
     border-radius: 3px; /* Rounds the edges slightly */
 }
 
+.text-characters {
+    text-shadow: 2px 2px 5px rgb(180, 205, 243);
+    margin-top: 5px;
+    color: #1d315c!important;
+    font-weight: bold; /* Makes the text bold */
+    font-size: medium;
+    padding: 2px 4px; /* Adds some padding around the text */
+    border-radius: 3px; /* Rounds the edges slightly */
+}
 
 /* Focus effect for the checkbox */
 .form-check-input:focus {
@@ -837,11 +783,125 @@ table tbody td {
     transform: scale(1.01); /* เพิ่มเอฟเฟกต์ zoom เมื่อ hover */
 }
 
-
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 754px) {
+    .table-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table th, .table td {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Slightly smaller text for smaller screens */
+    }
+
+    .navbar-collapse {
+        padding-top: 10px;
+    }
+
+    .custom-text {
+        font-size: 1.25rem; /* Smaller font size on mobile */
+        letter-spacing: 0.8px; /* Reduce letter spacing slightly on smaller screens */
+    }
+
     .button-group {
         flex-direction: column; /* Stack buttons vertically */
         gap: 10px; /* Reduced gap between buttons */
+    }
+
+    .form-wrapper {
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+        gap: 10px; /* Add space between elements */
+    }
+
+    .form-wrapper label {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        width: 100%; /* Full width for select */
+    }
+
+    .alert {
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        flex-direction: column; /* Stack pagination items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .pagination .page-item {
+        margin: 5px 0; /* Add vertical margin between items */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 80px; /* Reduce logo size */
+        height: 80px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.2rem; /* Reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.9rem; /* Reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.9rem; /* Reduce font size for alerts */
+    }
+
+    .form-check-label {
+        font-size: 0.9rem; /* Reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    body {
+        min-width: 754px; /* Limit minimum width */
     }
 }

@@ -2,12 +2,20 @@
 session_start();
 require_once("includes/db_connect.php");
 
+// Generate CSRF token
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $hashed_password = md5($password); // แฮชรหัสผ่านก่อนเก็บในฐานข้อมูล
 
-    if (empty($username) || empty($password)) {
+    // Verify CSRF token
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        $error = "Invalid CSRF token.";
+    } elseif (empty($username) || empty($password)) {
         $error = "Please enter both username and password.";
     } else {
         try {
@@ -20,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // หากผู้ใช้มีอยู่แล้วในฐานข้อมูล ให้ตรวจสอบรหัสผ่าน
                 if ($user['password'] === $hashed_password) {
                     $_SESSION['username'] = $user['username'];
+                    $_SESSION['status'] = 'success';
+                    $_SESSION['message'] = 'Login successful.';
                     header("Location: upload.php");
                     exit;
                 } else {
@@ -31,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $insert_stmt->execute([$username, $hashed_password]);
 
                 $_SESSION['username'] = $username; // เก็บ username ใน Session
+                $_SESSION['status'] = 'success';
+                $_SESSION['message'] = 'User registered and logged in successfully.';
                 header("Location: upload.php");
                 exit;
             }
@@ -40,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,10 +67,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container mt-5">
         <h2 style="-webkit-text-stroke: 0.7px">Login</h2>
         <p style="-webkit-text-stroke: 0.7px">System for uploading Slab data files</p>
-        <?php if (isset($error)) echo "<p>$error</p>"; ?>
+        <?php if (isset($error)): ?>
+            <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+                <?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['status']) && isset($_SESSION['message'])): ?>
+            <div class="alert <?= $_SESSION['status'] === 'success' ? 'alert-success' : 'alert-danger' ?> alert-dismissible fade show mt-4" role="alert">
+                <?= htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php unset($_SESSION['status'], $_SESSION['message']); ?>
+        <?php endif; ?>
         
         <!-- ฟอร์ม Login -->
         <form action="login.php" method="POST">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <div class="mb-1 mt-1">
                 <label for="username" class="form-label" style="-webkit-text-stroke: 0.7px">User Name:</label>
                 <div class="input-group">

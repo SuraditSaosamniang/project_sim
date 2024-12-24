@@ -28,12 +28,13 @@ if (!in_array($fileExtension, $allowedExtensions)) {
 $tableHeaders = [];
 $tableData = [];
 if (($handle = fopen($filePath, "r")) !== false) {
-    $tableHeaders = fgetcsv($handle); // อ่าน header
-    while (($row = fgetcsv($handle)) !== false) {
-        $tableData[] = $row; // อ่านข้อมูลทีละแถว
+    $tableHeaders = fgetcsv($handle, 1000, ",", '"', "\\");
+    while (($row = fgetcsv($handle, 1000, ",", '"', "\\")) !== false) {
+        $tableData[] = $row;
     }
     fclose($handle);
 }
+
 
 // กำหนดจำนวนแถวต่อหน้า
 $rowsPerPage = 25;
@@ -75,7 +76,7 @@ if ($sort === 'name') {
         <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
     </head>
     <body>
-    <div class="container my-5 mb-3">
+    <div class="container-lg my-3">
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container-lg">
@@ -83,6 +84,9 @@ if ($sort === 'name') {
                     <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
                     <span class="fw-bold custom-text">System for uploading CSV files</span>
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -132,7 +136,7 @@ if ($sort === 'name') {
         });
     </script>
 
-    <div class="container-lg"> 
+    <div class="container-lg my-3">
         <!-- Table Section -->
         <?php if (!empty($tableHeaders) && !empty($currentData)): ?>
             <div class="card shadow-sm">

@@ -151,7 +151,7 @@ p {
     background-color: #e9f1f7; /* Match the background color of the input fields */
     border: 1px solid #ddd; /* Match the border color of the input fields */
     border-radius: 8px 0 0 8px; /* Rounded corners on the left side */
-    color: #333333; /* Darker text for better readability */
+    color: #212529bf; /* Darker text for better readability */
     display: flex;
     align-items: center; /* Center the icon vertically */
     justify-content: center; /* Center the icon horizontally */
@@ -175,8 +175,30 @@ p {
     line-height: normal; /* Adjust line-height for consistent appearance */
 }
 
+.alert .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
 
+.alert .btn-close {
+    padding: 0.25rem;
+    margin-top: 0.15rem;
+    margin-left: 2px;
+    font-size: small;
+}
 
+.alert .btn-close:hover {
+    opacity: 1;
+    background-color: none; /* Light gray hover */
+    transform: scale(1.1); /* Slight zoom effect on close button */
+}
 
 
 
