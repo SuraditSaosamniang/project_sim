@@ -60,27 +60,30 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                 <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
                 <span class="fw-bold custom-text">Form for uploading CSV files</span>
             </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <span class="nav-link text-user fw-bold">
-                            <i class="bi bi-person-circle"></i> 
-                            <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
-                        </span>
-                    </li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <span class="nav-link text-user fw-bold">
+                                <i class="bi bi-person-circle"style="-webkit-text-stroke: 0.7px"></i> 
+                                <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
+                            </span>
+                        </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown" id="dropdownNav">
                             <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-menu-button-wide me-1"></i> Menu
+                                <i class="bi bi-menu-button-wide me-1"style="-webkit-text-stroke: 0.7px"></i> Menu
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
-                                <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2"></i> Show Data</a></li>
-                                <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2"></i> Home</a></li>
+                                <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2"style="-webkit-text-stroke: 0.7px"></i> Show Data</a></li>
+                                <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2"style="-webkit-text-stroke: 0.7px"></i> Home</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-logout" href="login.php">
-                                <i class="bi bi-box-arrow-right"></i> Logout
+                                <i class="bi bi-box-arrow-right"style="-webkit-text-stroke: 0.7px"></i> Logout
                             </a>
                         </li>
                     </ul>
@@ -154,7 +157,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                                 <?php if ($currentPage > 1): ?>
                                     <li class="paginate_button page-item previous">
                                         <a class="page-link" href="?page=<?= $currentPage - 1 ?>">
-                                            <i class="bi bi-chevron-left"></i> Previous
+                                            <i class="bi bi-chevron-left"style="-webkit-text-stroke: 0.7px"></i> Previous
                                         </a>
                                     </li>
                                 <?php else: ?>
@@ -172,12 +175,8 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                                 <?php if ($currentPage < $totalPages): ?>
                                     <li class="paginate_button page-item next">
                                         <a class="page-link" href="?page=<?= $currentPage + 1 ?>">
-                                            Next <i class="bi bi-chevron-right"></i>
+                                            Next <i class="bi bi-chevron-right"style="-webkit-text-stroke: 0.7px"></i>
                                         </a>
-                                    </li>
-                                <?php else: ?>
-                                    <li class="paginate_button page-item next disabled">
-                                        <a class="page-link" href="#">Next <i class="bi bi-chevron-right"></i></a>
                                     </li>
                                 <?php endif; ?>
                             </ul>
@@ -189,7 +188,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
             <!-- Action Buttons -->
             <div class="mt-4 text-center">
                 <a href="upload.php" class="btn btn-back">
-                    <i class="bi bi-arrow-left"></i> Back to Upload
+                    <i class="bi bi-arrow-left"style="-webkit-text-stroke: 0.7px"></i> Back to Upload
                 </a>
             </div>
             <?php else: ?>
