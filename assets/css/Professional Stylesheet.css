@@ -678,6 +678,10 @@ table tbody td {
     border-radius: 3px; /* Rounds the edges slightly */
 }
 
+.text-black{
+    color: #424242!important;
+}
+
 /* Focus effect for the checkbox */
 .form-check-input:focus {
     outline: none;
@@ -783,36 +787,38 @@ table tbody td {
     transform: scale(1.01); /* เพิ่มเอฟเฟกต์ zoom เมื่อ hover */
 }
 
-/* Responsive Design */
-@media (max-width: 754px) {
+/* Responsive Design for Desktop, Tablet, and Phone */
+@media (max-width: 1200px) {
     .table-container {
         overflow-x: auto; /* Enable horizontal scrolling */
     }
 
     .table th, .table td {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Slightly smaller text for smaller screens */
+        font-size: 0.95rem; /* Slightly smaller text for smaller screens */
     }
 
     .navbar-collapse {
         padding-top: 10px;
+        flex-direction: column; /* Stack items vertically */
     }
 
     .custom-text {
-        font-size: 1.25rem; /* Smaller font size on mobile */
-        letter-spacing: 0.8px; /* Reduce letter spacing slightly on smaller screens */
+        font-size: 1.4rem; /* Smaller font size on tablet */
+        letter-spacing: 0.7px; /* Reduce letter spacing slightly on smaller screens */
     }
 
     .button-group {
         flex-direction: column; /* Stack buttons vertically */
+        width: 100%; /* Full width for buttons */
         gap: 10px; /* Reduced gap between buttons */
     }
 
@@ -836,12 +842,563 @@ table tbody td {
     }
 
     .pagination {
-        flex-direction: column; /* Stack pagination items vertically */
-        align-items: center; /* Center align items */
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
     }
 
     .pagination .page-item {
-        margin: 5px 0; /* Add vertical margin between items */
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.8rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 90px; /* Reduce logo size */
+        height: 90px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.3rem; /* Reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.9rem; /* Reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.9rem; /* Reduce font size for alerts */
+    }
+
+    .form-check-label {
+        font-size: 0.9rem; /* Reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    body {
+        min-width: 1200px; /* Limit minimum width */
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 70px; /* Further reduce logo size */
+        height: 70px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 1.1rem; /* Further reduce font size for brand text */
+    }
+
+    .custom-text {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.85rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.85rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.75rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.75rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 70px; /* Further reduce logo size */
+        height: 70px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.1rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.75rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.75rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        width: 100%; /* Full width for buttons */
+    }
+
+    body {
+        min-width: 992px; /* Limit minimum width */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 60px; /* Further reduce logo size */
+        height: 60px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Further reduce font size for brand text */
+    }
+
+    .custom-text {
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.85rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.85rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.75rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.75rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 60px; /* Further reduce logo size */
+        height: 60px;
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.75rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.75rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        width: 100%; /* Full width for buttons */
+    }
+
+    body {
+        min-width: 768px; /* Limit minimum width */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 50px; /* Further reduce logo size */
+        height: 50px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 0.9rem; /* Further reduce font size for brand text */
+    }
+
+    .custom-text {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.75rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.75rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.7rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.7rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.7rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.7rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 50px; /* Further reduce logo size */
+        height: 50px;
+    }
+
+    .navbar-brand span {
+        font-size: 0.9rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.7rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.7rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 16px; /* Reduce size of checkboxes */
+        height: 16px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        width: 100%; /* Full width for buttons */
+    }
+
+    body {
+        min-width: 576px; /* Limit minimum width */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 754px) {
+    .table-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table th, .table td {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Slightly smaller text for smaller screens */
+    }
+
+    .navbar-collapse {
+        padding-top: 10px;
+        flex-direction: row !important; /* Align items horizontally */
+    }
+
+    .dropdown-menu {
+        position: fixed !important; /* Make the menu fixed */
+        top: 200px !important; /* Vertical position */
+        left: 233px !important; /* Horizontal position */
+        z-index: 1050 !important; /* Ensure it's on top */
+        width: 123px !important; /* Set width to auto to fit content */
+        min-width: 123px !important; /* Ensure it doesn't shrink too much */
+        background-color: #e4edfa; /* Background color */
+        border: 1px solid #e4edfa; /* Border */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+        border-radius: 8px; /* Rounded corners */
+        padding: 0px !important; /* No padding */
+    }
+
+    .custom-text {
+        font-size: 1.25rem; /* Smaller font size on mobile */
+        letter-spacing: 0.8px; /* Reduce letter spacing slightly on smaller screens */
+    }
+
+    .button-group {
+        flex-direction: row; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+    }
+
+    .form-wrapper {
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+        gap: 10px; /* Add space between elements */
+    }
+
+    .form-wrapper label {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        width: 100%; /* Full width for select */
+    }
+
+    .alert {
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
     }
 
     .footer {
@@ -883,6 +1440,281 @@ table tbody td {
         margin-top: 10px; /* Add top margin to pagination */
     }
 
+    .alert {
+        font-size: 0.9rem; /* Reduce font size for alerts */
+    }
+
+    .form-check-label {
+        font-size: 0.9rem; /* Reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    body {
+        min-width: 754px; /* Limit minimum width */
+    }
+}
+
+/* Additional Responsive Design for Smaller Screens */
+@media (max-width: 576px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 60px; /* Further reduce logo size */
+        height: 60px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Further reduce font size for brand text */
+    }
+
+    .dropdown-menu {
+        position: fixed !important; /* Make the menu fixed */
+        top: 220px !important; /* Vertical position */
+        left: 125px !important; /* Horizontal position */
+        z-index: 1050 !important; /* Ensure it's on top */
+        width: auto !important; /* Set width to auto to fit content */
+        min-width: 123px !important; /* Ensure it doesn't shrink too much */
+        background-color: #e4edfa; /* Background color */
+        border: 1px solid #e4edfa; /* Border */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+        border-radius: 8px; /* Rounded corners */
+        padding: 0px !important; /* No padding */
+    }
+
+    .custom-text {
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.85rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.85rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.75rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.75rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 60px; /* Further reduce logo size */
+        height: 60px;
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.75rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.75rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: auto !important; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: row; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        margin-top: 5px; /* Add top margin to buttons */
+    }
+    
+    body {
+        min-width: 576px; /* Limit minimum width */
+    }
+}
+
+/* Responsive Design for Desktop, Tablet, and Phone */
+@media (max-width: 1200px) {
+    .table-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table th, .table td {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.95rem; /* Slightly smaller text for smaller screens */
+    }
+
+    .navbar-collapse {
+        padding-top: 10px;
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .custom-text {
+        font-size: 1.4rem; /* Smaller font size on tablet */
+        letter-spacing: 0.7px; /* Reduce letter spacing slightly on smaller screens */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        width: 100%; /* Full width for buttons */
+        gap: 10px; /* Reduced gap between buttons */
+    }
+
+    .form-wrapper {
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+        gap: 10px; /* Add space between elements */
+    }
+
+    .form-wrapper label {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        width: 100%; /* Full width for select */
+    }
+
+    .alert {
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.8rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 90px; /* Reduce logo size */
+        height: 90px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.3rem; /* Reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.9rem; /* Reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
     .btn-insert, .btn-refresh, .btn-back {
         width: 100%; /* Full width buttons */
         margin-bottom: 10px; /* Add bottom margin to buttons */
@@ -902,6 +1734,405 @@ table tbody td {
     }
 
     body {
-        min-width: 754px; /* Limit minimum width */
+        min-width: 1200px; /* Limit minimum width */
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 70px; /* Further reduce logo size */
+        height: 70px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 1.1rem; /* Further reduce font size for brand text */
+    }
+
+    .custom-text {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.85rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.85rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.75rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.75rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 70px; /* Further reduce logo size */
+        height: 70px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.1rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.75rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.75rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        width: 100%; /* Full width for buttons */
+    }
+
+    body {
+        min-width: 992px; /* Limit minimum width */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 60px; /* Further reduce logo size */
+        height: 60px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Further reduce font size for brand text */
+    }
+
+    .custom-text {
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.85rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.85rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.75rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.75rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 60px; /* Further reduce logo size */
+        height: 60px;
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.75rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.75rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 18px; /* Reduce size of checkboxes */
+        height: 18px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        width: 100%; /* Full width for buttons */
+    }
+
+    body {
+        min-width: 768px; /* Limit minimum width */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-brand img {
+        width: 50px; /* Further reduce logo size */
+        height: 50px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .navbar-brand span {
+        font-size: 0.9rem; /* Further reduce font size for brand text */
+    }
+
+    .custom-text {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+
+    .form-wrapper {
+        gap: 5px; /* Further reduce gap between elements */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .form-wrapper label {
+        font-size: 0.75rem; /* Further reduce font size for labels */
+        margin-bottom: 5px; /* Add bottom margin */
+    }
+
+    .form-wrapper select {
+        font-size: 0.75rem; /* Further reduce font size for select */
+        width: 100%; /* Full width for select */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduce padding */
+        font-size: 0.7rem; /* Further reduce font size */
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .alert {
+        font-size: 0.7rem; /* Further reduce font size for alerts */
+        max-width: 90%; /* Reduce max width for alerts */
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center; /* Center align items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 5px; /* Add gap between items */
+    }
+
+    .pagination .page-item {
+        margin: 0; /* Remove vertical margin between items */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Further reduce padding */
+        font-size: 0.7rem; /* Further reduce font size */
+    }
+
+    .footer {
+        text-align: center; /* Center align footer text */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer p {
+        font-size: 0.7rem; /* Further reduce font size for footer text */
+    }
+
+    .container-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin-top: 15px; /* Reduce top margin for cards */
+    }
+
+    .navbar-brand img {
+        width: 50px; /* Further reduce logo size */
+        height: 50px;
+    }
+
+    .navbar-brand span {
+        font-size: 0.9rem; /* Further reduce font size for brand text */
+    }
+
+    .table-responsive {
+        margin-bottom: 15px; /* Add bottom margin to table */
+    }
+
+    .dataTables_info {
+        font-size: 0.7rem; /* Further reduce font size for info text */
+    }
+
+    .dataTables_paginate {
+        margin-top: 10px; /* Add top margin to pagination */
+    }
+
+    .form-check-label {
+        font-size: 0.7rem; /* Further reduce font size for form labels */
+    }
+
+    .form-check-input {
+        width: 16px; /* Reduce size of checkboxes */
+        height: 16px;
+    }
+
+    .btn-insert, .btn-refresh, .btn-back {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 10px; /* Add bottom margin to buttons */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduced gap between buttons */
+        width: 100%; /* Full width for buttons */
+    }
+
+    body {
+        min-width: 576px; /* Limit minimum width */
     }
 }

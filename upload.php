@@ -185,115 +185,114 @@ if (!isset($_SESSION['username'])) {
 
 <!-- Uploaded Files Section -->
 <div class="container my-5">
-        <div class="card shadow-sm" style="margin-top: 20px;">
-            <div class="card-body">
-                <h3 class="card-title text-center mb-4">Uploaded Files</h3>
+    <div class="card shadow-sm" style="margin-top: 20px;">
+        <div class="card-body">
+            <h3 class="card-title text-center mb-4">Uploaded Files</h3>
 
-                <!-- Sort Dropdown -->
-                <div class="form-wrapper">
-                    <form method="get">
-                        <label for="sort">Sort by:</label>
-                        <!-- Custom Select -->
-                        <div class="custom-select" id="custom-select">
-                            <div class="select-selected">Name</div>
-                            <div class="select-items select-hide">
-                                <div data-value="date">Date</div>
-                                <div data-value="name">Name</div>
-                                <div data-value="size">Size</div>
-                            </div>
+            <!-- Sort Dropdown -->
+            <div class="form-wrapper">
+                <form method="get">
+                    <label for="sort">Sort by:</label>
+                    <!-- Custom Select -->
+                    <div class="custom-select" id="custom-select">
+                        <div class="select-selected">Name</div>
+                        <div class="select-items select-hide">
+                            <div data-value="date">Date</div>
+                            <div data-value="name">Name</div>
+                            <div data-value="size">Size</div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+            </div>
 
-                <script>
-                    // JavaScript for Custom Dropdown
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const selected = document.querySelector(".select-selected");
-                        const items = document.querySelector(".select-items");
-                        const options = items.querySelectorAll("div");
+            <script>
+                // JavaScript for Custom Dropdown
+                document.addEventListener("DOMContentLoaded", function () {
+                    const selected = document.querySelector(".select-selected");
+                    const items = document.querySelector(".select-items");
+                    const options = items.querySelectorAll("div");
 
-                        // แสดงผลการเลือกจาก URL (ค่าของ 'sort')
-                        const urlParams = new URLSearchParams(window.location.search);
-                        const sortValue = urlParams.get('sort') || 'name';  // กำหนด default เป็น 'name' ถ้าไม่มีค่า sort ใน URL
+                    // แสดงผลการเลือกจาก URL (ค่าของ 'sort')
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const sortValue = urlParams.get('sort') || 'name';  // กำหนด default เป็น 'name' ถ้าไม่มีค่า sort ใน URL
 
-                        // ตั้งค่าชื่อที่เลือกใน dropdown
-                        selected.textContent = optionsArray[sortValue] || 'Name'; // ใช้ map ของตัวเลือก
+                    // ตั้งค่าชื่อที่เลือกใน dropdown
+                    selected.textContent = optionsArray[sortValue] || 'Name'; // ใช้ map ของตัวเลือก
 
-                        // แสดง/ซ่อน dropdown เมื่อคลิก
-                        selected.addEventListener("click", function () {
-                            items.classList.toggle("select-hide");
-                        });
+                    // แสดง/ซ่อน dropdown เมื่อคลิก
+                    selected.addEventListener("click", function () {
+                        items.classList.toggle("select-hide");
+                    });
 
-                        options.forEach(option => {
-                            option.addEventListener("click", function () {
-                                selected.textContent = this.textContent; // เปลี่ยนข้อความใน select
-                                const value = this.getAttribute("data-value");
+                    options.forEach(option => {
+                        option.addEventListener("click", function () {
+                            selected.textContent = this.textContent; // เปลี่ยนข้อความใน select
+                            const value = this.getAttribute("data-value");
 
-                                // ส่งค่าไปยัง URL
-                                window.location.href = "?sort=" + value; // ส่งค่าไปยัง URL เพื่อรีเฟรช
-                            });
-                        });
-
-                        // ปิด dropdown เมื่อคลิกข้างนอก
-                        document.addEventListener("click", function (e) {
-                            if (!e.target.closest("#custom-select")) {
-                                items.classList.add("select-hide");
-                            }
+                            // ส่งค่าไปยัง URL
+                            window.location.href = "?sort=" + value; // ส่งค่าไปยัง URL เพื่อรีเฟรช
                         });
                     });
-                </script>
 
-                <script>
-                    // Map for selected values
-                    const optionsArray = {
-                        'date': 'Date',
-                        'name': 'Name',
-                        'size': 'Size'
-                    };
-                </script>
+                    // ปิด dropdown เมื่อคลิกข้างนอก
+                    document.addEventListener("click", function (e) {
+                        if (!e.target.closest("#custom-select")) {
+                            items.classList.add("select-hide");
+                        }
+                    });
+                });
+            </script>
 
-                <!-- Files Table -->
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead class="bg-dark text-white">
+            <script>
+                // Map for selected values
+                const optionsArray = {
+                    'date': 'Date',
+                    'name': 'Name',
+                    'size': 'Size'
+                };
+            </script>
+
+            <!-- Files Table -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th>No</th>
+                                <th>File Name</th>
+                                <th>Size</th>
+                                <th>Upload Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php if (empty($uploadedFiles)): ?>
                                 <tr>
-                                    <th>No</th>
-                                    <th>File Name</th>
-                                    <th>Size</th>
-                                    <th>Upload Date</th>
-                                    <th>Actions</th>
+                                    <td colspan="5" class="text-center text-muted">No files uploaded yet.</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                            <?php if (empty($uploadedFiles)): ?>
+                            <?php else: ?>
+                                <?php foreach ($uploadedFiles as $index => $file): ?>
                                     <tr>
-                                        <td colspan="5" class="text-center text-muted">No files uploaded yet.</td>
+                                        <td class="file-data"><?= $index + 1 ?></td>
+                                        <td class="file-data"><?= htmlspecialchars($file['name'], ENT_QUOTES, 'UTF-8') ?></td>
+                                        <td class="file-data"><?= number_format($file['size'] / 1024, 2) ?> KB</td>
+                                        <td class="file-data"><?= date('d-m-Y H:i:s', $file['date']) ?></td>
+                                        <td>
+                                            <!-- ปุ่ม Preview -->
+                                            <a href="preview.php?file=<?= urlencode($file['name']) ?>" class="btn btn-preview btn-sm">
+                                                <i class="bi-file-earmark-text"style="-webkit-text-stroke: 0.7px"></i> Preview
+                                            </a>
+                                            <!-- ปุ่ม Delete -->
+                                            <a href="delete-file.php?delete=<?= urlencode($file['name']) ?>" class="btn btn-delete btn-sm">
+                                                <i class="bi bi-trash fw-bold"style="-webkit-text-stroke: 0.7px"></i> Delete
+                                            </a>
+                                        </td>
                                     </tr>
-                                <?php else: ?>
-                                    <?php foreach ($uploadedFiles as $index => $file): ?>
-                                        <tr>
-                                            <td class="file-data"><?= $index + 1 ?></td>
-                                            <td class="file-data"><?= htmlspecialchars($file['name'], ENT_QUOTES, 'UTF-8') ?></td>
-                                            <td class="file-data"><?= number_format($file['size'] / 1024, 2) ?> KB</td>
-                                            <td class="file-data"><?= date('d-m-Y H:i:s', $file['date']) ?></td>
-                                            <td>
-                                                <!-- ปุ่ม Preview -->
-                                                <a href="preview.php?file=<?= urlencode($file['name']) ?>" class="btn btn-preview btn-sm">
-                                                    <i class="bi-file-earmark-text"style="-webkit-text-stroke: 0.7px"></i> Preview
-                                                </a>
-                                                <!-- ปุ่ม Delete -->
-                                                <a href="delete-file.php?delete=<?= urlencode($file['name']) ?>" class="btn btn-delete btn-sm">
-                                                    <i class="bi bi-trash fw-bold"style="-webkit-text-stroke: 0.7px"></i> Delete
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
-                    </div>   
-                </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>   
             </div>
         </div>
     </div>
@@ -303,13 +302,12 @@ if (!isset($_SESSION['username'])) {
 <div class="container-lg my-1">
     <footer class="footer mt-5 py-4 bg-dark text-light">                
         <div class="container">              
-            <div class="row"              >
-                 <div class="col-md-6 text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
                     <h5 class="fw-bold text-dark-custom">File Manager</h5>
-                        <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
-                        <p class="text-dark-custom small mb-0">&copy; 2024 File Manager. All Rights Reserved.</p>
-                    </div>   
-                </div>
+                    <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
+                    <p class="text-dark-custom small mb-0">&copy; 2024 File Manager. All Rights Reserved.</p>
+                </div>   
             </div>
         </div>
     </footer>                                  

@@ -76,17 +76,17 @@ if ($sort === 'name') {
         <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
     </head>
     <body>
-    <div class="container-lg my-3">
+    <div class="container my-5 mb-3">
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-            <div class="container-lg">
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">System for uploading CSV files</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container-lg">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
+                <span class="fw-bold custom-text">Form for uploading CSV files</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -95,19 +95,19 @@ if ($sort === 'name') {
                                 <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
                             </span>
                         </li>
-                        <!-- Dropdown Menu -->
-                        <li class="nav-item dropdown" id="dropdownNav">
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown" id="dropdownNav">
                             <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-menu-button-wide"style="-webkit-text-stroke: 0.7px"></i> Menu
+                                <i class="bi bi-menu-button-wide me-1"style="-webkit-text-stroke: 0.7px"></i> Menu
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
                                 <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2"style="-webkit-text-stroke: 0.7px"></i> Show Data</a></li>
                                 <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2"style="-webkit-text-stroke: 0.7px"></i> Home</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-logout" href="login.php">
-                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
+                                <i class="bi bi-box-arrow-right"style="-webkit-text-stroke: 0.7px"></i> Logout
                             </a>
                         </li>
                     </ul>
@@ -176,9 +176,9 @@ if ($sort === 'name') {
             <!-- Pagination -->    
             <nav class="mt-4">
                 <div class="row">
-                    <div class="text-center">
+                    <div class="col-12">
                         <div class="dataTables_paginate paging_simple_numbers" id="Size_paginate">
-                        <ul class="pagination justify-content-center">
+                            <ul class="pagination justify-content-center">
                                 <?php if ($currentPage > 1): ?>
                                     <li class="paginate_button page-item previous">
                                         <a class="page-link" href="?file=<?= urlencode($fileName) ?>&page=<?= $currentPage - 1 ?>">
