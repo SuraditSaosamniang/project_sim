@@ -76,7 +76,7 @@ if ($sort === 'name') {
         <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
     </head>
     <body>
-    <div class="container my-5 mb-3">
+    <div class="container-lg my-5 mb-3">
         <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container-lg">
@@ -151,7 +151,7 @@ if ($sort === 'name') {
                             <thead>
                                 <tr>
                                     <?php foreach ($tableHeaders as $header): ?>
-                                        <th><?= htmlspecialchars($header) ?></th>
+                                        <th class="responsive-header"><?= htmlspecialchars($header) ?></th>
                                     <?php endforeach; ?>
                                 </tr>
                             </thead>

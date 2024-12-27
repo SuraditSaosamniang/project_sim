@@ -149,7 +149,7 @@ if (!isset($_SESSION['username'])) {
 </div>
 
 <!-- Upload Section -->
-<div class="container my-3">
+<div class="container-lg my-3">
     <?php if (isset($_SESSION['status']) && isset($_SESSION['message'])): ?>
         <div class="alert <?= $_SESSION['status'] === 'success' ? 'alert-success' : 'alert-danger' ?> alert-dismissible fade show mt-4" role="alert">
             <?= htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') ?>
@@ -184,7 +184,7 @@ if (!isset($_SESSION['username'])) {
 </div>
 
 <!-- Uploaded Files Section -->
-<div class="container my-5">
+<div class="container-lg my-5">
     <div class="card shadow-sm" style="margin-top: 20px;">
         <div class="card-body">
             <h3 class="card-title text-center mb-4">Uploaded Files</h3>
@@ -272,18 +272,18 @@ if (!isset($_SESSION['username'])) {
                                 </tr>
                             <?php else: ?>
                                 <?php foreach ($uploadedFiles as $index => $file): ?>
-                                    <tr>
+                                    <tr class="responsive-row">
                                         <td class="file-data"><?= $index + 1 ?></td>
                                         <td class="file-data"><?= htmlspecialchars($file['name'], ENT_QUOTES, 'UTF-8') ?></td>
                                         <td class="file-data"><?= number_format($file['size'] / 1024, 2) ?> KB</td>
                                         <td class="file-data"><?= date('d-m-Y H:i:s', $file['date']) ?></td>
                                         <td>
                                             <!-- ปุ่ม Preview -->
-                                            <a href="preview.php?file=<?= urlencode($file['name']) ?>" class="btn btn-preview btn-sm">
+                                            <a href="preview.php?file=<?= urlencode($file['name']) ?>" class="btn btn-preview">
                                                 <i class="bi-file-earmark-text"style="-webkit-text-stroke: 0.7px"></i> Preview
                                             </a>
                                             <!-- ปุ่ม Delete -->
-                                            <a href="delete-file.php?delete=<?= urlencode($file['name']) ?>" class="btn btn-delete btn-sm">
+                                            <a href="delete-file.php?delete=<?= urlencode($file['name']) ?>" class="btn btn-delete">
                                                 <i class="bi bi-trash fw-bold"style="-webkit-text-stroke: 0.7px"></i> Delete
                                             </a>
                                         </td>

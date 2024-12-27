@@ -83,7 +83,7 @@ table tbody td {
 }
 
 .card-subtitle {
-    font-size: 1rem; /* Smaller font for subtitle */
+    font-size: 1rem ; /* Smaller font for subtitle */
     color: #424242; /* Lighter text for subtitle */
 }
 
@@ -179,11 +179,19 @@ table tbody td {
 .pagination {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 20px 0;
     list-style: none;
     padding: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0;
-    border-radius: 5px;
-    overflow: hidden;
+    list-style: none;
+    padding: 0;
 }
 
 .pagination .page-item {
@@ -197,20 +205,20 @@ table tbody td {
     color: #424242 !important; /* Use color from the color scheme */
     background-color: #b8def5; /* Background color */
     border: 1px solid #5c86b4; /* Border color */
-    border-radius: 30px;
+    border-radius: 8px; /* Set rounded corners */
     transition: all 0.3s ease;
 }
 
 .pagination .page-link:hover {
     background-color: #5c86b4; /* Change background on hover */
-    color: #616161 !important; /* Text color on hover */
+    color: #ffffff !important; /* Text color on hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: scale(1.05); /* Zoom effect */
 }
 
 .pagination .page-item.active .page-link {
     background-color: #5c86b4; /* Highlight active page */
-    color: #ffffff; /* Active page text color */
+    color: #ffffff !important; /* Active page text color */
     font-weight: bold;
 }
 
@@ -219,17 +227,18 @@ table tbody td {
     background-color: #7ea9df; /* Background for disabled */
     border-color: #9fc8fa; /* Border color for disabled */
     cursor: not-allowed;
+    opacity: 0.6;
 }
 
-/* Rounded corners for the first and last items */
+/* First and Last Items - Rounded Corners */
 .pagination .page-item:first-child .page-link {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .pagination .page-item:last-child .page-link {
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 /* Page Info Styling */
@@ -787,9 +796,180 @@ table tbody td {
     transform: scale(1.01); /* เพิ่มเอฟเฟกต์ zoom เมื่อ hover */
 }
 
-/* Responsive Design for Desktop, Tablet, and Phone */
+/* ============================= */
+/* 🌐 RESPONSIVE DESIGN */
+/* ============================= */
+
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-brand span {
+        font-size: 14px;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-wrapper select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    body {
+        font-size: 16px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .navbar-brand span {
+        font-size: 16px;
+    }
+
+    .navbar-nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .dropdown-menu {
+        font-size: 14px;
+    }
+
+    .form-wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .form-wrapper select {
+        width: 48%;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+
+    .navbar {
+        padding: 15px 0;
+        justify-content: space-between;
+    }
+
+    .navbar-brand img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .navbar-brand span {
+        font-size: 18px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .dropdown-menu {
+        font-size: 16px;
+    }
+
+    .form-wrapper {
+        justify-content: flex-end;
+    }
+
+    .form-wrapper select {
+        width: auto;
+    }
+
+    .footer {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+/* Responsive Design for Table */
 @media (max-width: 1200px) {
-    .table-container {
+    .table-responsive {
         overflow-x: auto; /* Enable horizontal scrolling */
     }
 
@@ -797,530 +977,13 @@ table tbody td {
         font-size: 0.9rem;
     }
 
-    .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 0.95rem; /* Slightly smaller text for smaller screens */
-    }
-
-    .navbar-collapse {
-        padding-top: 10px;
-        flex-direction: column; /* Stack items vertically */
-    }
-
-    .custom-text {
-        font-size: 1.4rem; /* Smaller font size on tablet */
-        letter-spacing: 0.7px; /* Reduce letter spacing slightly on smaller screens */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        width: 100%; /* Full width for buttons */
-        gap: 10px; /* Reduced gap between buttons */
-    }
-
-    .form-wrapper {
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-        gap: 10px; /* Add space between elements */
-    }
-
-    .form-wrapper label {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        width: 100%; /* Full width for select */
-    }
-
-    .alert {
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.8rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 90px; /* Reduce logo size */
-        height: 90px;
-    }
-
-    .navbar-brand span {
-        font-size: 1.3rem; /* Reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
     .dataTables_info {
         font-size: 0.9rem; /* Reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.9rem; /* Reduce font size for alerts */
-    }
-
-    .form-check-label {
-        font-size: 0.9rem; /* Reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    body {
-        min-width: 1200px; /* Limit minimum width */
     }
 }
 
 @media (max-width: 992px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 70px; /* Further reduce logo size */
-        height: 70px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 1.1rem; /* Further reduce font size for brand text */
-    }
-
-    .custom-text {
-        font-size: 1.2rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.85rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.85rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.75rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.75rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 70px; /* Further reduce logo size */
-        height: 70px;
-    }
-
-    .navbar-brand span {
-        font-size: 1.1rem; /* Further reduce font size for brand text */
-    }
-
     .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
-    .dataTables_info {
-        font-size: 0.75rem; /* Further reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.75rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        width: 100%; /* Full width for buttons */
-    }
-
-    body {
-        min-width: 992px; /* Limit minimum width */
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 60px; /* Further reduce logo size */
-        height: 60px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 1rem; /* Further reduce font size for brand text */
-    }
-
-    .custom-text {
-        font-size: 1rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.85rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.85rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.75rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.75rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 60px; /* Further reduce logo size */
-        height: 60px;
-    }
-
-    .navbar-brand span {
-        font-size: 1rem; /* Further reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
-    .dataTables_info {
-        font-size: 0.75rem; /* Further reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.75rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        width: 100%; /* Full width for buttons */
-    }
-
-    body {
-        min-width: 768px; /* Limit minimum width */
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 50px; /* Further reduce logo size */
-        height: 50px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 0.9rem; /* Further reduce font size for brand text */
-    }
-
-    .custom-text {
-        font-size: 0.9rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.75rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.75rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.7rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.7rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.7rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.7rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 50px; /* Further reduce logo size */
-        height: 50px;
-    }
-
-    .navbar-brand span {
-        font-size: 0.9rem; /* Further reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
-    .dataTables_info {
-        font-size: 0.7rem; /* Further reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.7rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 16px; /* Reduce size of checkboxes */
-        height: 16px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        width: 100%; /* Full width for buttons */
-    }
-
-    body {
-        min-width: 576px; /* Limit minimum width */
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 754px) {
-    .table-container {
         overflow-x: auto; /* Enable horizontal scrolling */
     }
 
@@ -1328,811 +991,603 @@ table tbody td {
         font-size: 0.85rem;
     }
 
-    .btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Slightly smaller text for smaller screens */
-    }
-
-    .navbar-collapse {
-        padding-top: 10px;
-        flex-direction: row !important; /* Align items horizontally */
-    }
-
-    .dropdown-menu {
-        position: fixed !important; /* Make the menu fixed */
-        top: 200px !important; /* Vertical position */
-        left: 233px !important; /* Horizontal position */
-        z-index: 1050 !important; /* Ensure it's on top */
-        width: 123px !important; /* Set width to auto to fit content */
-        min-width: 123px !important; /* Ensure it doesn't shrink too much */
-        background-color: #e4edfa; /* Background color */
-        border: 1px solid #e4edfa; /* Border */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
-        border-radius: 8px; /* Rounded corners */
-        padding: 0px !important; /* No padding */
-    }
-
-    .custom-text {
-        font-size: 1.25rem; /* Smaller font size on mobile */
-        letter-spacing: 0.8px; /* Reduce letter spacing slightly on smaller screens */
-    }
-
-    .button-group {
-        flex-direction: row; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-    }
-
-    .form-wrapper {
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-        gap: 10px; /* Add space between elements */
-    }
-
-    .form-wrapper label {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        width: 100%; /* Full width for select */
-    }
-
-    .alert {
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 80px; /* Reduce logo size */
-        height: 80px;
-    }
-
-    .navbar-brand span {
-        font-size: 1.2rem; /* Reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
     .dataTables_info {
-        font-size: 0.9rem; /* Reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .alert {
-        font-size: 0.9rem; /* Reduce font size for alerts */
-    }
-
-    .form-check-label {
-        font-size: 0.9rem; /* Reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    body {
-        min-width: 754px; /* Limit minimum width */
-    }
-}
-
-/* Additional Responsive Design for Smaller Screens */
-@media (max-width: 576px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 60px; /* Further reduce logo size */
-        height: 60px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 1rem; /* Further reduce font size for brand text */
-    }
-
-    .dropdown-menu {
-        position: fixed !important; /* Make the menu fixed */
-        top: 220px !important; /* Vertical position */
-        left: 125px !important; /* Horizontal position */
-        z-index: 1050 !important; /* Ensure it's on top */
-        width: auto !important; /* Set width to auto to fit content */
-        min-width: 123px !important; /* Ensure it doesn't shrink too much */
-        background-color: #e4edfa; /* Background color */
-        border: 1px solid #e4edfa; /* Border */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
-        border-radius: 8px; /* Rounded corners */
-        padding: 0px !important; /* No padding */
-    }
-
-    .custom-text {
-        font-size: 1rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.85rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.85rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.75rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.75rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 60px; /* Further reduce logo size */
-        height: 60px;
-    }
-
-    .navbar-brand span {
-        font-size: 1rem; /* Further reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
-    .dataTables_info {
-        font-size: 0.75rem; /* Further reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.75rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: auto !important; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: row; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        margin-top: 5px; /* Add top margin to buttons */
-    }
-    
-    body {
-        min-width: 576px; /* Limit minimum width */
-    }
-}
-
-/* Responsive Design for Desktop, Tablet, and Phone */
-@media (max-width: 1200px) {
-    .table-container {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    .table th, .table td {
-        font-size: 0.9rem;
-    }
-
-    .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 0.95rem; /* Slightly smaller text for smaller screens */
-    }
-
-    .navbar-collapse {
-        padding-top: 10px;
-        flex-direction: column; /* Stack items vertically */
-    }
-
-    .custom-text {
-        font-size: 1.4rem; /* Smaller font size on tablet */
-        letter-spacing: 0.7px; /* Reduce letter spacing slightly on smaller screens */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        width: 100%; /* Full width for buttons */
-        gap: 10px; /* Reduced gap between buttons */
-    }
-
-    .form-wrapper {
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-        gap: 10px; /* Add space between elements */
-    }
-
-    .form-wrapper label {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        width: 100%; /* Full width for select */
-    }
-
-    .alert {
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.8rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 90px; /* Reduce logo size */
-        height: 90px;
-    }
-
-    .navbar-brand span {
-        font-size: 1.3rem; /* Reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
-    .dataTables_info {
-        font-size: 0.9rem; /* Reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.9rem; /* Reduce font size for alerts */
-    }
-
-    .form-check-label {
-        font-size: 0.9rem; /* Reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    body {
-        min-width: 1200px; /* Limit minimum width */
-    }
-}
-
-@media (max-width: 992px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 70px; /* Further reduce logo size */
-        height: 70px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 1.1rem; /* Further reduce font size for brand text */
-    }
-
-    .custom-text {
-        font-size: 1.2rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.85rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.85rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.75rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.75rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 70px; /* Further reduce logo size */
-        height: 70px;
-    }
-
-    .navbar-brand span {
-        font-size: 1.1rem; /* Further reduce font size for brand text */
-    }
-
-    .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
-    }
-
-    .dataTables_info {
-        font-size: 0.75rem; /* Further reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.75rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        width: 100%; /* Full width for buttons */
-    }
-
-    body {
-        min-width: 992px; /* Limit minimum width */
+        font-size: 0.85rem; /* Reduce font size for info text */
     }
 }
 
 @media (max-width: 768px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 60px; /* Further reduce logo size */
-        height: 60px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 1rem; /* Further reduce font size for brand text */
-    }
-
-    .custom-text {
-        font-size: 1rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.85rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.85rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.75rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.75rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 60px; /* Further reduce logo size */
-        height: 60px;
-    }
-
-    .navbar-brand span {
-        font-size: 1rem; /* Further reduce font size for brand text */
-    }
-
     .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table th, .table td {
+        font-size: 0.8rem;
     }
 
     .dataTables_info {
-        font-size: 0.75rem; /* Further reduce font size for info text */
-    }
-
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.75rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 18px; /* Reduce size of checkboxes */
-        height: 18px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        width: 100%; /* Full width for buttons */
-    }
-
-    body {
-        min-width: 768px; /* Limit minimum width */
+        font-size: 0.8rem; /* Reduce font size for info text */
     }
 }
 
 @media (max-width: 576px) {
-    .navbar-brand {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-brand img {
-        width: 50px; /* Further reduce logo size */
-        height: 50px;
-        margin-bottom: 10px; /* Add space below the logo */
-    }
-
-    .navbar-brand span {
-        font-size: 0.9rem; /* Further reduce font size for brand text */
-    }
-
-    .custom-text {
-        font-size: 0.9rem; /* Further reduce font size */
-    }
-
-    .form-wrapper {
-        gap: 5px; /* Further reduce gap between elements */
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .form-wrapper label {
-        font-size: 0.75rem; /* Further reduce font size for labels */
-        margin-bottom: 5px; /* Add bottom margin */
-    }
-
-    .form-wrapper select {
-        font-size: 0.75rem; /* Further reduce font size for select */
-        width: 100%; /* Full width for select */
-    }
-
-    .btn {
-        padding: 4px 8px; /* Further reduce padding */
-        font-size: 0.7rem; /* Further reduce font size */
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .alert {
-        font-size: 0.7rem; /* Further reduce font size for alerts */
-        max-width: 90%; /* Reduce max width for alerts */
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center; /* Center align items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 5px; /* Add gap between items */
-    }
-
-    .pagination .page-item {
-        margin: 0; /* Remove vertical margin between items */
-    }
-
-    .pagination .page-link {
-        padding: 6px 10px; /* Further reduce padding */
-        font-size: 0.7rem; /* Further reduce font size */
-    }
-
-    .footer {
-        text-align: center; /* Center align footer text */
-    }
-
-    .footer .row {
-        flex-direction: column; /* Stack footer columns vertically */
-        align-items: center; /* Center align items */
-    }
-
-    .footer p {
-        font-size: 0.7rem; /* Further reduce font size for footer text */
-    }
-
-    .container-lg {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .card {
-        margin-top: 15px; /* Reduce top margin for cards */
-    }
-
-    .navbar-brand img {
-        width: 50px; /* Further reduce logo size */
-        height: 50px;
-    }
-
-    .navbar-brand span {
-        font-size: 0.9rem; /* Further reduce font size for brand text */
-    }
-
     .table-responsive {
-        margin-bottom: 15px; /* Add bottom margin to table */
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table th, .table td {
+        font-size: 0.75rem;
     }
 
     .dataTables_info {
-        font-size: 0.7rem; /* Further reduce font size for info text */
+        font-size: 0.75rem; /* Reduce font size for info text */
     }
+}
 
-    .dataTables_paginate {
-        margin-top: 10px; /* Add top margin to pagination */
-    }
-
-    .form-check-label {
-        font-size: 0.7rem; /* Further reduce font size for form labels */
-    }
-
-    .form-check-input {
-        width: 16px; /* Reduce size of checkboxes */
-        height: 16px;
-    }
-
-    .btn-insert, .btn-refresh, .btn-back {
-        width: 100%; /* Full width buttons */
-        margin-bottom: 10px; /* Add bottom margin to buttons */
-    }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Reduced gap between buttons */
-        width: 100%; /* Full width for buttons */
-    }
-
+/* Responsive Design for Font Sizes */
+@media (max-width: 575.98px) {
     body {
-        min-width: 576px; /* Limit minimum width */
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+
+    .navbar-brand span,
+    .navbar-nav .nav-link,
+    .card-title,
+    .card-subtitle,
+    .btn,
+    .table th,
+    .table td,
+    .dataTables_info,
+    .footer p {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    body {
+        font-size: 14px; /* Medium font size for tablet */
+    }
+
+    .navbar-brand span,
+    .navbar-nav .nav-link,
+    .card-title,
+    .card-subtitle,
+    .btn,
+    .table th,
+    .table td,
+    .dataTables_info,
+    .footer p {
+        font-size: 14px; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        font-size: 16px; /* Larger font size for desktop */
+    }
+
+    .navbar-brand span,
+    .navbar-nav .nav-link,
+    .card-title,
+    .card-subtitle,
+    .btn,
+    .table th,
+    .table td,
+    .dataTables_info,
+    .footer p {
+        font-size: 16px; /* Larger font size for desktop */
+    }
+}
+
+/* Responsive Design for Table Headers */
+.responsive-header {
+    font-size: 1rem; /* Default font size */
+}
+
+@media (max-width: 575.98px) {
+    .responsive-header {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .responsive-header {
+        font-size: 0.85rem; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .responsive-header {
+        font-size: 1rem; /* Larger font size for desktop */
+    }
+}
+
+/* Responsive Design for Table Headers */
+.responsive-header {
+    font-size: 1rem; /* Default font size */
+}
+
+@media (max-width: 575.98px) {
+    .responsive-header {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .responsive-header {
+        font-size: 0.85rem; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .responsive-header {
+        font-size: 1rem; /* Larger font size for desktop */
+    }
+}
+
+/* Responsive Design for Data Info */
+.responsive-info {
+    font-size: 1rem; /* Default font size */
+}
+
+@media (max-width: 575.98px) {
+    .responsive-info {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .responsive-info {
+        font-size: 0.85rem; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .responsive-info {
+        font-size: 1rem; /* Larger font size for desktop */
+    }
+}
+
+/* ============================= */
+/* 🌟 NAVBAR RESPONSIVE ADJUSTMENTS */
+/* ============================= */
+
+/* 📱 Phone */
+@media (max-width: 575.98px) {
+    .navbar-toggler {
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .dropdown-menu {
+        font-size: 14px;
+    }
+}
+
+/* 📊 Tablet */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .navbar-nav .nav-item {
+        margin: 0 5px;
+    }
+}
+
+/* 💻 Desktop */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
+}
+
+/* ============================= */
+/* 🛠️ ADDITIONAL RESPONSIVE ADJUSTMENTS */
+/* ============================= */
+
+/* 📱 Phone - General */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+/* 📊 Tablet - General */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* 💻 Desktop - General */
+@media (min-width: 992px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* ============================= */
+/* 🎯 INTERACTIVITY & SPACING */
+/* ============================= */
+.navbar-toggler:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .dropdown-menu {
+    min-width: 200px;
+    text-align: left;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #424242;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #212529bf;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 5px;
+}
+
+/* ============================= */
+/* 🌐 RESPONSIVE NAVBAR */
+/* ============================= */
+
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-brand span {
+        font-size: 14px;
+    }
+
+    .navbar-toggler {
+        font-size: 1rem;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .dropdown-menu {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .navbar-brand span {
+        font-size: 16px;
+    }
+
+    .navbar-nav {
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+    .dropdown-menu {
+        font-size: 14px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 5px;
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 15px 0;
+        justify-content: space-between;
+    }
+
+    .navbar-brand img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .navbar-brand span {
+        font-size: 18px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
+
+    .dropdown-menu {
+        font-size: 16px;
+    }
+}
+
+/* ============================= */
+/* 🌟 PAGINATION RESPONSIVE */
+/* ============================= */
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    .pagination .page-link {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination .page-item {
+        margin: 2px;
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .pagination .page-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .pagination .page-item {
+        margin: 3px;
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    .pagination .page-link {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .pagination .page-item {
+        margin: 5px;
+    }
+}
+
+/* ============================= */
+/* 🎯 INTERACTIVITY & SPACING */
+/* ============================= */
+
+/* Navbar Hover Effects */
+.navbar-nav .nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.navbar-toggler:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dropdown Menu Hover Effects */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #424242;
+}
+
+/* Active Navbar Link */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #212529bf;
+}
+
+/* Pagination Hover Effects */
+.pagination .page-link:hover {
+    color: #007bff;
+}
+
+/* ============================= */
+/* 🌟 ADDITIONAL ADJUSTMENTS */
+/* ============================= */
+
+/* Phone Adjustments */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .navbar {
+        padding: 5px 0;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+}
+
+/* Desktop Adjustments */
+@media (min-width: 992px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+}
+
+/* ============================= */
+/* 🌟 TABLE RESPONSIVE */
+/* ============================= */
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .dataTables_info {
+        font-size: 12px;
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    body {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .dataTables_info {
+        font-size: 14px;
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        font-size: 16px;
+    }
+
+    .dataTables_info {
+        font-size: 16px;
+    }
+}
+
+/* ============================= */
+/* 🎯 RESPONSIVE FONT SIZES FOR CARD */
+/* ============================= */
+
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    .card-header .card-title {
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
+    }
+
+    .card-header .card-subtitle {
+        font-size: 14px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
+    }
+
+    .card-body table th,
+    .card-body table td {
+        font-size: 12px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอเล็ก */
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .card-header .card-title {
+        font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
+    }
+
+    .card-header .card-subtitle {
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
+    }
+
+    .card-body table th,
+    .card-body table td {
+        font-size: 14px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอแท็บเล็ต */
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    .card-header .card-title {
+        font-size: 22px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
+    }
+
+    .card-header .card-subtitle {
+        font-size: 18px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
+    }
+
+    .card-body table th,
+    .card-body table td {
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอ Desktop */
     }
 }
