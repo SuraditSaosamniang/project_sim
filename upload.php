@@ -277,14 +277,14 @@ if (!isset($_SESSION['username'])) {
                                         <td class="file-data"><?= htmlspecialchars($file['name'], ENT_QUOTES, 'UTF-8') ?></td>
                                         <td class="file-data"><?= number_format($file['size'] / 1024, 2) ?> KB</td>
                                         <td class="file-data"><?= date('d-m-Y H:i:s', $file['date']) ?></td>
-                                        <td>
+                                        <td class="file-actions">
                                             <!-- ปุ่ม Preview -->
                                             <a href="preview.php?file=<?= urlencode($file['name']) ?>" class="btn btn-preview">
-                                                <i class="bi-file-earmark-text"style="-webkit-text-stroke: 0.7px"></i> Preview
+                                                <i class="bi-file-earmark-text" style="-webkit-text-stroke: 0.7px"></i> Preview
                                             </a>
                                             <!-- ปุ่ม Delete -->
                                             <a href="delete-file.php?delete=<?= urlencode($file['name']) ?>" class="btn btn-delete">
-                                                <i class="bi bi-trash fw-bold"style="-webkit-text-stroke: 0.7px"></i> Delete
+                                                <i class="bi bi-trash fw-bold" style="-webkit-text-stroke: 0.7px"></i> Delete
                                             </a>
                                         </td>
                                     </tr>

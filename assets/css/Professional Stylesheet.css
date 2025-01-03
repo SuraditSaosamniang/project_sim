@@ -43,10 +43,6 @@ body {
     background-color: #ddd; /* Hover effect */
 }
 
-.table th, .table td {
-    font-size: 1rem;
-}
-
 table tbody td {
     color: #424242 !important;
 }
@@ -89,6 +85,29 @@ table tbody td {
 
 .card-body {
     color: #424242;
+}
+
+/* Responsive Design for Card Titles */
+.card-title {
+    font-size: 1.8rem !important; /* Default font size */
+}
+
+@media (max-width: 575.98px) {
+    .card-title {
+        font-size: 1.2rem !important; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .card-title {
+        font-size: 1.5rem !important; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .card-title {
+        font-size: 1.8rem !important; /* Larger font size for desktop */
+    }
 }
 
 /* Button Styling */
@@ -350,13 +369,31 @@ table tbody td {
 
 /* Custom Text Styling */
 .custom-text {
-    font-size: 1.5rem; /* Larger font size for the text */
+    font-size: 1.7rem !important; /* Default font size */
     font-weight: 700; /* Bold weight for emphasis */
     color: #424242; /* Set color to #21130d */
     letter-spacing: 0.5px; /* Slightly spread letters for a modern look */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     text-transform: capitalize; /* Ensure that words start with uppercase */
     display: inline-block; /* Allow additional spacing and transforms */
+}
+
+@media (max-width: 575.98px) {
+    .custom-text {
+        font-size: 1rem !important; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .custom-text {
+        font-size: 1.25rem !important; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .custom-text {
+        font-size: 1.7rem !important; /* Larger font size for desktop */
+    }
 }
 
 /* Hover Effect */
@@ -550,8 +587,26 @@ table tbody td {
 .form-wrapper label {
     margin-right: 10px; /* ระยะห่างจาก select */
     font-weight: 600; /* ทำตัวหนา */
-    font-size: 16px; /* ขนาดตัวอักษรเหมาะสม */
+    font-size: 18px !important; /* Default font size */
     color: #424242; /* สีข้อความเข้มขึ้น */
+}
+
+@media (max-width: 575.98px) {
+    .form-wrapper label {
+        font-size: 14px !important; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .form-wrapper label {
+        font-size: 16px !important; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .form-wrapper label {
+        font-size: 18px !important; /* Larger font size for desktop */
+    }
 }
 
 /* ปรับสไตล์ select ให้ดูทันสมัย */
@@ -657,7 +712,7 @@ table tbody td {
 
 .form-check-label {
     margin-left: 8px;
-    font-size: 14px;
+    font-size: 15px;
     color: #424242;
     cursor: pointer;
     font-family: Arial, sans-serif;
@@ -682,9 +737,27 @@ table tbody td {
     margin-top: 5px;
     color: #1d315c!important;
     font-weight: bold; /* Makes the text bold */
-    font-size: medium;
+    font-size: 1.18rem !important; /* Default font size */
     padding: 2px 4px; /* Adds some padding around the text */
     border-radius: 3px; /* Rounds the edges slightly */
+}
+
+@media (max-width: 575.98px) {
+    .text-characters {
+        font-size: 14px !important; /* Smaller font size for mobile */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .text-characters {
+        font-size: 14px !important; /* Medium font size for tablet */
+    }
+}
+
+@media (min-width: 992px) {
+    .text-characters {
+        font-size: 16px !important; /* Larger font size for desktop */
+    }
 }
 
 .text-black{
@@ -860,6 +933,52 @@ table tbody td {
     }
 }
 
+/* 📱 Extra Small Phone (หน้าจอเล็กกว่า 431px) */
+@media (max-width: 431px) {
+    body {
+        font-size: 12px;
+    }
+
+    .navbar {
+        padding: 5px 0;
+    }
+
+    .navbar-brand img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-brand span {
+        font-size: 12px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .dropdown-menu {
+        font-size: 12px;
+    }
+
+    .form-wrapper {
+        padding-right: 10px;
+    }
+
+    .footer {
+        font-size: 10px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .card {
+        padding: 8px;
+    }
+}
+
 /* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
 @media (min-width: 576px) and (max-width: 991.98px) {
     body {
@@ -880,17 +999,21 @@ table tbody td {
     }
 
     .navbar-nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center !important; /* Center align items */
+        gap: 10px;
     }
 
     .navbar-nav .nav-link {
-        font-size: 14px;
+        font-size: 15px;
         padding: 8px 12px;
     }
 
     .dropdown-menu {
         font-size: 14px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 5px;
     }
 
     .form-wrapper {
@@ -967,184 +1090,67 @@ table tbody td {
     }
 }
 
-/* Responsive Design for Table */
-@media (max-width: 1200px) {
-    .table-responsive {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    .table th, .table td {
-        font-size: 0.9rem;
-    }
-
-    .dataTables_info {
-        font-size: 0.9rem; /* Reduce font size for info text */
+/* Large Screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .table th {
+        font-size: 16px !important;
+        padding: 8px;
     }
 }
 
-@media (max-width: 992px) {
-    .table-responsive {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    .table th, .table td {
-        font-size: 0.85rem;
-    }
-
-    .dataTables_info {
-        font-size: 0.85rem; /* Reduce font size for info text */
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .table th {
+        font-size: 16px !important;
+        padding: 6px;
     }
 }
 
-@media (max-width: 768px) {
-    .table-responsive {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    .table th, .table td {
-        font-size: 0.8rem;
-    }
-
-    .dataTables_info {
-        font-size: 0.8rem; /* Reduce font size for info text */
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .table th {
+        font-size: 14px !important;
+        padding: 5px;
     }
 }
 
-@media (max-width: 576px) {
-    .table-responsive {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    .table th, .table td {
-        font-size: 0.75rem;
-    }
-
-    .dataTables_info {
-        font-size: 0.75rem; /* Reduce font size for info text */
-    }
-}
-
-/* Responsive Design for Font Sizes */
+/* Extra Small Screens (<576px) */
 @media (max-width: 575.98px) {
-    body {
-        font-size: 12px; /* Smaller font size for mobile */
-    }
-
-    .navbar-brand span,
-    .navbar-nav .nav-link,
-    .card-title,
-    .card-subtitle,
-    .btn,
-    .table th,
-    .table td,
-    .dataTables_info,
-    .footer p {
-        font-size: 12px; /* Smaller font size for mobile */
+    .table th {
+        font-size: 14px !important;
+        padding: 4px;
     }
 }
 
-@media (min-width: 576px) and (max-width: 991.98px) {
-    body {
-        font-size: 14px; /* Medium font size for tablet */
-    }
-
-    .navbar-brand span,
-    .navbar-nav .nav-link,
-    .card-title,
-    .card-subtitle,
-    .btn,
-    .table th,
-    .table td,
-    .dataTables_info,
-    .footer p {
-        font-size: 14px; /* Medium font size for tablet */
+/* Large Screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .table .file-data {
+        font-size: 16px !important;
+        padding: 8px;
     }
 }
 
-@media (min-width: 992px) {
-    body {
-        font-size: 16px; /* Larger font size for desktop */
-    }
-
-    .navbar-brand span,
-    .navbar-nav .nav-link,
-    .card-title,
-    .card-subtitle,
-    .btn,
-    .table th,
-    .table td,
-    .dataTables_info,
-    .footer p {
-        font-size: 16px; /* Larger font size for desktop */
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .table .file-data {
+        font-size: 16px !important;
+        padding: 6px;
     }
 }
 
-/* Responsive Design for Table Headers */
-.responsive-header {
-    font-size: 1rem; /* Default font size */
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .table .file-data {
+        font-size: 14px !important;
+        padding: 5px;
+    }
 }
 
+/* Extra Small Screens (<576px) */
 @media (max-width: 575.98px) {
-    .responsive-header {
-        font-size: 0.75rem; /* Smaller font size for mobile */
-    }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .responsive-header {
-        font-size: 0.85rem; /* Medium font size for tablet */
-    }
-}
-
-@media (min-width: 992px) {
-    .responsive-header {
-        font-size: 1rem; /* Larger font size for desktop */
-    }
-}
-
-/* Responsive Design for Table Headers */
-.responsive-header {
-    font-size: 1rem; /* Default font size */
-}
-
-@media (max-width: 575.98px) {
-    .responsive-header {
-        font-size: 0.75rem; /* Smaller font size for mobile */
-    }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .responsive-header {
-        font-size: 0.85rem; /* Medium font size for tablet */
-    }
-}
-
-@media (min-width: 992px) {
-    .responsive-header {
-        font-size: 1rem; /* Larger font size for desktop */
-    }
-}
-
-/* Responsive Design for Data Info */
-.responsive-info {
-    font-size: 1rem; /* Default font size */
-}
-
-@media (max-width: 575.98px) {
-    .responsive-info {
-        font-size: 0.75rem; /* Smaller font size for mobile */
-    }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .responsive-info {
-        font-size: 0.85rem; /* Medium font size for tablet */
-    }
-}
-
-@media (min-width: 992px) {
-    .responsive-info {
-        font-size: 1rem; /* Larger font size for desktop */
+    .table .file-data {
+        font-size: 12px !important;
+        padding: 4px;
     }
 }
 
@@ -1298,7 +1304,7 @@ table tbody td {
     }
 
     .navbar-nav {
-        justify-content: space-between;
+        justify-content: center !important; /* Center align items */
         gap: 10px;
     }
 
@@ -1320,7 +1326,7 @@ table tbody td {
 @media (min-width: 992px) {
     .navbar {
         padding: 15px 0;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .navbar-brand img {
@@ -1589,5 +1595,188 @@ table tbody td {
     .card-body table th,
     .card-body table td {
         font-size: 16px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอ Desktop */
+    }
+}
+
+/* Responsive Design for File Actions */
+.file-actions {
+    display: flex;
+    gap: 8px; /* ลดช่องว่างระหว่างปุ่ม */
+    justify-content: center; /* จัดวางปุ่มตรงกลาง */
+    align-items: center; /* จัดให้ปุ่มอยู่ในแนวเดียวกัน */
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่หากพื้นที่ไม่พอ */
+}
+
+.file-actions .btn-preview,
+.file-actions .btn-delete {
+    font-size: 0.85rem; /* ขนาดตัวอักษรเล็กลง */
+    padding: 5px 8px; /* ปรับ padding ให้ปุ่มเล็กลง */
+    border-radius: 4px; /* ทำให้มุมปุ่มโค้งมน */
+    text-align: center;
+}
+
+/* Mobile Devices (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .file-actions {
+        flex-direction: column; /* เรียงปุ่มแนวตั้งบนจอเล็ก */
+        gap: 4px; /* ลดช่องว่างระหว่างปุ่ม */
+    }
+
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.75rem; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        padding: 4px 6px; /* ปรับ padding ให้เหมาะสม */
+    }
+}
+
+/* Tablets (576px - 991.98px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .file-actions {
+        gap: 6px; /* ปรับช่องว่างสำหรับแท็บเล็ต */
+    }
+
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.8rem; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
+        padding: 5px 8px; /* ปรับ padding */
+    }
+}
+
+/* Desktops (min-width: 992px) */
+@media (min-width: 992px) {
+    .file-actions {
+        gap: 10px; /* ช่องว่างระหว่างปุ่มสำหรับเดสก์ท็อป */
+    }
+
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.9rem; /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
+        padding: 6px 10px; /* ปรับ padding */
+    }
+}
+
+/* ปรับความกว้างของปุ่ม .btn-custom ตามขนาดหน้าจอ */
+/* Extra Small Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .btn-custom {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+        padding: 6px 12px; /* Adjust padding */
+        width: 100% !important; /* Full width on small screens */
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .btn-custom {
+        font-size: 0.85rem; /* Medium font size */
+        padding: 7px 14px;
+        width: 100% !important; /* 80% width on small screens */
+    }
+
+    
+   /* จัด Navbar ให้อยู่ตรงกลาง */
+    .navbar-nav {
+        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
+        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
+        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
+        width: 100% !important; 
+    }
+
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .btn-custom {
+        font-size: 0.9rem; /* Slightly larger font */
+        padding: 8px 16px;
+        width: 100% !important; /* 60% width on medium screens */
+    }
+
+    .navbar-nav {
+        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
+        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
+        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
+        width: 100% !important;
+    }
+
+}
+
+/* Large Screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .btn-custom {
+        font-size: 1rem;
+        padding: 8px 18px;
+        width: auto; /* Auto width for large screens */
+        min-width: 100% !important; /* Ensure a minimum width */
+    }
+}
+
+/* Extra Large Screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .btn-custom {
+        font-size: 1.1rem; /* Larger font size for extra large screens */
+        padding: 10px 20px; /* Larger padding */
+        width: auto; /* Auto width for extra large screens */
+        min-width: 100% !important; /* Ensure a minimum width */
+    }
+}
+
+/* ปรับสำหรับจอเล็ก (Mobile) */
+@media (max-width: 575.98px) {
+    .navbar-nav .nav-item .nav-link {
+        font-size: 0.85rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        padding: 3px 6px; /* ลด padding ให้เหมาะสม */
+    }
+
+    .navbar-nav .nav-item .nav-link i {
+        font-size: 0.9rem !important; /* ลดขนาดไอคอนบนจอเล็ก */
+    }
+
+    .text-user, .text-logout {
+        font-size: 0.75rem !important; /* ลดขนาดข้อความเพิ่มเติม */
+    }
+
+    .dropdown-menu {
+        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 120px !important; /* กำหนดความกว้างของเมนู dropdown */ 
+        margin-top: 45px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 256px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+
+    .dropdown-item {
+        font-size: 0.9rem !important; /* ขนาดไอคอนเล็กลง */
+    }
+}
+
+/* Large Screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .responsive-header {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .responsive-header {
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .responsive-header{
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+
+/* Extra Small Screens (<576px) */
+@media (max-width: 575.98px) {
+    .responsive-header {
+        font-size: 12px;
+        padding: 4px;
     }
 }
