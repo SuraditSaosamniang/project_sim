@@ -555,11 +555,6 @@ table tbody td {
     transform: scale(1.1); /* Slight zoom effect on close button */
 }
 
-/* Margin Styling */
-.my-5 {
-    margin-top: 20px;
-}
-
 /* File Data Styling */
 .file-data {
     color: #424242 !important; /* สีข้อความ */
@@ -873,220 +868,332 @@ table tbody td {
 /* 🌐 RESPONSIVE DESIGN */
 /* ============================= */
 
-/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+/* 📱 Phone (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     body {
         font-size: 14px;
     }
-
     .navbar {
         flex-direction: column;
         text-align: center;
         padding: 8px 0;
     }
-
     .navbar-brand img {
         width: 50px;
         height: 50px;
     }
-
     .navbar-brand span {
         font-size: 14px;
     }
-
     .navbar-nav {
         margin-top: 10px;
     }
-
     .navbar-nav .nav-link {
         font-size: 14px;
         padding: 6px 10px;
     }
-
     .dropdown-menu {
         width: 100%;
         text-align: center;
     }
-
     .form-wrapper {
         flex-direction: column;
         align-items: stretch;
     }
-
     .form-wrapper select {
         width: 100%;
         margin-bottom: 10px;
     }
-
     .footer {
         text-align: center;
         font-size: 12px;
     }
-
     .btn {
         font-size: 12px;
         padding: 5px 10px;
     }
-
     .card {
         padding: 10px;
     }
-}
-
-/* 📱 Extra Small Phone (หน้าจอเล็กกว่า 431px) */
-@media (max-width: 431px) {
-    body {
-        font-size: 12px;
+    .table th {
+        font-size: 14px !important;
+        padding: 4px;
     }
-
-    .navbar {
-        padding: 5px 0;
+    .file-data {
+        font-size: 12px !important;
+        padding: 4px;
     }
-
-    .navbar-brand img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .navbar-brand span {
-        font-size: 12px;
-    }
-
-    .navbar-nav .nav-link {
+    .pagination .page-link {
         font-size: 12px;
         padding: 4px 8px;
     }
-
+    .pagination {
+        flex-wrap: wrap;
+    }
+    .pagination .page-item {
+        margin: 2px;
+    }
+    .navbar-toggler {
+        font-size: 1rem;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .card-header .card-title {
+        font-size: 16px;
+    }
+    .card-header .card-subtitle {
+        font-size: 14px;
+    }
+    .card-body table th,
+    .card-body table td {
+        font-size: 12px;
+    }
+    .file-actions {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.75rem;
+        padding: 4px 6px;
+    }
+    .btn-custom {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        width: 100% !important;
+    }
+    .navbar-nav .nav-item .nav-link {
+        font-size: 0.85rem !important;
+        padding: 3px 6px;
+    }
+    .navbar-nav .nav-item .nav-link i {
+        font-size: 0.9rem !important;
+    }
+    .text-user, .text-logout {
+        font-size: 0.75rem !important;
+    }
     .dropdown-menu {
+        position: fixed !important;
+        width: 120px !important;
+        margin-top: 45px !important;
+        margin-left: 256px !important;
+        font-size: 0.9rem !important;
+    }
+    .dropdown-item {
+        font-size: 0.9rem !important;
+    }
+    .responsive-header {
         font-size: 12px;
-    }
-
-    .form-wrapper {
-        padding-right: 10px;
-    }
-
-    .footer {
-        font-size: 10px;
-    }
-
-    .btn {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-    .card {
-        padding: 8px;
+        padding: 4px;
     }
 }
 
-/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+/* 📊 Tablet (576px - 991.98px) */
 @media (min-width: 576px) and (max-width: 991.98px) {
     body {
         font-size: 16px;
     }
-
     .navbar {
         padding: 10px 0;
     }
-
     .navbar-brand img {
         width: 70px;
         height: 70px;
     }
-
     .navbar-brand span {
         font-size: 16px;
     }
-
     .navbar-nav {
-        justify-content: center !important; /* Center align items */
+        justify-content: center !important;
         gap: 10px;
     }
-
     .navbar-nav .nav-link {
         font-size: 15px;
         padding: 8px 12px;
     }
-
     .dropdown-menu {
         font-size: 14px;
     }
-
     .navbar-nav .nav-item {
         margin: 0 5px;
     }
-
     .form-wrapper {
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
     .form-wrapper select {
         width: 48%;
     }
-
     .footer {
         font-size: 14px;
     }
-
     .btn {
         font-size: 14px;
         padding: 8px 14px;
     }
-
     .card {
         padding: 15px;
     }
+    .table th {
+        font-size: 16px !important;
+        padding: 5px;
+    }
+    .file-data {
+        font-size: 14px !important;
+        padding: 5px;
+    }
+    .pagination .page-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    .pagination .page-item {
+        margin: 3px;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .card-header .card-title {
+        font-size: 18px;
+    }
+    .card-header .card-subtitle {
+        font-size: 16px;
+    }
+    .card-body table th,
+    .card-body table td {
+        font-size: 14px;
+    }
+    .file-actions {
+        gap: 6px;
+    }
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+    .btn-custom {
+        font-size: 0.85rem;
+        padding: 7px 14px;
+        width: 100% !important;
+    }
+    .navbar-nav {
+        margin: 0 auto !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    .responsive-header {
+        font-size: 16px;
+        padding: 6px;
+    }
 }
 
-/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+/* 💻 Desktop (min-width: 992px) */
 @media (min-width: 992px) {
     body {
         font-size: 18px;
     }
-
     .navbar {
         padding: 15px 0;
         justify-content: space-between;
     }
-
     .navbar-brand img {
         width: 90px;
         height: 90px;
     }
-
     .navbar-brand span {
         font-size: 18px;
     }
-
+    .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
     .navbar-nav .nav-link {
         font-size: 16px;
         padding: 10px 15px;
     }
-
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
     .dropdown-menu {
         font-size: 16px;
     }
-
     .form-wrapper {
         justify-content: flex-end;
     }
-
     .form-wrapper select {
         width: auto;
     }
-
     .footer {
         font-size: 16px;
     }
-
     .btn {
         font-size: 16px;
         padding: 10px 18px;
     }
-
     .card {
         padding: 20px;
+    }
+    .table th {
+        font-size: 16px !important;
+        padding: 8px;
+    }
+    .file-data {
+        font-size: 16px !important;
+        padding: 8px;
+    }
+    .pagination .page-link {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    .pagination .page-item {
+        margin: 5px;
+    }
+    .container {
+        max-width: 1200px;
+    }
+    .card-header .card-title {
+        font-size: 22px;
+    }
+    .card-header .card-subtitle {
+        font-size: 18px;
+    }
+    .card-body table th,
+    .card-body table td {
+        font-size: 16px;
+    }
+    .file-actions {
+        gap: 10px;
+    }
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    .btn-custom {
+        font-size: 1rem;
+        padding: 8px 18px;
+        width: auto;
+        min-width: 100% !important;
+    }
+    .responsive-header {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* Extra Large Screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .btn-custom {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        width: auto;
+        min-width: 100% !important;
     }
 }
 
@@ -1163,11 +1270,9 @@ table tbody td {
     .navbar-toggler {
         font-size: 1rem;
     }
-
     .navbar-nav .nav-item {
         margin: 5px 0;
     }
-
     .dropdown-menu {
         font-size: 14px;
     }
@@ -1196,7 +1301,6 @@ table tbody td {
     .container {
         padding: 0 10px;
     }
-
     .dropdown-menu {
         width: 100%;
     }
@@ -1255,34 +1359,27 @@ table tbody td {
         text-align: center;
         padding: 10px 0;
     }
-
     .navbar-brand img {
         width: 50px;
         height: 50px;
     }
-
     .navbar-brand span {
         font-size: 14px;
     }
-
     .navbar-toggler {
         font-size: 1rem;
     }
-
     .navbar-nav {
         margin-top: 10px;
     }
-
     .navbar-nav .nav-link {
         font-size: 14px;
         padding: 6px 10px;
     }
-
     .dropdown-menu {
         text-align: center;
         width: 100%;
     }
-
     .navbar-nav .nav-item {
         margin: 5px 0;
     }
@@ -1293,30 +1390,24 @@ table tbody td {
     .navbar {
         padding: 10px 0;
     }
-
     .navbar-brand img {
         width: 70px;
         height: 70px;
     }
-
     .navbar-brand span {
         font-size: 16px;
     }
-
     .navbar-nav {
-        justify-content: center !important; /* Center align items */
+        justify-content: center !important;
         gap: 10px;
     }
-
     .navbar-nav .nav-link {
         font-size: 15px;
         padding: 8px 12px;
     }
-
     .dropdown-menu {
         font-size: 14px;
     }
-
     .navbar-nav .nav-item {
         margin: 0 5px;
     }
@@ -1328,25 +1419,20 @@ table tbody td {
         padding: 15px 0;
         justify-content: center;
     }
-
     .navbar-brand img {
         width: 90px;
         height: 90px;
     }
-
     .navbar-brand span {
         font-size: 18px;
     }
-
     .navbar-nav .nav-link {
         font-size: 16px;
         padding: 10px 15px;
     }
-
     .navbar-nav .nav-item {
         margin: 0 8px;
     }
-
     .dropdown-menu {
         font-size: 16px;
     }
@@ -1361,11 +1447,9 @@ table tbody td {
         font-size: 12px;
         padding: 4px 8px;
     }
-
     .pagination {
         flex-wrap: wrap;
     }
-
     .pagination .page-item {
         margin: 2px;
     }
@@ -1377,7 +1461,6 @@ table tbody td {
         font-size: 14px;
         padding: 6px 10px;
     }
-
     .pagination .page-item {
         margin: 3px;
     }
@@ -1389,7 +1472,6 @@ table tbody td {
         font-size: 16px;
         padding: 8px 12px;
     }
-
     .pagination .page-item {
         margin: 5px;
     }
@@ -1441,11 +1523,9 @@ table tbody td {
     .container {
         padding: 0 10px;
     }
-
     .navbar {
         padding: 5px 0;
     }
-
     .dropdown-menu {
         width: 100%;
     }
@@ -1456,7 +1536,6 @@ table tbody td {
     .container {
         padding: 0 20px;
     }
-
     .navbar {
         padding: 10px 0;
     }
@@ -1467,316 +1546,10 @@ table tbody td {
     .container {
         max-width: 1200px;
     }
-
     .navbar {
         padding: 15px 0;
     }
 }
-
-/* ============================= */
-/* 🌟 TABLE RESPONSIVE */
-/* ============================= */
-/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
-@media (max-width: 575.98px) {
-    body {
-        font-size: 14px;
-    }
-
-    .card {
-        padding: 10px;
-        margin-bottom: 15px;
-    }
-
-    .table-responsive {
-        overflow-x: auto;
-    }
-
-    .table {
-        font-size: 12px;
-    }
-
-    .dataTables_info {
-        font-size: 12px;
-    }
-}
-
-/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
-@media (min-width: 576px) and (max-width: 991.98px) {
-    body {
-        font-size: 16px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    .table-responsive {
-        overflow-x: auto;
-    }
-
-    .table {
-        font-size: 14px;
-    }
-
-    .dataTables_info {
-        font-size: 14px;
-    }
-}
-
-/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
-@media (min-width: 992px) {
-    body {
-        font-size: 18px;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    .table-responsive {
-        overflow-x: auto;
-    }
-
-    .table {
-        font-size: 16px;
-    }
-
-    .dataTables_info {
-        font-size: 16px;
-    }
-}
-
-/* ============================= */
-/* 🎯 RESPONSIVE FONT SIZES FOR CARD */
 /* ============================= */
 
-/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
-@media (max-width: 575.98px) {
-    .card-header .card-title {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
-    }
 
-    .card-header .card-subtitle {
-        font-size: 14px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
-    }
-
-    .card-body table th,
-    .card-body table td {
-        font-size: 12px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอเล็ก */
-    }
-}
-
-/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .card-header .card-title {
-        font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
-    }
-
-    .card-header .card-subtitle {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
-    }
-
-    .card-body table th,
-    .card-body table td {
-        font-size: 14px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอแท็บเล็ต */
-    }
-}
-
-/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
-@media (min-width: 992px) {
-    .card-header .card-title {
-        font-size: 22px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
-    }
-
-    .card-header .card-subtitle {
-        font-size: 18px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
-    }
-
-    .card-body table th,
-    .card-body table td {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอ Desktop */
-    }
-}
-
-/* Responsive Design for File Actions */
-.file-actions {
-    display: flex;
-    gap: 8px; /* ลดช่องว่างระหว่างปุ่ม */
-    justify-content: center; /* จัดวางปุ่มตรงกลาง */
-    align-items: center; /* จัดให้ปุ่มอยู่ในแนวเดียวกัน */
-    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่หากพื้นที่ไม่พอ */
-}
-
-.file-actions .btn-preview,
-.file-actions .btn-delete {
-    font-size: 0.85rem; /* ขนาดตัวอักษรเล็กลง */
-    padding: 5px 8px; /* ปรับ padding ให้ปุ่มเล็กลง */
-    border-radius: 4px; /* ทำให้มุมปุ่มโค้งมน */
-    text-align: center;
-}
-
-/* Mobile Devices (max-width: 575.98px) */
-@media (max-width: 575.98px) {
-    .file-actions {
-        flex-direction: column; /* เรียงปุ่มแนวตั้งบนจอเล็ก */
-        gap: 4px; /* ลดช่องว่างระหว่างปุ่ม */
-    }
-
-    .btn-preview,
-    .btn-delete {
-        font-size: 0.75rem; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
-        padding: 4px 6px; /* ปรับ padding ให้เหมาะสม */
-    }
-}
-
-/* Tablets (576px - 991.98px) */
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .file-actions {
-        gap: 6px; /* ปรับช่องว่างสำหรับแท็บเล็ต */
-    }
-
-    .btn-preview,
-    .btn-delete {
-        font-size: 0.8rem; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
-        padding: 5px 8px; /* ปรับ padding */
-    }
-}
-
-/* Desktops (min-width: 992px) */
-@media (min-width: 992px) {
-    .file-actions {
-        gap: 10px; /* ช่องว่างระหว่างปุ่มสำหรับเดสก์ท็อป */
-    }
-
-    .btn-preview,
-    .btn-delete {
-        font-size: 0.9rem; /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
-        padding: 6px 10px; /* ปรับ padding */
-    }
-}
-
-/* ปรับความกว้างของปุ่ม .btn-custom ตามขนาดหน้าจอ */
-/* Extra Small Screens (max-width: 575.98px) */
-@media (max-width: 575.98px) {
-    .btn-custom {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-        padding: 6px 12px; /* Adjust padding */
-        width: 100% !important; /* Full width on small screens */
-    }
-}
-
-/* Small Screens (576px - 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .btn-custom {
-        font-size: 0.85rem; /* Medium font size */
-        padding: 7px 14px;
-        width: 100% !important; /* 80% width on small screens */
-    }
-
-    
-   /* จัด Navbar ให้อยู่ตรงกลาง */
-    .navbar-nav {
-        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
-        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
-        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
-        width: 100% !important; 
-    }
-
-}
-
-/* Medium Screens (768px - 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .btn-custom {
-        font-size: 0.9rem; /* Slightly larger font */
-        padding: 8px 16px;
-        width: 100% !important; /* 60% width on medium screens */
-    }
-
-    .navbar-nav {
-        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
-        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
-        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
-        width: 100% !important;
-    }
-
-}
-
-/* Large Screens (992px - 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .btn-custom {
-        font-size: 1rem;
-        padding: 8px 18px;
-        width: auto; /* Auto width for large screens */
-        min-width: 100% !important; /* Ensure a minimum width */
-    }
-}
-
-/* Extra Large Screens (min-width: 1200px) */
-@media (min-width: 1200px) {
-    .btn-custom {
-        font-size: 1.1rem; /* Larger font size for extra large screens */
-        padding: 10px 20px; /* Larger padding */
-        width: auto; /* Auto width for extra large screens */
-        min-width: 100% !important; /* Ensure a minimum width */
-    }
-}
-
-/* ปรับสำหรับจอเล็ก (Mobile) */
-@media (max-width: 575.98px) {
-    .navbar-nav .nav-item .nav-link {
-        font-size: 0.85rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
-        padding: 3px 6px; /* ลด padding ให้เหมาะสม */
-    }
-
-    .navbar-nav .nav-item .nav-link i {
-        font-size: 0.9rem !important; /* ลดขนาดไอคอนบนจอเล็ก */
-    }
-
-    .text-user, .text-logout {
-        font-size: 0.75rem !important; /* ลดขนาดข้อความเพิ่มเติม */
-    }
-
-    .dropdown-menu {
-        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
-        width: 120px !important; /* กำหนดความกว้างของเมนู dropdown */ 
-        margin-top: 45px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
-        margin-left: 256px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
-        font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
-    }
-
-    .dropdown-item {
-        font-size: 0.9rem !important; /* ขนาดไอคอนเล็กลง */
-    }
-}
-
-/* Large Screens (992px - 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .responsive-header {
-        font-size: 16px;
-        padding: 8px;
-    }
-}
-
-/* Medium Screens (768px - 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .responsive-header {
-        font-size: 16px;
-        padding: 6px;
-    }
-}
-
-/* Small Screens (576px - 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .responsive-header{
-        font-size: 14px;
-        padding: 5px;
-    }
-}
-
-/* Extra Small Screens (<576px) */
-@media (max-width: 575.98px) {
-    .responsive-header {
-        font-size: 12px;
-        padding: 4px;
-    }
-}

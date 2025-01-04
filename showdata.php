@@ -52,7 +52,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-lg my-5 mb-3">
+<div class="container-lg my-3 mb-3">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container-lg">
