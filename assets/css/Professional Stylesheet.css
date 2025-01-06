@@ -3,6 +3,7 @@ body {
     background-color: #ececeb;
     font-family: 'Poppins', sans-serif, 'Kanit', sans-serif;
     font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
+    min-width: 433px;
 }
 
 /* Table Styling */
@@ -123,6 +124,14 @@ table tbody td {
     background-color: #4f81be; /* Set button background color */
     color: #ffffff; /* Ensure text is visible */
     border: 1px solid #1450ac; /* Button border */
+    font-size: 1rem;
+    padding: 6px 12px;
+    width: 100% !important; /* Default width */
+    min-width: 100% !important; /* Ensure a minimum width */
+    justify-content: center !important; /* Center align items */
+    display: flex;
+    margin: auto;
+    gap: 3px;
 }
 
 .btn-custom:hover {
@@ -506,14 +515,15 @@ table tbody td {
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
-    max-width: 500px;
+    max-width: 300px;
     width: 100%;
     border-radius: 12px; /* Rounded corners */
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
     font-size: 1rem; /* Font size for readability */
-    opacity: 0.9;
-    transition: all 0.6s ease; /* Smooth transition for changes */
+    opacity: 1; /* Fully visible */
+    transition: background-color 0.3s ease, transform 1.05s ease;
+
 }
 
 /* Success Alert */
@@ -526,7 +536,6 @@ table tbody td {
 .alert-success:hover {
     background-color: #93b6dc; /* Lighter blue on hover */
     color: white; /* White text on hover */
-    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Error or Danger Alert */
@@ -539,7 +548,6 @@ table tbody td {
 .alert-danger:hover {
     background-color: #f5c6cb; /* Lighter red on hover */
     color: white; /* White text on hover */
-    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .alert .btn-close {
@@ -553,6 +561,11 @@ table tbody td {
     opacity: 1;
     background-color: none; /* Light gray hover */
     transform: scale(1.1); /* Slight zoom effect on close button */
+}
+
+/* Margin Styling */
+.my-5 {
+    margin-top: 20px;
 }
 
 /* File Data Styling */
@@ -780,7 +793,7 @@ table tbody td {
 /* กำหนดขนาดให้ .dropdown-menu และ .dropdown-item เท่ากัน */
 .dropdown-menu {
     position: fixed !important; /* Make the menu fixed */
-    top: 130px !important; /* Vertical position */
+    top: 100px !important; /* Vertical position */
     right: 227px !important; /* Horizontal position */
     z-index: 1050 !important; /* Ensure it's on top */
     width: auto !important; /* Set width to auto to fit content */
@@ -868,332 +881,174 @@ table tbody td {
 /* 🌐 RESPONSIVE DESIGN */
 /* ============================= */
 
-/* 📱 Phone (max-width: 575.98px) */
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
 @media (max-width: 575.98px) {
     body {
         font-size: 14px;
     }
+
     .navbar {
         flex-direction: column;
         text-align: center;
         padding: 8px 0;
     }
+
     .navbar-brand img {
         width: 50px;
         height: 50px;
     }
+
     .navbar-brand span {
         font-size: 14px;
     }
+
     .navbar-nav {
         margin-top: 10px;
     }
+
     .navbar-nav .nav-link {
         font-size: 14px;
         padding: 6px 10px;
     }
+
     .dropdown-menu {
         width: 100%;
         text-align: center;
     }
+
     .form-wrapper {
         flex-direction: column;
         align-items: stretch;
     }
+
     .form-wrapper select {
         width: 100%;
         margin-bottom: 10px;
     }
+
     .footer {
         text-align: center;
         font-size: 12px;
     }
+
     .btn {
         font-size: 12px;
         padding: 5px 10px;
     }
+
     .card {
         padding: 10px;
     }
-    .table th {
-        font-size: 14px !important;
-        padding: 4px;
-    }
-    .file-data {
-        font-size: 12px !important;
-        padding: 4px;
-    }
-    .pagination .page-link {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
-    .pagination {
-        flex-wrap: wrap;
-    }
-    .pagination .page-item {
-        margin: 2px;
-    }
-    .navbar-toggler {
-        font-size: 1rem;
-    }
-    .navbar-nav .nav-item {
-        margin: 5px 0;
-    }
-    .container {
-        padding: 0 10px;
-    }
-    .card-header .card-title {
-        font-size: 16px;
-    }
-    .card-header .card-subtitle {
-        font-size: 14px;
-    }
-    .card-body table th,
-    .card-body table td {
-        font-size: 12px;
-    }
-    .file-actions {
-        flex-direction: column;
-        gap: 4px;
-    }
-    .btn-preview,
-    .btn-delete {
-        font-size: 0.75rem;
-        padding: 4px 6px;
-    }
-    .btn-custom {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-        width: 100% !important;
-    }
-    .navbar-nav .nav-item .nav-link {
-        font-size: 0.85rem !important;
-        padding: 3px 6px;
-    }
-    .navbar-nav .nav-item .nav-link i {
-        font-size: 0.9rem !important;
-    }
-    .text-user, .text-logout {
-        font-size: 0.75rem !important;
-    }
-    .dropdown-menu {
-        position: fixed !important;
-        width: 120px !important;
-        margin-top: 45px !important;
-        margin-left: 256px !important;
-        font-size: 0.9rem !important;
-    }
-    .dropdown-item {
-        font-size: 0.9rem !important;
-    }
-    .responsive-header {
-        font-size: 12px;
-        padding: 4px;
-    }
 }
 
-/* 📊 Tablet (576px - 991.98px) */
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
 @media (min-width: 576px) and (max-width: 991.98px) {
     body {
         font-size: 16px;
     }
+
     .navbar {
         padding: 10px 0;
     }
+
     .navbar-brand img {
         width: 70px;
         height: 70px;
     }
+
     .navbar-brand span {
         font-size: 16px;
     }
+
     .navbar-nav {
-        justify-content: center !important;
+        justify-content: center !important; /* Center align items */
         gap: 10px;
     }
+
     .navbar-nav .nav-link {
         font-size: 15px;
         padding: 8px 12px;
     }
+
     .dropdown-menu {
         font-size: 14px;
     }
+
     .navbar-nav .nav-item {
         margin: 0 5px;
     }
+
     .form-wrapper {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
     .form-wrapper select {
         width: 48%;
     }
+
     .footer {
         font-size: 14px;
     }
+
     .btn {
         font-size: 14px;
         padding: 8px 14px;
     }
+
     .card {
         padding: 15px;
     }
-    .table th {
-        font-size: 16px !important;
-        padding: 5px;
-    }
-    .file-data {
-        font-size: 14px !important;
-        padding: 5px;
-    }
-    .pagination .page-link {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-    .pagination .page-item {
-        margin: 3px;
-    }
-    .container {
-        padding: 0 20px;
-    }
-    .card-header .card-title {
-        font-size: 18px;
-    }
-    .card-header .card-subtitle {
-        font-size: 16px;
-    }
-    .card-body table th,
-    .card-body table td {
-        font-size: 14px;
-    }
-    .file-actions {
-        gap: 6px;
-    }
-    .btn-preview,
-    .btn-delete {
-        font-size: 0.8rem;
-        padding: 5px 8px;
-    }
-    .btn-custom {
-        font-size: 0.85rem;
-        padding: 7px 14px;
-        width: 100% !important;
-    }
-    .navbar-nav {
-        margin: 0 auto !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-    .responsive-header {
-        font-size: 16px;
-        padding: 6px;
-    }
 }
 
-/* 💻 Desktop (min-width: 992px) */
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
 @media (min-width: 992px) {
     body {
         font-size: 18px;
     }
+
     .navbar {
         padding: 15px 0;
         justify-content: space-between;
     }
+
     .navbar-brand img {
         width: 90px;
         height: 90px;
     }
+
     .navbar-brand span {
         font-size: 18px;
     }
-    .navbar-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
+
     .navbar-nav .nav-link {
         font-size: 16px;
         padding: 10px 15px;
     }
-    .navbar-nav .nav-item {
-        margin: 0 8px;
-    }
+
     .dropdown-menu {
         font-size: 16px;
     }
+
     .form-wrapper {
         justify-content: flex-end;
     }
+
     .form-wrapper select {
         width: auto;
     }
+
     .footer {
         font-size: 16px;
     }
+
     .btn {
         font-size: 16px;
         padding: 10px 18px;
     }
+
     .card {
         padding: 20px;
-    }
-    .table th {
-        font-size: 16px !important;
-        padding: 8px;
-    }
-    .file-data {
-        font-size: 16px !important;
-        padding: 8px;
-    }
-    .pagination .page-link {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
-    .pagination .page-item {
-        margin: 5px;
-    }
-    .container {
-        max-width: 1200px;
-    }
-    .card-header .card-title {
-        font-size: 22px;
-    }
-    .card-header .card-subtitle {
-        font-size: 18px;
-    }
-    .card-body table th,
-    .card-body table td {
-        font-size: 16px;
-    }
-    .file-actions {
-        gap: 10px;
-    }
-    .btn-preview,
-    .btn-delete {
-        font-size: 0.9rem;
-        padding: 6px 10px;
-    }
-    .btn-custom {
-        font-size: 1rem;
-        padding: 8px 18px;
-        width: auto;
-        min-width: 100% !important;
-    }
-    .responsive-header {
-        font-size: 16px;
-        padding: 8px;
-    }
-}
-
-/* Extra Large Screens (min-width: 1200px) */
-@media (min-width: 1200px) {
-    .btn-custom {
-        font-size: 1.1rem;
-        padding: 10px 20px;
-        width: auto;
-        min-width: 100% !important;
     }
 }
 
@@ -1270,9 +1125,11 @@ table tbody td {
     .navbar-toggler {
         font-size: 1rem;
     }
+
     .navbar-nav .nav-item {
         margin: 5px 0;
     }
+
     .dropdown-menu {
         font-size: 14px;
     }
@@ -1301,6 +1158,7 @@ table tbody td {
     .container {
         padding: 0 10px;
     }
+
     .dropdown-menu {
         width: 100%;
     }
@@ -1359,27 +1217,34 @@ table tbody td {
         text-align: center;
         padding: 10px 0;
     }
+
     .navbar-brand img {
         width: 50px;
         height: 50px;
     }
+
     .navbar-brand span {
         font-size: 14px;
     }
+
     .navbar-toggler {
         font-size: 1rem;
     }
+
     .navbar-nav {
         margin-top: 10px;
     }
+
     .navbar-nav .nav-link {
         font-size: 14px;
         padding: 6px 10px;
     }
+
     .dropdown-menu {
         text-align: center;
         width: 100%;
     }
+
     .navbar-nav .nav-item {
         margin: 5px 0;
     }
@@ -1390,24 +1255,30 @@ table tbody td {
     .navbar {
         padding: 10px 0;
     }
+
     .navbar-brand img {
         width: 70px;
         height: 70px;
     }
+
     .navbar-brand span {
         font-size: 16px;
     }
+
     .navbar-nav {
-        justify-content: center !important;
+        justify-content: center !important; /* Center align items */
         gap: 10px;
     }
+
     .navbar-nav .nav-link {
         font-size: 15px;
         padding: 8px 12px;
     }
+
     .dropdown-menu {
         font-size: 14px;
     }
+
     .navbar-nav .nav-item {
         margin: 0 5px;
     }
@@ -1419,20 +1290,25 @@ table tbody td {
         padding: 15px 0;
         justify-content: center;
     }
+
     .navbar-brand img {
         width: 90px;
         height: 90px;
     }
+
     .navbar-brand span {
         font-size: 18px;
     }
+
     .navbar-nav .nav-link {
         font-size: 16px;
         padding: 10px 15px;
     }
+
     .navbar-nav .nav-item {
         margin: 0 8px;
     }
+
     .dropdown-menu {
         font-size: 16px;
     }
@@ -1447,9 +1323,11 @@ table tbody td {
         font-size: 12px;
         padding: 4px 8px;
     }
+
     .pagination {
         flex-wrap: wrap;
     }
+
     .pagination .page-item {
         margin: 2px;
     }
@@ -1461,6 +1339,7 @@ table tbody td {
         font-size: 14px;
         padding: 6px 10px;
     }
+
     .pagination .page-item {
         margin: 3px;
     }
@@ -1472,6 +1351,7 @@ table tbody td {
         font-size: 16px;
         padding: 8px 12px;
     }
+
     .pagination .page-item {
         margin: 5px;
     }
@@ -1523,9 +1403,11 @@ table tbody td {
     .container {
         padding: 0 10px;
     }
+
     .navbar {
         padding: 5px 0;
     }
+
     .dropdown-menu {
         width: 100%;
     }
@@ -1536,6 +1418,7 @@ table tbody td {
     .container {
         padding: 0 20px;
     }
+
     .navbar {
         padding: 10px 0;
     }
@@ -1546,10 +1429,519 @@ table tbody td {
     .container {
         max-width: 1200px;
     }
+
     .navbar {
         padding: 15px 0;
     }
 }
+
+/* ============================= */
+/* 🌟 TABLE RESPONSIVE */
+/* ============================= */
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .dataTables_info {
+        font-size: 12px;
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    body {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .dataTables_info {
+        font-size: 14px;
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        font-size: 16px;
+    }
+
+    .dataTables_info {
+        font-size: 16px;
+    }
+}
+
+/* ============================= */
+/* 🎯 RESPONSIVE FONT SIZES FOR CARD */
 /* ============================= */
 
+/* 📱 Phone (หน้าจอเล็กกว่า 576px) */
+@media (max-width: 575.98px) {
+    .card-header .card-title {
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
+    }
 
+    .card-header .card-subtitle {
+        font-size: 14px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
+    }
+
+    .card-body table th,
+    .card-body table td {
+        font-size: 12px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอเล็ก */
+    }
+}
+
+/* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .card-header .card-title {
+        font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
+    }
+
+    .card-header .card-subtitle {
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
+    }
+
+    .card-body table th,
+    .card-body table td {
+        font-size: 14px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอแท็บเล็ต */
+    }
+}
+
+/* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
+@media (min-width: 992px) {
+    .card-header .card-title {
+        font-size: 22px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
+    }
+
+    .card-header .card-subtitle {
+        font-size: 18px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
+    }
+
+    .card-body table th,
+    .card-body table td {
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอ Desktop */
+    }
+}
+
+/* Responsive Design for File Actions */
+.file-actions {
+    display: flex;
+    gap: 8px; /* ลดช่องว่างระหว่างปุ่ม */
+    justify-content: center; /* จัดวางปุ่มตรงกลาง */
+    align-items: center; /* จัดให้ปุ่มอยู่ในแนวเดียวกัน */
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่หากพื้นที่ไม่พอ */
+}
+
+.file-actions .btn-preview,
+.file-actions .btn-delete {
+    font-size: 0.85rem; /* ขนาดตัวอักษรเล็กลง */
+    padding: 5px 8px; /* ปรับ padding ให้ปุ่มเล็กลง */
+    border-radius: 4px; /* ทำให้มุมปุ่มโค้งมน */
+    text-align: center;
+}
+
+/* Mobile Devices (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .file-actions {
+        flex-direction: column; /* เรียงปุ่มแนวตั้งบนจอเล็ก */
+        gap: 4px; /* ลดช่องว่างระหว่างปุ่ม */
+    }
+
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.75rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        padding: 2px 4px; /* ปรับ padding ให้เหมาะสม */
+        width: 90px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
+        
+    }
+}
+
+/* Tablets (576px - 991.98px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .file-actions {
+        gap: 6px; /* ปรับช่องว่างสำหรับแท็บเล็ต */
+    }
+
+    .btn-preview,
+    .btn-delete {
+        font-size: 1rem !important; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
+        padding: 5px 8px; /* ปรับ padding */
+        width: 100px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
+    }
+}
+
+/* Desktops (min-width: 992px) */
+@media (min-width: 992px) {
+    .file-actions {
+        gap: 10px; /* ช่องว่างระหว่างปุ่มสำหรับเดสก์ท็อป */
+    }
+
+    .btn-preview,
+    .btn-delete {
+        font-size: 0.85rem !important; /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
+        padding: 6px 10px; /* ปรับ padding */
+        width: 120px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
+    }
+}
+
+/* ปรับความกว้างของปุ่ม .btn-custom ตามขนาดหน้าจอ */
+/* Extra Small Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .btn-custom {
+        font-size: 0.7rem; /* Smaller font size for mobile */
+        padding: 6px 12px; /* Adjust padding */
+        width: 60% !important; /* Full width on small screens */
+        min-width: 60% !important; /* Ensure a minimum width */
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .btn-custom {
+        font-size: 0.75rem; /* Medium font size */
+        padding: 7px 14px;
+        width: 50% !important; /* 80% width on small screens */
+        min-width: 50% !important; /* Ensure a minimum width */
+    }
+
+   /* จัด Navbar ให้อยู่ตรงกลาง */
+    .navbar-nav {
+        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
+        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
+        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
+        width: 100% !important; 
+    }
+    
+    .dropdown-menu {
+        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 120px !important; /* กำหนดความกว้างของเมนู dropdown */ 
+        margin-top: 56px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 100px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .btn-custom {
+        font-size: 0.8rem; /* Slightly larger font */
+        padding: 8px 16px;
+        width: 60% !important; /* 60% width on medium screens */
+        min-width: 60% !important; /* Ensure a minimum width */
+    }
+
+    .navbar-nav {
+        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
+        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
+        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
+        width: 100% !important;
+    }
+
+    .dropdown-menu {
+        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 120px !important; /* กำหนดความกว้างของเมนู dropdown */ 
+        margin-top: 56px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 100px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+
+    .nav-link.text-logout {
+        padding-left:  14px !important; /* ย้ายข้อความไปทางซ้าย */
+    }
+
+    .nav-link.dropdown-toggle {
+        padding: 5px 17px !important; /* ปรับ padding ให้เหมาะสม */
+    }
+
+}
+
+/* Large Screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .btn-custom {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+        width: 70% !important; /* 50% width on large screens */
+        min-width: 70% !important; /* Ensure a minimum width */
+    }
+}
+
+/* Extra Large Screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .btn-custom {
+        font-size: 1rem; /* Larger font size for extra large screens */
+        padding: 10px 20px; /* Larger padding */
+        width: 90% !important; /* 50% width on extra large screens */
+        min-width: 90% !important; /* Ensure a minimum width */
+    }
+}
+
+/* ปรับสำหรับจอเล็ก (Mobile) */
+@media (max-width: 575.98px) {
+    .navbar-nav .nav-item .nav-link {
+        font-size: 0.85rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        padding: 3px 6px; /* ลด padding ให้เหมาะสม */
+    }
+
+    .navbar-nav .nav-item .nav-link i {
+        font-size: 0.9rem !important; /* ลดขนาดไอคอนบนจอเล็ก */
+    }
+
+    .text-user, .text-logout {
+        font-size: 0.75rem !important; /* ลดขนาดข้อความเพิ่มเติม */
+    }
+
+    /* จัดการ nav-link แต่ละตัว */
+    .navbar-nav > .nav-item > .nav-link.text-user,
+    .navbar-nav > .nav-item > .nav-link.dropdown-toggle,
+    .navbar-nav > .nav-item > .nav-link.text-logout {
+        width: 90px !important; /* กว้างเต็มพื้นที่ */
+        max-width: none !important; /* ยกเลิกข้อจำกัด max-width */
+        text-align: center !important; /* จัดข้อความตรงกลาง */
+        margin-left: 160px !important; /* ย้ายข้อความไปทางขวา */
+    }
+
+    .nav-link.text-logout {
+        padding-left:  10px !important; /* ย้ายข้อความไปทางซ้าย */
+    }
+
+    .nav-link.dropdown-toggle {
+        padding: 5px 15px !important; /* ปรับ padding ให้เหมาะสม */
+    }
+    
+    .dropdown-menu {
+        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 90px !important; /* กำหนดความกว้างของเมนู dropdown */ 
+        margin-top: 31px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 90px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        font-size: auto !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+
+    .dropdown-item {
+        font-size: 0.9rem !important; /* ขนาดไอคอนเล็กลง */
+    }
+}
+
+/* Large Screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .responsive-header {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .responsive-header {
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .responsive-header{
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+
+/* Extra Small Screens (<576px) */
+@media (max-width: 575.98px) {
+    .responsive-header {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+/* Extra Small Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .dataTables_info {
+        font-size: 12px !important; /* Smaller font size for mobile */
+        padding: 5px !important; /* Smaller padding for mobile */
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .dataTables_info {
+        font-size: 14px !important; /* Medium font size */
+        padding: 8px !important; /* Medium padding */
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .dataTables_info {
+        font-size: 15px !important; /* Slightly larger font */
+        padding: 9px !important; /* Slightly larger padding */
+    }
+}
+
+/* Large Screens (992px and above) */
+@media (min-width: 992px) {
+    .dataTables_info {
+        font-size: 16px !important; /* Default font size */
+        padding: 10px !important; /* Default padding */
+    }
+}
+
+/* ============================= */
+/* 🌟 RESPONSIVE DESIGN *
+/* ============================= */
+/* fromcontorl */
+/* Default styles for .form-control */
+.form-control {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    color: #424242 !important;
+    background-color: #fff !important;
+}
+
+/* Extra Small Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .form-control {
+        font-size: 0.85rem !important; /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+    }
+
+    .form-check-input {
+        width: 0.85rem !important; /* Smaller width for mobile */
+        height: 0.85rem !important; /* Smaller height for mobile */
+    }
+
+    .form-check-label {
+        font-size: 0.75rem !important; /* Smaller font size for mobile */
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .form-control {
+        font-size: 0.9rem !important; /* Medium font size */
+        padding: 0.3rem 0.6rem !important; /* Medium padding */
+    }
+
+    .form-check-input {
+        width: 0.95rem !important; /* Medium width */
+        height: 0.95rem !important; /* Medium height */
+    }
+
+    .form-check-label {
+        font-size: 0.85rem !important; /* Smaller font size for mobile */
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .form-control {
+        font-size: 0.95rem !important; /* Default font size */
+        padding: 0.375rem 0.75rem !important; /* Default padding */
+    }
+
+    .form-check-input {
+        width: 1rem !important; /* Default width */
+        height: 1rem !important; /* Default height */
+    }
+
+    .form-check-label {
+        font-size: 0.95rem !important; /* Smaller font size for mobile */
+    }
+}
+
+/* Large Screens (992px and above) */
+@media (min-width: 992px) {
+    .form-control {
+        font-size: 1rem !important; /* Larger font size for large screens */
+        padding: 0.4rem 0.8rem !important; /* Larger padding for large screens */
+    }
+
+    .form-check-input {
+        width: 1.1rem !important; /* Larger width for large screens */
+        height: 1.1rem !important; /* Larger height for large screens */
+    }
+
+    .form-check-label {
+        font-size: 1rem !important; /* Smaller font size for mobile */
+    }
+}
+
+/* Default styles for .alert */
+/* Extra Small Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .alert {
+        font-size: 0.85rem; /* Smaller font size for mobile */
+        padding: 10px; /* Smaller padding for mobile */
+        margin: 5px 0; /* Smaller margin for mobile */
+        width: 50%; /* Half width for mobile */
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .alert {
+        font-size: 0.9rem; /* Medium font size */
+        padding: 12px; /* Medium padding */
+        margin: 8px 0; /* Medium margin */
+        width: 60%; /* 60% width */
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .alert {
+        font-size: 0.95rem; /* Slightly larger font */
+        padding: 14px; /* Slightly larger padding */
+        margin: 9px 0; /* Slightly larger margin */
+        width: 70%; /* 70% width */
+    }
+}
+
+/* Large Screens (992px and above) */
+@media (min-width: 992px) {
+    .alert {
+        font-size: 1rem; /* Default font size */
+        padding: 15px; /* Default padding */
+        margin: 10px 0; /* Default margin */
+        width: 80%; /* 80% width */
+    }
+}

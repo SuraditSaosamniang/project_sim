@@ -91,23 +91,25 @@ if ($sort === 'name') {
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <span class="nav-link text-user fw-bold">
-                                <i class="bi bi-person-circle"style="-webkit-text-stroke: 0.7px"></i> 
+                                <i class="bi bi-person-circle" style="-webkit-text-stroke: 0.7px"></i>
                                 <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
                             </span>
                         </li>
-                    <!-- Dropdown Menu -->
-                    <li class="nav-item dropdown" id="dropdownNav">
+                        
+                        <!-- Dropdown Menu -->
+                        <li class="nav-item dropdown" id="dropdownNav">
                             <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-menu-button-wide me-1"style="-webkit-text-stroke: 0.7px"></i> Menu
+                                <i class="bi bi-menu-button-wide me-1" style="-webkit-text-stroke: 0.7px"></i> Menu
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
-                                <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2"style="-webkit-text-stroke: 0.7px"></i> Show Data</a></li>
-                                <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2"style="-webkit-text-stroke: 0.7px"></i> Home</a></li>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2" style="-webkit-text-stroke: 0.7px"></i> Show Data</a></li>
+                                <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2" style="-webkit-text-stroke: 0.7px"></i> Home</a></li>
                             </ul>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-logout" href="login.php">
-                                <i class="bi bi-box-arrow-right"style="-webkit-text-stroke: 0.7px"></i> Logout
+                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
                             </a>
                         </li>
                     </ul>
