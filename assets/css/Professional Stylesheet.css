@@ -28,6 +28,9 @@ body {
 .table td {
     padding: 10px;
     border-bottom: 1px solid #ddd; /* Subtle border */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางแนวนอน */
+    vertical-align: middle; /* จัดข้อความให้อยู่ตรงกลางแนวตั้ง */
+    padding: 8px; /* เพิ่มช่องว่างรอบข้อความ */
 }
 
 .table thead th {
@@ -593,35 +596,18 @@ table tbody td {
 
 /* จัดสไตล์ label ให้สวยงาม */
 .form-wrapper label {
-    margin-right: 10px; /* ระยะห่างจาก select */
+    margin-left: 17px; /* ระยะห่างด้านซ้าย */
+    margin-right: 5px; /* ระยะห่างจาก select */
     font-weight: 600; /* ทำตัวหนา */
-    font-size: 18px !important; /* Default font size */
+    font-size: 16px !important; /* Default font size */
     color: #424242; /* สีข้อความเข้มขึ้น */
-}
-
-@media (max-width: 575.98px) {
-    .form-wrapper label {
-        font-size: 14px !important; /* Smaller font size for mobile */
-    }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .form-wrapper label {
-        font-size: 16px !important; /* Medium font size for tablet */
-    }
-}
-
-@media (min-width: 992px) {
-    .form-wrapper label {
-        font-size: 18px !important; /* Larger font size for desktop */
-    }
 }
 
 /* ปรับสไตล์ select ให้ดูทันสมัย */
 .form-wrapper select {
     width: auto; /* ขนาดพอดีกับเนื้อหา */
     padding: 6px 12px; /* เพิ่มพื้นที่ภายใน */
-    font-size: 14px; /* ขนาดตัวอักษร */
+    font-size: 16px !important; /* ขนาดตัวอักษร */
     border: 1px solid #ccc; /* ขอบสีเทา */
     border-radius: 4px; /* ขอบโค้งเล็กน้อย */
     background-color: #fff; /* พื้นหลังสีขาว */
@@ -655,6 +641,7 @@ table tbody td {
 
 .select-selected {
     background-color: #f1f1f1;
+    font-size: 16px;
     padding: 8px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -679,12 +666,55 @@ table tbody td {
 .select-items div:hover {
     background-color: #5c86b4; /* สี hover */
     color: white;
+    border-radius: 2px;
 }
 
 .select-hide {
     display: none;
 }
 
+@media (min-width: 575.98px) {
+    .form-wrapper label {
+        font-size: 12px !important; /* Smaller font size for mobile */
+        
+    }   
+
+    .select-selected,.select-items,.select-items div {
+        font-size: 12px !important; /* Smaller font size for mobile */
+        width: 90px !important; 
+    }
+}
+@media (max-width: 575.98px) {
+    .form-wrapper label {
+        font-size: 12px !important; /* Smaller font size for mobile */
+    }
+    .select-selected,.select-items,.select-items div {
+        font-size: 12px !important; /* Smaller font size for mobile */
+        width: 90px !important; 
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .form-wrapper label {
+        font-size: 14px !important; /* Medium font size for tablet */
+    }
+
+    .select-selected,.select-items,.select-items div {
+        font-size: 14px !important; /* Smaller font size for mobile */
+        width: 120px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-wrapper label {
+        font-size: 16px !important; /* Larger font size for desktop */
+    }
+
+    .select-selected,.select-items,.select-items div {
+        font-size: 16px !important; /* Smaller font size for mobile */
+        width: 150px !important;
+    }
+}
 /* Styling the checkbox */
 /* Wrapper สำหรับ Form */
 .form-check-wrapper {
@@ -833,7 +863,7 @@ table tbody td {
 
 /* Hover effect for the dropdown items */
 .nav-item .dropdown-item:hover {
-    background-color: #9cbbe1; /* Background color on hover */
+    background-color: #9cbbe1 !important; /* Background color on hover */
     color: hsl(214, 7%, 19%); /* Text color on hover */
     border-radius: 8px;
 }
@@ -846,12 +876,12 @@ table tbody td {
     font-size: 1rem ; /* ขนาดข้อความ */
     padding: 10px 15px; /* ระยะห่าง */
     border-radius: 5px; /* มุมโค้งมน */
-    transition: color 0.3s ease, background-color 0.3s ease; /* การเปลี่ยนสี */
 }
 
 /* เปลี่ยนสีเมื่อ Hover */
 .nav-link.dropdown-toggle:hover {
     color: hsl(214, 7%, 19%) !important; /* สีเมื่อ Hover (สีดำโปร่ง 75%) */
+    border: none; /* เส้นขอบ */
     background-color: #98c2f8; /* พื้นหลังสีอ่อนเมื่อ Hover */
 }
 
@@ -1063,7 +1093,7 @@ table tbody td {
 /* Medium Screens (768px - 991.98px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .table th {
-        font-size: 16px !important;
+        font-size: 14px !important;
         padding: 6px;
     }
 }
@@ -1079,7 +1109,7 @@ table tbody td {
 /* Extra Small Screens (<576px) */
 @media (max-width: 575.98px) {
     .table th {
-        font-size: 14px !important;
+        font-size: 12px !important;
         padding: 4px;
     }
 }
@@ -1193,6 +1223,7 @@ table tbody td {
 
 .navbar-nav .dropdown-item:hover {
     background-color: #f8f9fa;
+    border-radius: 6px;
     font-weight: bold;
     color: #424242;
 }
@@ -1522,7 +1553,6 @@ table tbody td {
         font-size: 14px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
     }
 
-    .card-body table th,
     .card-body table td {
         font-size: 12px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอเล็ก */
     }
@@ -1538,7 +1568,6 @@ table tbody td {
         font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
     }
 
-    .card-body table th,
     .card-body table td {
         font-size: 14px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอแท็บเล็ต */
     }
@@ -1554,12 +1583,17 @@ table tbody td {
         font-size: 18px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
     }
 
-    .card-body table th,
     .card-body table td {
         font-size: 16px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอ Desktop */
     }
 }
 
+/* ============================= */
+/* Responsive Design for File Data */
+.file-data {
+    vertical-align: middle; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    text-align: center !important; /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้าต้องการ) */
+}
 /* Responsive Design for File Actions */
 .file-actions {
     display: flex;
@@ -1574,6 +1608,7 @@ table tbody td {
     font-size: 0.85rem; /* ขนาดตัวอักษรเล็กลง */
     padding: 5px 8px; /* ปรับ padding ให้ปุ่มเล็กลง */
     border-radius: 4px; /* ทำให้มุมปุ่มโค้งมน */
+    width: 100px; /* กำหนดความกว้างของปุ่ม */
     text-align: center;
 }
 
@@ -1582,14 +1617,20 @@ table tbody td {
     .file-actions {
         flex-direction: column; /* เรียงปุ่มแนวตั้งบนจอเล็ก */
         gap: 4px; /* ลดช่องว่างระหว่างปุ่ม */
+        
     }
 
     .btn-preview,
     .btn-delete {
         font-size: 0.75rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
         padding: 2px 4px; /* ปรับ padding ให้เหมาะสม */
-        width: 90px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
+        width: 80px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
         
+    }
+
+    .file-data {
+        vertical-align: middle; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+        text-align: center; /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้าต้องการ) */
     }
 }
 
@@ -1601,7 +1642,7 @@ table tbody td {
 
     .btn-preview,
     .btn-delete {
-        font-size: 1rem !important; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
+        font-size: 0.85rem !important; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
         padding: 5px 8px; /* ปรับ padding */
         width: 100px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
     }
@@ -1615,7 +1656,7 @@ table tbody td {
 
     .btn-preview,
     .btn-delete {
-        font-size: 0.85rem !important; /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
+        font-size: 0.95rem !important; /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
         padding: 6px 10px; /* ปรับ padding */
         width: 120px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
     }
@@ -1750,11 +1791,10 @@ table tbody td {
         width: 90px !important; /* กำหนดความกว้างของเมนู dropdown */ 
         margin-top: 31px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
         margin-left: 90px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
-        font-size: auto !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
     }
 
-    .dropdown-item {
-        font-size: 0.9rem !important; /* ขนาดไอคอนเล็กลง */
+    .dropdown-item,.dropdown-item i {
+        font-size: 0.75rem !important; /* ขนาดไอคอนเล็กลง */
     }
 }
 
@@ -1831,10 +1871,33 @@ table tbody td {
     display: block !important;
     width: 100% !important;
     padding: 0.375rem 0.75rem !important;
-    font-size: 1rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 550 !important;
     line-height: 1.5 !important;
     color: #424242 !important;
     background-color: #fff !important;
+}
+
+#fileUpload {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px; /* เพิ่มความโค้งมน */
+}
+
+#fileName {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px; /* เพิ่มความโค้งมน */
 }
 
 /* Extra Small Screens (max-width: 575.98px) */
@@ -1851,6 +1914,16 @@ table tbody td {
 
     .form-check-label {
         font-size: 0.75rem !important; /* Smaller font size for mobile */
+    }
+
+    #fileUpload {
+        font-size: 0.75rem !important; /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+    }
+
+    #fileName {
+        font-size: 0.75rem !important; /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
     }
 }
 
@@ -1869,6 +1942,16 @@ table tbody td {
     .form-check-label {
         font-size: 0.85rem !important; /* Smaller font size for mobile */
     }
+
+    #fileUpload {
+        font-size: 0.85rem !important; /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */  
+    }
+
+    #fileName {
+        font-size: 0.85rem !important; /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+    }
 }
 
 /* Medium Screens (768px - 991.98px) */
@@ -1884,7 +1967,17 @@ table tbody td {
     }
 
     .form-check-label {
-        font-size: 0.95rem !important; /* Smaller font size for mobile */
+        font-size: 0.95rem !important; /* Medium font size for mobile */
+    }
+
+    #fileUpload {
+        font-size: 0.95rem !important; /* Medium font size for tablet */
+        padding: 0.3rem 0.6rem !important; /* Medium padding for tablet */
+    }
+
+    #fileName {
+        font-size: 0.95rem !important; /* Medium font size for tablet */
+        padding: 0.3rem 0.6rem !important; /* Medium padding for tablet */
     }
 }
 
@@ -1903,6 +1996,16 @@ table tbody td {
     .form-check-label {
         font-size: 1rem !important; /* Smaller font size for mobile */
     }
+
+    #fileUpload {
+        font-size: 1rem !important; /* Larger font size for desktop */
+        padding: 0.4rem 0.8rem !important; /* Larger padding for desktop */
+    }
+
+    #fileName {
+        font-size: 1rem !important; /* Larger font size for desktop */
+        padding: 0.4rem 0.8rem !important; /* Larger padding for desktop */
+    }
 }
 
 /* Default styles for .alert */
@@ -1914,6 +2017,10 @@ table tbody td {
         margin: 5px 0; /* Smaller margin for mobile */
         width: 50%; /* Half width for mobile */
     }
+
+    .btn-close {
+        font-size: 0.65rem !important; /* Smaller font size for mobile */
+    }
 }
 
 /* Small Screens (576px - 767.98px) */
@@ -1923,6 +2030,10 @@ table tbody td {
         padding: 12px; /* Medium padding */
         margin: 8px 0; /* Medium margin */
         width: 60%; /* 60% width */
+    }
+
+    .btn-close {
+        font-size: 0.75rem !important; /* Smaller font size for mobile */
     }
 }
 
@@ -1934,6 +2045,10 @@ table tbody td {
         margin: 9px 0; /* Slightly larger margin */
         width: 70%; /* 70% width */
     }
+
+    .btn-close {
+        font-size: 0.85rem !important; /* Smaller font size for mobile */
+    }
 }
 
 /* Large Screens (992px and above) */
@@ -1943,5 +2058,9 @@ table tbody td {
         padding: 15px; /* Default padding */
         margin: 10px 0; /* Default margin */
         width: 80%; /* 80% width */
+    }
+
+    .btn-close {
+        font-size: 0.95rem !important; /* Smaller font size for mobile */
     }
 }
