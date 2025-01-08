@@ -9,50 +9,74 @@ body {
 /* Table Styling */
 .table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
     background-color: #b8def5; /* Light background */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* โค้งขอบตารางทั้งหมด */
+    overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบตาราง */
+    border-collapse: separate; /* ป้องกันเส้นขอบทับกัน */
+    border-spacing: 0; /* กำจัดช่องว่างระหว่างเซลล์ */
 }
 
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+
+/* Header Styling */
 .table th {
     background-color: #5c86b4; /* Dark background for header */
     color: #ffffff; /* White text */
     font-size: 16px !important;
     padding: 10px;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบตาราง */
 }
 
+/* Cell Styling */
 .table td {
     padding: 10px;
-    border-bottom: 1px solid #ddd; /* Subtle border */
-    text-align: center; /* จัดข้อความให้อยู่ตรงกลางแนวนอน */
-    vertical-align: middle; /* จัดข้อความให้อยู่ตรงกลางแนวตั้ง */
-    padding: 8px; /* เพิ่มช่องว่างรอบข้อความ */
+    text-align: center;
+    vertical-align: middle;
+    color: #424242;
 }
 
-.table thead th {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.05rem;
-}
-
+/* Alternate Row Styling */
 .table tr:nth-child(even) {
     background-color: #e9e9e9; /* Light gray for even rows */
 }
 
-.table tr:hover {
-    background-color: #ddd; /* Hover effect */
+/* Top-left corner (Header) */
+.table tr:first-child th:first-child {
+    border-top-left-radius: 8px;
 }
 
-table tbody td {
-    color: #424242 !important;
+/* Top-right corner (Header) */
+.table tr:first-child th:last-child {
+    border-top-right-radius: 8px;
 }
 
-.total-records-container p {
-    color: #424242;
+/* Bottom-left corner */
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+    overflow: hidden;
+}
+
+/* Bottom-right corner */
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+}
+
+/* File Actions Column */
+.table tr .file-actions {
+    text-align: center;
 }
 
 /* Card Styling */
@@ -677,7 +701,11 @@ table tbody td {
     .form-wrapper label {
         font-size: 12px !important; /* Smaller font size for mobile */
         
-    }   
+    }
+    
+    .form-wrapper {
+        margin-bottom: 0px; /* เว้นช่องว่างด้านล่าง */
+    }
 
     .select-selected,.select-items,.select-items div {
         font-size: 12px !important; /* Smaller font size for mobile */
@@ -692,6 +720,11 @@ table tbody td {
         font-size: 12px !important; /* Smaller font size for mobile */
         width: 90px !important; 
     }
+
+    .form-wrapper {
+        margin-bottom: 0px; /* เว้นช่องว่างด้านล่าง */
+    }
+
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
@@ -823,7 +856,7 @@ table tbody td {
 /* กำหนดขนาดให้ .dropdown-menu และ .dropdown-item เท่ากัน */
 .dropdown-menu {
     position: fixed !important; /* Make the menu fixed */
-    top: 100px !important; /* Vertical position */
+    top: 98px !important; /* Vertical position */
     right: 227px !important; /* Horizontal position */
     z-index: 1050 !important; /* Ensure it's on top */
     width: auto !important; /* Set width to auto to fit content */
@@ -2062,5 +2095,56 @@ table tbody td {
 
     .btn-close {
         font-size: 0.95rem !important; /* Smaller font size for mobile */
+    }
+}
+
+/* Default styles for .table-bordered */
+/* Extra Small Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .table-bordered {
+        border: 0.5px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 0.5px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+        font-size: 0.75rem; /* ลดขนาดฟอนต์ */
+        padding: 5px; /* ลด padding */
+    }
+}
+
+/* Small Screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .table-bordered {
+        border: 0.75px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 0.75px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+    }
+}
+
+/* Medium Screens (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .table-bordered {
+        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+    }
+}
+
+/* Large Screens (992px and above) */
+@media (min-width: 992px) {
+    .table-bordered {
+        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
     }
 }
