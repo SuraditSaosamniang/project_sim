@@ -297,10 +297,10 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
 </div>
-        
+
 <!-- Footer -->
 <div class="container-lg my-1">
-    <footer class="footer mt-5 py-4 bg-dark text-light">                
+    <footer class="footer mt-5 py-4">                
         <div class="container">              
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">

@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     background-color: #ececeb;
-    font-family: 'Poppins', sans-serif, 'Kanit', sans-serif;
+    font-family: 'Poppins', sans-serif, 'Kanit', sans-serif !important; /* ใช้ฟอนต์ทันสมัย */
     font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
     min-width: 433px;
 }
@@ -44,7 +44,7 @@ body {
     padding: 10px;
     text-align: center;
     vertical-align: middle;
-    color: #424242;
+    color: #424242 !important; /* สีข้อความ */
 }
 
 /* Alternate Row Styling */
@@ -90,6 +90,9 @@ body {
 
 .card-header {
     color: #424242; /* เปลี่ยนสีข้อความเป็นสี #424242 */
+    width: 97%; /* ขยายความกว้างเต็มพื้นที่ */
+    margin: 0 auto; /* จัดตำแหน่งตรงกลาง */
+    justify-content: center;
 }
 
 .card-header .card-title {
@@ -101,41 +104,18 @@ body {
 }
 
 .card-title {
-    font-size: 1.8rem; /* Larger title font size */
+    font-size: 22px; /* Larger title font size */
     font-weight: 600; /* Semi-bold font */
     margin-bottom: 8px; /* Space between title and subtitle */
 }
 
 .card-subtitle {
-    font-size: 1rem ; /* Smaller font for subtitle */
+    font-size: 18px; /* Smaller font for subtitle */
     color: #424242; /* Lighter text for subtitle */
 }
 
 .card-body {
     color: #424242;
-}
-
-/* Responsive Design for Card Titles */
-.card-title {
-    font-size: 1.8rem !important; /* Default font size */
-}
-
-@media (max-width: 575.98px) {
-    .card-title {
-        font-size: 1.2rem !important; /* Smaller font size for mobile */
-    }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-    .card-title {
-        font-size: 1.5rem !important; /* Medium font size for tablet */
-    }
-}
-
-@media (min-width: 992px) {
-    .card-title {
-        font-size: 1.8rem !important; /* Larger font size for desktop */
-    }
 }
 
 /* Button Styling */
@@ -322,6 +302,7 @@ body {
     color: white;
     border-radius: 15px; /* เพิ่มความโค้งมนให้กับ navbar */
     overflow: hidden; /* ป้องกันเนื้อหาหลุดออกนอกขอบ */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1) !important; /* เงาใน */
 }
 
 .navbar-brand {
@@ -441,8 +422,9 @@ body {
 /* Footer Styling */
 .footer {
     background: linear-gradient(45deg, #bbd9fa, #6c9feb); /* พื้นหลังไล่สี */
-    border-top: 3px solid #c2e8ff; /* เพิ่มขอบบนสีสัน */
-    border-radius: 30px;
+    padding: 15px; /* ระยะห่างขอบ */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาใน */
+    border-radius: 15px;
 }
 
 .footer h5 {
@@ -451,6 +433,8 @@ body {
 
 .footer p {
     font-size: 0.9rem; /* ขนาดข้อความที่เล็กลง */
+    font-style: oblique; /* ตัวเอียง */
+    font-weight: lighter;
 }
 
 /* Custom Dark Text */
@@ -1578,21 +1562,23 @@ body {
 
 /* 📱 Phone (หน้าจอเล็กกว่า 576px) */
 @media (max-width: 575.98px) {
+    .card-header {
+        width: 91% !important;
+    }
     .card-header .card-title {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
+        font-size: 16px !important; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
     }
 
     .card-header .card-subtitle {
-        font-size: 14px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
-    }
-
-    .card-body table td {
-        font-size: 12px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอเล็ก */
+        font-size: 14px !important; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
     }
 }
 
 /* 📊 Tablet (หน้าจอระหว่าง 576px - 992px) */
 @media (min-width: 576px) and (max-width: 991.98px) {
+    .card-header {
+        width: 93%;
+    }
     .card-header .card-title {
         font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
     }
@@ -1600,24 +1586,20 @@ body {
     .card-header .card-subtitle {
         font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
     }
-
-    .card-body table td {
-        font-size: 14px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอแท็บเล็ต */
-    }
 }
 
 /* 💻 Desktop (หน้าจอใหญ่กว่า 992px) */
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+    .card-header {
+        width: 98%;
+    }
+
     .card-header .card-title {
-        font-size: 22px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
+        font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
     }
 
     .card-header .card-subtitle {
-        font-size: 18px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
-    }
-
-    .card-body table td {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับตารางในหน้าจอ Desktop */
+        font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
     }
 }
 
@@ -2146,5 +2128,36 @@ body {
     .table-bordered th,
     .table-bordered td {
         border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .footer h5 {
+        font-size: 15px;
+    }
+
+    .footer p {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .footer h5 {
+        font-size: 17px;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+}
+    
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .footer  {
+        font-size: 19px;
+    }
+
+    .footer p {
+        font-size: 13px;
     }
 }

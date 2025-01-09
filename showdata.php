@@ -118,7 +118,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
         <!-- Table Section -->
         <?php if (!empty($tableHeaders) && !empty($currentData)): ?>
             <div class="card shadow-sm">
-                <div class="card-header bg-gradient text-black text-center p-4">
+                <div class="card-header bg-gradient text-center p-4">
                     <h2 class="card-title mb-2">Show Available Information Slab Table</h2>
                     <p class="card-subtitle text-black">Display the data available in the Slab table.</p>
                 </div>
@@ -200,7 +200,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 
         <!-- Footer -->
         <div class="container-lg my-1">
-            <footer class="footer mt-5 py-4 bg-dark text-light">
+            <footer class="footer mt-5 py-4">
                 <div class="container">
                     <div class="row">
                     <!-- Footer Branding -->
