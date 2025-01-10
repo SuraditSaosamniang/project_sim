@@ -1,8 +1,10 @@
 /* General Styling */
 body {
     background-color: #ececeb;
-    font-family: 'Poppins', sans-serif, 'Kanit', sans-serif !important; /* ใช้ฟอนต์ทันสมัย */
-    font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
+    font-family: 'Poppins', sans-serif, 'Kanit', sans-serif !important;
+    /* ใช้ฟอนต์ทันสมัย */
+    font-weight: bold;
+    /* ทำให้คำว่า "plate" ดูโดดเด่น */
     min-width: 433px;
 }
 
@@ -10,11 +12,16 @@ body {
 .table {
     width: 100%;
     margin-top: 20px;
-    background-color: #b8def5; /* Light background */
-    border-radius: 8px; /* โค้งขอบตารางทั้งหมด */
-    overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบตาราง */
-    border-collapse: separate; /* ป้องกันเส้นขอบทับกัน */
-    border-spacing: 0; /* กำจัดช่องว่างระหว่างเซลล์ */
+    background-color: #b8def5;
+    /* Light background */
+    border-radius: 8px;
+    /* โค้งขอบตารางทั้งหมด */
+    overflow: hidden;
+    /* ซ่อนเนื้อหาที่เกินขอบตาราง */
+    border-collapse: separate;
+    /* ป้องกันเส้นขอบทับกัน */
+    border-spacing: 0;
+    /* กำจัดช่องว่างระหว่างเซลล์ */
 }
 
 .table-bordered {
@@ -29,14 +36,17 @@ body {
 
 /* Header Styling */
 .table th {
-    background-color: #5c86b4; /* Dark background for header */
-    color: #ffffff; /* White text */
+    background-color: #5c86b4;
+    /* Dark background for header */
+    color: #ffffff;
+    /* White text */
     font-size: 16px !important;
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
-    overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบตาราง */
+    overflow: hidden;
+    /* ซ่อนเนื้อหาที่เกินขอบตาราง */
 }
 
 /* Cell Styling */
@@ -44,12 +54,14 @@ body {
     padding: 10px;
     text-align: center;
     vertical-align: middle;
-    color: #424242 !important; /* สีข้อความ */
+    color: #424242 !important;
+    /* สีข้อความ */
 }
 
 /* Alternate Row Styling */
 .table tr:nth-child(even) {
-    background-color: #e9e9e9; /* Light gray for even rows */
+    background-color: #e9e9e9;
+    /* Light gray for even rows */
 }
 
 /* Top-left corner (Header) */
@@ -84,34 +96,46 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    overflow: hidden; /* Ensure content doesn't overflow the border radius */
-    background-color: #ffffff; /* White background for card */
+    overflow: hidden;
+    /* Ensure content doesn't overflow the border radius */
+    background-color: #ffffff;
+    /* White background for card */
 }
 
 .card-header {
-    color: #424242; /* เปลี่ยนสีข้อความเป็นสี #424242 */
-    width: 97%; /* ขยายความกว้างเต็มพื้นที่ */
-    margin: 0 auto; /* จัดตำแหน่งตรงกลาง */
+    color: #424242;
+    /* เปลี่ยนสีข้อความเป็นสี #424242 */
+    width: 97%;
+    /* ขยายความกว้างเต็มพื้นที่ */
+    margin: 0 auto;
+    /* จัดตำแหน่งตรงกลาง */
     justify-content: center;
 }
 
 .card-header .card-title {
-    color: #424242; /* เปลี่ยนสีข้อความของ card-title */
+    color: #424242;
+    /* เปลี่ยนสีข้อความของ card-title */
 }
 
 .card-header .card-subtitle {
-    color: #424242; /* เปลี่ยนสีข้อความของ card-subtitle */
+    color: #424242;
+    /* เปลี่ยนสีข้อความของ card-subtitle */
 }
 
 .card-title {
-    font-size: 22px; /* Larger title font size */
-    font-weight: 600; /* Semi-bold font */
-    margin-bottom: 8px; /* Space between title and subtitle */
+    font-size: 22px;
+    /* Larger title font size */
+    font-weight: 600;
+    /* Semi-bold font */
+    margin-bottom: 8px;
+    /* Space between title and subtitle */
 }
 
 .card-subtitle {
-    font-size: 18px; /* Smaller font for subtitle */
-    color: #424242; /* Lighter text for subtitle */
+    font-size: 18px;
+    /* Smaller font for subtitle */
+    color: #424242;
+    /* Lighter text for subtitle */
 }
 
 .card-body {
@@ -128,14 +152,20 @@ body {
 }
 
 .btn-custom {
-    background-color: #4f81be; /* Set button background color */
-    color: #ffffff; /* Ensure text is visible */
-    border: 1px solid #1450ac; /* Button border */
+    background-color: #4f81be;
+    /* Set button background color */
+    color: #ffffff;
+    /* Ensure text is visible */
+    border: 1px solid #1450ac;
+    /* Button border */
     font-size: 1rem;
     padding: 6px 12px;
-    width: 100% !important; /* Default width */
-    min-width: 100% !important; /* Ensure a minimum width */
-    justify-content: center !important; /* Center align items */
+    width: 100% !important;
+    /* Default width */
+    min-width: 100% !important;
+    /* Ensure a minimum width */
+    justify-content: center !important;
+    /* Center align items */
     display: flex;
     margin: auto;
     gap: 3px;
@@ -143,71 +173,87 @@ body {
 
 .btn-custom:hover {
     background: #3869b3;
-    opacity: 0.9; /* Subtle hover effect */
+    opacity: 0.9;
+    /* Subtle hover effect */
 }
 
 .btn-preview {
     font-weight: bold;
     background-color: #9cbbe1;
-    color: #424242; /* Ensure text is visible */
-    border: 1px solid #5c86b4; /* Button border */
+    color: #424242;
+    /* Ensure text is visible */
+    border: 1px solid #5c86b4;
+    /* Button border */
 }
 
 .btn-preview:hover {
     color: #ececec;
     background: #93b6dc;
-    opacity: 1; /* Fix invalid value */
+    opacity: 1;
+    /* Fix invalid value */
 }
 
 .btn-delete {
     font-weight: bold;
     background-color: #365d9b;
-    color: #424242; /* Ensure text is visible */
-    border: 1px solid #1e5697; /* Button border */
+    color: #424242;
+    /* Ensure text is visible */
+    border: 1px solid #1e5697;
+    /* Button border */
 }
 
 .btn-delete:hover {
     color: #ececec;
     background: #26466d;
-    opacity: 1; /* Fix invalid value */
+    opacity: 1;
+    /* Fix invalid value */
 }
 
 .btn-insert {
     background-color: #32629c;
-    color: #ffffff; /* Ensure text is visible */
+    color: #ffffff;
+    /* Ensure text is visible */
     font-weight: bold;
-    border: 1px solid #114785; /* Button border */
+    border: 1px solid #114785;
+    /* Button border */
 }
 
 .btn-insert:hover {
     background: #3b71b3;
-    opacity: 1; /* Fix invalid value */
+    opacity: 1;
+    /* Fix invalid value */
 }
 
 .btn-refresh {
     font-weight: bold;
     background-color: #9cbbe1 !important;
-    color: #424242; /* Ensure text is visible */
-    border: 1px solid #93b6dc; /* Button border */
+    color: #424242;
+    /* Ensure text is visible */
+    border: 1px solid #93b6dc;
+    /* Button border */
 }
 
 .btn-refresh:hover {
     background: #3b71b3 !important;
     color: #ffffff;
-    opacity: 1; /* Fix invalid value */
+    opacity: 1;
+    /* Fix invalid value */
 }
 
 .btn-back {
     font-weight: bold;
     background-color: #7ea9df !important;
-    color: #424242; /* Ensure text is visible */
-    border: 1px solid #9bd2ff; /* Button border */
+    color: #424242;
+    /* Ensure text is visible */
+    border: 1px solid #9bd2ff;
+    /* Button border */
 }
 
 .btn-back:hover {
     background: #1d518c;
     color: #ffffff;
-    opacity: 1; /* Fix invalid value */
+    opacity: 1;
+    /* Fix invalid value */
 }
 
 /* Pagination Styling */
@@ -230,37 +276,50 @@ body {
 }
 
 .pagination .page-item {
-    margin: 0 3px; /* Add a small margin between items */
+    margin: 0 3px;
+    /* Add a small margin between items */
 }
 
 .pagination .page-link {
     display: block;
     padding: 8px 12px;
     text-decoration: none;
-    color: #424242 !important; /* Use color from the color scheme */
-    background-color: #b8def5; /* Background color */
-    border: 1px solid #5c86b4; /* Border color */
-    border-radius: 8px; /* Set rounded corners */
+    color: #424242 !important;
+    /* Use color from the color scheme */
+    background-color: #b8def5;
+    /* Background color */
+    border: 1px solid #5c86b4;
+    /* Border color */
+    border-radius: 8px;
+    /* Set rounded corners */
     transition: all 0.3s ease;
 }
 
 .pagination .page-link:hover {
-    background-color: #5c86b4; /* Change background on hover */
-    color: #ffffff !important; /* Text color on hover */
+    background-color: #5c86b4;
+    /* Change background on hover */
+    color: #ffffff !important;
+    /* Text color on hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05); /* Zoom effect */
+    transform: scale(1.05);
+    /* Zoom effect */
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #5c86b4; /* Highlight active page */
-    color: #ffffff !important; /* Active page text color */
+    background-color: #5c86b4;
+    /* Highlight active page */
+    color: #ffffff !important;
+    /* Active page text color */
     font-weight: bold;
 }
 
 .pagination .page-item.disabled .page-link {
-    color: #ebeff3 !important; /* Light color for disabled */
-    background-color: #7ea9df; /* Background for disabled */
-    border-color: #9fc8fa; /* Border color for disabled */
+    color: #ebeff3 !important;
+    /* Light color for disabled */
+    background-color: #7ea9df;
+    /* Background for disabled */
+    border-color: #9fc8fa;
+    /* Border color for disabled */
     cursor: not-allowed;
     opacity: 0.6;
 }
@@ -280,57 +339,79 @@ body {
 .page-info {
     display: inline-block;
     padding: 8px 12px;
-    color: #041531; /* สีข้อความ */
-    background-color: #e3f2fd; /* สีพื้นหลัง */
-    border: 1px solid #5c86b4; /* สีขอบ */
-    border-radius: 30px; /* มุมโค้งมน */
-    font-size: 14px; /* ขนาดตัวอักษร */
-    font-weight: 500; /* น้ำหนักตัวอักษร */
+    color: #041531;
+    /* สีข้อความ */
+    background-color: #e3f2fd;
+    /* สีพื้นหลัง */
+    border: 1px solid #5c86b4;
+    /* สีขอบ */
+    border-radius: 30px;
+    /* มุมโค้งมน */
+    font-size: 14px;
+    /* ขนาดตัวอักษร */
+    font-weight: 500;
+    /* น้ำหนักตัวอักษร */
     transition: all 0.3s ease;
 }
 
 .page-info:hover {
-    background-color: #5c86b4; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: #ffffff; /* เปลี่ยนสีข้อความเมื่อ hover */
+    background-color: #5c86b4;
+    /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #ffffff;
+    /* เปลี่ยนสีข้อความเมื่อ hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05); /* เอฟเฟกต์ zoom เมื่อ hover */
+    transform: scale(1.05);
+    /* เอฟเฟกต์ zoom เมื่อ hover */
 }
 
 /* Navbar Styling */
 .navbar {
-    background: linear-gradient(45deg, #bbd9fa, #6c9feb); /* พื้นหลังไล่สี */
+    background: linear-gradient(45deg, #bbd9fa, #6c9feb);
+    /* พื้นหลังไล่สี */
     color: white;
-    border-radius: 15px; /* เพิ่มความโค้งมนให้กับ navbar */
-    overflow: hidden; /* ป้องกันเนื้อหาหลุดออกนอกขอบ */
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1) !important; /* เงาใน */
+    border-radius: 15px;
+    /* เพิ่มความโค้งมนให้กับ navbar */
+    overflow: hidden;
+    /* ป้องกันเนื้อหาหลุดออกนอกขอบ */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1) !important;
+    /* เงาใน */
 }
 
 .navbar-brand {
-    color: hsl(214, 7%, 19%); /* Branding color */
-    font-size: 1.25rem; /* Larger font size for branding */
+    color: hsl(214, 7%, 19%);
+    /* Branding color */
+    font-size: 1.25rem;
+    /* Larger font size for branding */
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: hsl(214, 7%, 19%); /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    color: hsl(214, 7%, 19%);
+    /* Darker blue on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect */
 }
 
 .navbar-nav .nav-link {
     font-size: 1rem;
-    color: hsl(214, 7%, 19%); /* Dark text for better readability */
+    color: hsl(214, 7%, 19%);
+    /* Dark text for better readability */
     font-weight: 500;
-    padding: 8px 15px; /* Improved padding for better click targets */
+    padding: 8px 15px;
+    /* Improved padding for better click targets */
     transition: all 0.3s ease;
 }
 
 /* Hover effects on nav links */
 .navbar-nav .nav-link:hover {
-    color: #052555; /* Dark blue color on hover */
-    background-color: #98c2f8; /* Subtle background color change on hover */
+    color: #052555;
+    /* Dark blue color on hover */
+    background-color: #98c2f8;
+    /* Subtle background color change on hover */
     border-radius: 8px;
-    transform: translateY(-2px); /* Lift effect */
+    transform: translateY(-2px);
+    /* Lift effect */
 }
 
 /* Styling the User info */
@@ -341,160 +422,205 @@ body {
 }
 
 .navbar-nav .nav-link.text-user:hover {
-    color: hsl(214, 7%, 19%); /* Darker color on hover */
-    transform: translateY(-2px); /* Lift effect */
+    color: hsl(214, 7%, 19%);
+    /* Darker color on hover */
+    transform: translateY(-2px);
+    /* Lift effect */
 }
 
 /* Logout Link */
 .navbar-nav .nav-item .nav-link.text-logout {
     font-size: 1.08rem;
     font-weight: 600;
-    color: #212529BF; /* Bootstrap's red color for logout */
+    color: #212529BF;
+    /* Bootstrap's red color for logout */
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-item .nav-link.text-logout:hover {
-    color: hsl(214, 7%, 19%); /* Darker black when hovered */
-    transform: translateY(-2px); /* Lift effect */
+    color: hsl(214, 7%, 19%);
+    /* Darker black when hovered */
+    transform: translateY(-2px);
+    /* Lift effect */
 }
 
 /* Show Data Link */
 .navbar-nav .nav-item .nav-link.text-showdata {
     font-size: 1.08rem;
     font-weight: 600;
-    color: #212529BF; /* Bootstrap's red color for logout */
+    color: #212529BF;
+    /* Bootstrap's red color for logout */
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-item .nav-link.text-showdata:hover {
-    color: hsl(214, 7%, 19%); /* Darker red when hovered */
-    transform: translateY(-2px); /* Lift effect */
+    color: hsl(214, 7%, 19%);
+    /* Darker red when hovered */
+    transform: translateY(-2px);
+    /* Lift effect */
 }
 
 /* Home Link */
 .navbar-nav .nav-item .nav-link.text-home {
     font-size: 1.08rem;
     font-weight: 600;
-    color: #212529BF; /* Bootstrap's red color for logout */
+    color: #212529BF;
+    /* Bootstrap's red color for logout */
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-item .nav-link.text-home:hover {
-    color: hsl(214, 7%, 19%); /* Darker red when hovered */
-    transform: translateY(-2px); /* Lift effect */
+    color: hsl(214, 7%, 19%);
+    /* Darker red when hovered */
+    transform: translateY(-2px);
+    /* Lift effect */
 }
 
 /* Custom Text Styling */
 .custom-text {
-    font-size: 1.7rem !important; /* Default font size */
-    font-weight: 700; /* Bold weight for emphasis */
-    color: #424242; /* Set color to #21130d */
-    letter-spacing: 0.5px; /* Slightly spread letters for a modern look */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
-    text-transform: capitalize; /* Ensure that words start with uppercase */
-    display: inline-block; /* Allow additional spacing and transforms */
+    font-size: 1.7rem !important;
+    /* Default font size */
+    font-weight: 700;
+    /* Bold weight for emphasis */
+    color: #424242;
+    /* Set color to #21130d */
+    letter-spacing: 0.5px;
+    /* Slightly spread letters for a modern look */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effect */
+    text-transform: capitalize;
+    /* Ensure that words start with uppercase */
+    display: inline-block;
+    /* Allow additional spacing and transforms */
 }
 
 @media (max-width: 575.98px) {
     .custom-text {
-        font-size: 1rem !important; /* Smaller font size for mobile */
+        font-size: 1rem !important;
+        /* Smaller font size for mobile */
     }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
     .custom-text {
-        font-size: 1.25rem !important; /* Medium font size for tablet */
+        font-size: 1.25rem !important;
+        /* Medium font size for tablet */
     }
 }
 
 @media (min-width: 992px) {
     .custom-text {
-        font-size: 1.7rem !important; /* Larger font size for desktop */
+        font-size: 1.7rem !important;
+        /* Larger font size for desktop */
     }
 }
 
 /* Hover Effect */
 .custom-text:hover {
-    color: hsl(214, 7%, 19%); /* Slightly darker shade of the original color on hover */
-    transform: translateY(-3px); /* Slight lift effect on hover */
+    color: hsl(214, 7%, 19%);
+    /* Slightly darker shade of the original color on hover */
+    transform: translateY(-3px);
+    /* Slight lift effect on hover */
 }
 
 /* Footer Styling */
 .footer {
-    background: linear-gradient(45deg, #bbd9fa, #6c9feb); /* พื้นหลังไล่สี */
-    padding: 15px; /* ระยะห่างขอบ */
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาใน */
+    background: linear-gradient(45deg, #bbd9fa, #6c9feb);
+    /* พื้นหลังไล่สี */
+    padding: 15px;
+    /* ระยะห่างขอบ */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* เงาใน */
     border-radius: 15px;
 }
 
 .footer h5 {
-    font-family: 'Poppins', sans-serif; /* ใช้ฟอนต์ทันสมัย */
+    font-family: 'Poppins', sans-serif;
+    /* ใช้ฟอนต์ทันสมัย */
 }
 
 .footer p {
-    font-size: 0.9rem; /* ขนาดข้อความที่เล็กลง */
-    font-style: oblique; /* ตัวเอียง */
+    font-size: 0.9rem;
+    /* ขนาดข้อความที่เล็กลง */
+    font-style: oblique;
+    /* ตัวเอียง */
     font-weight: lighter;
 }
 
 /* Custom Dark Text */
 .text-dark-custom {
-    color: hsl(214, 7%, 19%); /*สีโทนเข้ม*/
-    font-weight: 500; /* เพิ่มความหนาเล็กน้อย */
+    color: hsl(214, 7%, 19%);
+    /*สีโทนเข้ม*/
+    font-weight: 500;
+    /* เพิ่มความหนาเล็กน้อย */
 }
 
 /* Optional: เพิ่ม hover effect ให้ดูมืออาชีพ */
 .text-dark-custom:hover {
-    color: hsl(214, 7%, 19%); /* สีเข้มกว่าเดิมเมื่อโฮเวอร์ */
+    color: hsl(214, 7%, 19%);
+    /* สีเข้มกว่าเดิมเมื่อโฮเวอร์ */
     transition: color 0.3s ease-in-out;
 }
 
 /* Row Styling */
 .row {
     font-family: 'Poppins', sans-serif;
-    font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
+    font-weight: bold;
+    /* ทำให้คำว่า "plate" ดูโดดเด่น */
 }
 
 /* Button Group Styling */
 .button-group {
     display: flex;
-    justify-content: center; /* Align buttons in the center */
-    gap: 15px; /* Add space between buttons */
-    margin: 20px 0; /* Add top and bottom margin */
+    justify-content: center;
+    /* Align buttons in the center */
+    gap: 15px;
+    /* Add space between buttons */
+    margin: 20px 0;
+    /* Add top and bottom margin */
 }
 
 /* Refresh Button Styling */
 .btn-refresh {
-    background-color: #95dee7; /* Custom background */
-    border: 1px solid #7cb1db; /* Border color */
+    background-color: #95dee7;
+    /* Custom background */
+    border: 1px solid #7cb1db;
+    /* Border color */
 }
 
 .btn-refresh:hover {
     background: #5a9ac5;
-    opacity: 0.9; /* Slight hover effect */
+    opacity: 0.9;
+    /* Slight hover effect */
 }
 
 /* Back Button Styling */
 .btn-back {
-    background-color: #cbdfe0; /* Custom background */
-    border: 1px solid #70bad5; /* Border color */
+    background-color: #cbdfe0;
+    /* Custom background */
+    border: 1px solid #70bad5;
+    /* Border color */
 }
 
 .btn-back:hover {
     background: #4f85b4;
-    opacity: 0.9; /* Slight hover effect */
+    opacity: 0.9;
+    /* Slight hover effect */
 }
 
 /* Success Button Styling */
 .btn-success {
     background-color: #2f537f;
-    color: #ffffff; /* Ensure text is visible */
-    border: 1px solid #0b1e33; /* Button border */
+    color: #ffffff;
+    /* Ensure text is visible */
+    border: 1px solid #0b1e33;
+    /* Button border */
 }
 
 .btn-success:hover {
     background: #1b406e;
-    opacity: 1; /* Fix invalid value */
+    opacity: 1;
+    /* Fix invalid value */
 }
 
 /* Total Records Container Styling */
@@ -522,43 +648,84 @@ body {
 /* Alert Styling */
 .alert {
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
-    max-width: 300px;
+    max-width: 350px;
+    min-width: 250px;
     width: 100%;
-    border-radius: 12px; /* Rounded corners */
+    border-radius: 12px;
+    /* Rounded corners */
     padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
-    font-size: 1rem; /* Font size for readability */
-    opacity: 1; /* Fully visible */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+    font-size: 1rem;
+    /* Font size for readability */
+    opacity: 1;
+    /* Fully visible */
     transition: background-color 0.3s ease, transform 1.05s ease;
-
 }
 
 /* Success Alert */
 .alert-success {
-    background-color: #9cbbe1; /* Light blue background */
-    color: #052555; /* Dark text */
-    border: 1px solid #5c86b4; /* Blue border */
+    background-color: #9cbbe1;
+    /* Light blue background */
+    color: #052555;
+    /* Dark text */
+    border: 1px solid #5c86b4;
+    /* Blue border */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
 }
 
 .alert-success:hover {
-    background-color: #93b6dc; /* Lighter blue on hover */
-    color: white; /* White text on hover */
+    background-color: #93b6dc;
+    /* Lighter blue on hover */
+    color: white;
+    /* White text on hover */
 }
 
 /* Error or Danger Alert */
 .alert-danger {
-    background-color: #f8d7da; /* Light red background */
-    color: #721c24; /* Dark red text */
-    border: 1px solid #f5c6cb; /* Red border */
+    background-color: #f8d7da;
+    /* Light red background */
+    color: #721c24;
+    /* Dark red text */
+    border: 1px solid #f5c6cb;
+    /* Red border */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
 }
 
 .alert-danger:hover {
-    background-color: #f5c6cb; /* Lighter red on hover */
-    color: white; /* White text on hover */
+    background-color: #f5c6cb;
+    /* Lighter red on hover */
+    color: white;
+    /* White text on hover */
+}
+
+.alert-warning {
+    background-color: #e0e0e0; /* Light yellow background */
+    color: #424242; /* Dark yellow text */
+    border: 1px solid #e0dfdb; /* Yellow border */
+    transform: translateX(-50%);
+    height: 50px;
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+}
+
+.alert-warning:hover {
+    background-color: #8f8f8f;
+    /* Lighter yellow on hover */
+    color: white;
+    /* White text on hover */
 }
 
 .alert .btn-close {
@@ -570,8 +737,10 @@ body {
 
 .alert .btn-close:hover {
     opacity: 1;
-    background-color: none; /* Light gray hover */
-    transform: scale(1.1); /* Slight zoom effect on close button */
+    background-color: none;
+    /* Light gray hover */
+    transform: scale(1.1);
+    /* Slight zoom effect on close button */
 }
 
 /* Margin Styling */
@@ -581,57 +750,89 @@ body {
 
 /* File Data Styling */
 .file-data {
-    color: #424242 !important; /* สีข้อความ */
-    font-size: 16px !important; /* ขนาดฟอนต์ */
-    padding: 10px !important; /* เพิ่มระยะห่างภายในเซลล์ */
-    text-align: left !important; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
-    white-space: nowrap !important; /* ป้องกันไม่ให้ข้อความแตกบรรทัด */
-    overflow: hidden !important; /* ป้องกันการแสดงผลของข้อความที่ยาวเกิน */
-    text-overflow: ellipsis !important; /* การใช้ "..." หากข้อความยาวเกินไป */
-    display: table-cell !important; /* ใช้ table-cell เพื่อจัดข้อความให้อยู่กึ่งกลาง */
+    color: #424242 !important;
+    /* สีข้อความ */
+    font-size: 16px !important;
+    /* ขนาดฟอนต์ */
+    padding: 10px !important;
+    /* เพิ่มระยะห่างภายในเซลล์ */
+    text-align: left !important;
+    /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+    white-space: nowrap !important;
+    /* ป้องกันไม่ให้ข้อความแตกบรรทัด */
+    overflow: hidden !important;
+    /* ป้องกันการแสดงผลของข้อความที่ยาวเกิน */
+    text-overflow: ellipsis !important;
+    /* การใช้ "..." หากข้อความยาวเกินไป */
+    display: table-cell !important;
+    /* ใช้ table-cell เพื่อจัดข้อความให้อยู่กึ่งกลาง */
 }
 
 /* Form Wrapper Styling */
 .form-wrapper {
-    display: flex; /* ใช้ Flexbox */
-    justify-content: flex-end; /* ชิดขอบขวา */
-    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    width: 100%; /* ขยายความกว้างเต็มพื้นที่ */
-    margin-bottom: 10px; /* เว้นช่องว่างด้านล่าง */
-    padding-right: 15px; /* เว้นขอบขวาให้สวยงาม */
-    box-sizing: border-box; /* ให้ padding รวมอยู่ในขนาด */
+    display: flex;
+    /* ใช้ Flexbox */
+    justify-content: flex-end;
+    /* ชิดขอบขวา */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    width: 100%;
+    /* ขยายความกว้างเต็มพื้นที่ */
+    margin-bottom: 10px;
+    /* เว้นช่องว่างด้านล่าง */
+    padding-right: 15px;
+    /* เว้นขอบขวาให้สวยงาม */
+    box-sizing: border-box;
+    /* ให้ padding รวมอยู่ในขนาด */
 }
 
 /* จัดสไตล์ label ให้สวยงาม */
 .form-wrapper label {
-    margin-left: 17px; /* ระยะห่างด้านซ้าย */
-    margin-right: 5px; /* ระยะห่างจาก select */
-    font-weight: 600; /* ทำตัวหนา */
-    font-size: 16px !important; /* Default font size */
-    color: #424242; /* สีข้อความเข้มขึ้น */
+    margin-left: 17px;
+    /* ระยะห่างด้านซ้าย */
+    margin-right: 5px;
+    /* ระยะห่างจาก select */
+    font-weight: 600;
+    /* ทำตัวหนา */
+    font-size: 16px !important;
+    /* Default font size */
+    color: #424242;
+    /* สีข้อความเข้มขึ้น */
 }
 
 /* ปรับสไตล์ select ให้ดูทันสมัย */
 .form-wrapper select {
-    width: auto; /* ขนาดพอดีกับเนื้อหา */
-    padding: 6px 12px; /* เพิ่มพื้นที่ภายใน */
-    font-size: 16px !important; /* ขนาดตัวอักษร */
-    border: 1px solid #ccc; /* ขอบสีเทา */
-    border-radius: 4px; /* ขอบโค้งเล็กน้อย */
-    background-color: #fff; /* พื้นหลังสีขาว */
-    color: #424242; /* สีข้อความ */
-    cursor: pointer; /* เมาส์แสดง pointer */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบาๆ */
-    transition: all 0.2s ease-in-out; /* เพิ่มอนิเมชัน */
+    width: auto;
+    /* ขนาดพอดีกับเนื้อหา */
+    padding: 6px 12px;
+    /* เพิ่มพื้นที่ภายใน */
+    font-size: 16px !important;
+    /* ขนาดตัวอักษร */
+    border: 1px solid #ccc;
+    /* ขอบสีเทา */
+    border-radius: 4px;
+    /* ขอบโค้งเล็กน้อย */
+    background-color: #fff;
+    /* พื้นหลังสีขาว */
+    color: #424242;
+    /* สีข้อความ */
+    cursor: pointer;
+    /* เมาส์แสดง pointer */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเบาๆ */
+    transition: all 0.2s ease-in-out;
+    /* เพิ่มอนิเมชัน */
 }
 
 /* เพิ่มเอฟเฟกต์ hover ให้กับ select */
 .form-wrapper select:hover {
-    border-color: #424242; /* เปลี่ยนสีขอบเมื่อ hover */
+    border-color: #424242;
+    /* เปลี่ยนสีขอบเมื่อ hover */
     box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
 }
 
-#sort, #sort option {
+#sort,
+#sort option {
     color: #424242;
     font-weight: 700;
     border: 0.5px solid;
@@ -644,7 +845,8 @@ body {
 }
 
 .custom-select select {
-    display: none; /* ซ่อน select ดั้งเดิม */
+    display: none;
+    /* ซ่อน select ดั้งเดิม */
 }
 
 .select-selected {
@@ -672,7 +874,8 @@ body {
 }
 
 .select-items div:hover {
-    background-color: #5c86b4; /* สี hover */
+    background-color: #5c86b4;
+    /* สี hover */
     color: white;
     border-radius: 2px;
 }
@@ -683,55 +886,76 @@ body {
 
 @media (min-width: 575.98px) {
     .form-wrapper label {
-        font-size: 12px !important; /* Smaller font size for mobile */
-        
-    }
-    
-    .form-wrapper {
-        margin-bottom: 0px; /* เว้นช่องว่างด้านล่าง */
+        font-size: 12px !important;
+        /* Smaller font size for mobile */
+
     }
 
-    .select-selected,.select-items,.select-items div {
-        font-size: 12px !important; /* Smaller font size for mobile */
-        width: 90px !important; 
+    .form-wrapper {
+        margin-bottom: 0px;
+        /* เว้นช่องว่างด้านล่าง */
+    }
+
+    .select-selected,
+    .select-items,
+    .select-items div {
+        font-size: 12px !important;
+        /* Smaller font size for mobile */
+        width: 90px !important;
     }
 }
+
 @media (max-width: 575.98px) {
     .form-wrapper label {
-        font-size: 12px !important; /* Smaller font size for mobile */
+        font-size: 12px !important;
+        /* Smaller font size for mobile */
     }
-    .select-selected,.select-items,.select-items div {
-        font-size: 12px !important; /* Smaller font size for mobile */
-        width: 90px !important; 
+
+    .select-selected,
+    .select-items,
+    .select-items div {
+        font-size: 12px !important;
+        /* Smaller font size for mobile */
+        width: 90px !important;
     }
 
     .form-wrapper {
-        margin-bottom: 0px; /* เว้นช่องว่างด้านล่าง */
+        margin-bottom: 0px;
+        /* เว้นช่องว่างด้านล่าง */
     }
 
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
     .form-wrapper label {
-        font-size: 14px !important; /* Medium font size for tablet */
+        font-size: 14px !important;
+        /* Medium font size for tablet */
     }
 
-    .select-selected,.select-items,.select-items div {
-        font-size: 14px !important; /* Smaller font size for mobile */
+    .select-selected,
+    .select-items,
+    .select-items div {
+        font-size: 14px !important;
+        /* Smaller font size for mobile */
         width: 120px !important;
     }
 }
 
 @media (min-width: 992px) {
     .form-wrapper label {
-        font-size: 16px !important; /* Larger font size for desktop */
+        font-size: 16px !important;
+        /* Larger font size for desktop */
     }
 
-    .select-selected,.select-items,.select-items div {
-        font-size: 16px !important; /* Smaller font size for mobile */
+    .select-selected,
+    .select-items,
+    .select-items div {
+        font-size: 16px !important;
+        /* Smaller font size for mobile */
         width: 150px !important;
     }
 }
+
 /* Styling the checkbox */
 /* Wrapper สำหรับ Form */
 .form-check-wrapper {
@@ -781,42 +1005,52 @@ body {
 .text-muted {
     text-shadow: 2px 2px 5px #a59e9e;
     margin-top: 2px;
-    color: #615f5f!important;
-    font-weight: bold; /* Makes the text bold */
-    padding: 2px 4px; /* Adds some padding around the text */
-    border-radius: 3px; /* Rounds the edges slightly */
+    color: #615f5f !important;
+    font-weight: bold;
+    /* Makes the text bold */
+    padding: 2px 4px;
+    /* Adds some padding around the text */
+    border-radius: 3px;
+    /* Rounds the edges slightly */
 }
 
 .text-characters {
     text-shadow: 2px 2px 5px rgb(180, 205, 243);
     margin-top: 5px;
-    color: #1d315c!important;
-    font-weight: bold; /* Makes the text bold */
-    font-size: 1.18rem !important; /* Default font size */
-    padding: 2px 4px; /* Adds some padding around the text */
-    border-radius: 3px; /* Rounds the edges slightly */
+    color: #1d315c !important;
+    font-weight: bold;
+    /* Makes the text bold */
+    font-size: 1.18rem !important;
+    /* Default font size */
+    padding: 2px 4px;
+    /* Adds some padding around the text */
+    border-radius: 3px;
+    /* Rounds the edges slightly */
 }
 
 @media (max-width: 575.98px) {
     .text-characters {
-        font-size: 14px !important; /* Smaller font size for mobile */
+        font-size: 14px !important;
+        /* Smaller font size for mobile */
     }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
     .text-characters {
-        font-size: 14px !important; /* Medium font size for tablet */
+        font-size: 14px !important;
+        /* Medium font size for tablet */
     }
 }
 
 @media (min-width: 992px) {
     .text-characters {
-        font-size: 16px !important; /* Larger font size for desktop */
+        font-size: 16px !important;
+        /* Larger font size for desktop */
     }
 }
 
-.text-black{
-    color: #424242!important;
+.text-black {
+    color: #424242 !important;
 }
 
 /* Focus effect for the checkbox */
@@ -828,10 +1062,12 @@ body {
 /* ปรับตำแหน่ง checkbox และปุ่ม upload ให้อยู่ใกล้กัน */
 .form-check-wrapper {
     display: flex;
-    justify-content: flex-start; /* ขยับให้เข้าขอบขวา */
+    justify-content: flex-start;
+    /* ขยับให้เข้าขอบขวา */
     align-items: center;
     margin-bottom: 5px;
-    gap: 15px; /* ระยะห่างระหว่าง checkbox และปุ่ม */
+    gap: 15px;
+    /* ระยะห่างระหว่าง checkbox และปุ่ม */
 }
 
 /* ปรับตำแหน่งของ Dropdown Menu */
@@ -839,27 +1075,43 @@ body {
 /* Dropdown Menu Fixed Styling */
 /* กำหนดขนาดให้ .dropdown-menu และ .dropdown-item เท่ากัน */
 .dropdown-menu {
-    position: fixed !important; /* Make the menu fixed */
-    top: 98px !important; /* Vertical position */
-    right: 227px !important; /* Horizontal position */
-    z-index: 1050 !important; /* Ensure it's on top */
-    width: auto !important; /* Set width to auto to fit content */
-    min-width: 123px !important; /* Ensure it doesn't shrink too much */
-    background-color: #e4edfa; /* Background color */
-    border: 1px solid #e4edfa; /* Border */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
-    border-radius: 8px; /* Rounded corners */
-    padding: 0px !important; /* No padding */
+    position: fixed !important;
+    /* Make the menu fixed */
+    top: 98px !important;
+    /* Vertical position */
+    right: 227px !important;
+    /* Horizontal position */
+    z-index: 1050 !important;
+    /* Ensure it's on top */
+    width: auto !important;
+    /* Set width to auto to fit content */
+    min-width: 123px !important;
+    /* Ensure it doesn't shrink too much */
+    background-color: #e4edfa;
+    /* Background color */
+    border: 1px solid #e4edfa;
+    /* Border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadow */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 0px !important;
+    /* No padding */
 }
 
 /* Dropdown items */
 .nav-item .dropdown-item {
-    color: #212529BF; /* Text color */
-    font-size: 14.5px; /* Font size */
+    color: #212529BF;
+    /* Text color */
+    font-size: 14.5px;
+    /* Font size */
     font-weight: bold;
-    width: auto !important; /* Set width to auto to fit content */
-    height: auto; /* Set height to auto */
-    padding: 10px; /* Padding */
+    width: auto !important;
+    /* Set width to auto to fit content */
+    height: auto;
+    /* Set height to auto */
+    padding: 10px;
+    /* Padding */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -880,48 +1132,74 @@ body {
 
 /* Hover effect for the dropdown items */
 .nav-item .dropdown-item:hover {
-    background-color: #9cbbe1 !important; /* Background color on hover */
-    color: hsl(214, 7%, 19%); /* Text color on hover */
+    background-color: #9cbbe1 !important;
+    /* Background color on hover */
+    color: hsl(214, 7%, 19%);
+    /* Text color on hover */
     border-radius: 8px;
 }
 
 /* ปุ่ม dropdown */
 /* ปรับสีข้อความปุ่ม Dropdown Menu */
 .nav-link.dropdown-toggle {
-    color: #212529BF !important; /* สีปกติ */
-    font-weight: bold ; /* ตัวหนา */
-    font-size: 1rem ; /* ขนาดข้อความ */
-    padding: 10px 15px; /* ระยะห่าง */
-    border-radius: 5px; /* มุมโค้งมน */
+    color: #212529BF !important;
+    /* สีปกติ */
+    font-weight: bold;
+    /* ตัวหนา */
+    font-size: 1rem;
+    /* ขนาดข้อความ */
+    padding: 10px 15px;
+    /* ระยะห่าง */
+    border-radius: 5px;
+    /* มุมโค้งมน */
 }
 
 /* เปลี่ยนสีเมื่อ Hover */
 .nav-link.dropdown-toggle:hover {
-    color: hsl(214, 7%, 19%) !important; /* สีเมื่อ Hover (สีดำโปร่ง 75%) */
-    border: none; /* เส้นขอบ */
-    background-color: #98c2f8; /* พื้นหลังสีอ่อนเมื่อ Hover */
+    color: hsl(214, 7%, 19%) !important;
+    /* สีเมื่อ Hover (สีดำโปร่ง 75%) */
+    border: none;
+    /* เส้นขอบ */
+    background-color: #98c2f8;
+    /* พื้นหลังสีอ่อนเมื่อ Hover */
 }
 
 #Size_info {
-    font-size: 14px; /* ปรับขนาดฟอนต์ */
-    color: #424242; /* สีตัวอักษร */
-    background-color: #f8f9fa; /* สีพื้นหลังแบบอ่อน */
-    padding: 10px 15px; /* เว้นระยะรอบตัวอักษร */
-    border: 1px solid #dee2e6; /* เส้นขอบ */
-    border-radius: 8px; /* มุมโค้งมน */
-    display: inline-flex; /* แสดงข้อความในบล็อกเล็ก */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เงาสร้างมิติ */
-    margin-top: 5px; /* เพิ่มระยะห่างจากด้านบน */
-    text-align: right; /* จัดข้อความชิดขวา */
-    justify-content: flex-end !important; /* จัดตำแหน่งให้อยู่ฝั่งขวา */
-    transition: all 0.3s ease; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+    font-size: 14px;
+    /* ปรับขนาดฟอนต์ */
+    color: #424242;
+    /* สีตัวอักษร */
+    background-color: #f8f9fa;
+    /* สีพื้นหลังแบบอ่อน */
+    padding: 10px 15px;
+    /* เว้นระยะรอบตัวอักษร */
+    border: 1px solid #dee2e6;
+    /* เส้นขอบ */
+    border-radius: 8px;
+    /* มุมโค้งมน */
+    display: inline-flex;
+    /* แสดงข้อความในบล็อกเล็ก */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* เงาสร้างมิติ */
+    margin-top: 5px;
+    /* เพิ่มระยะห่างจากด้านบน */
+    text-align: right;
+    /* จัดข้อความชิดขวา */
+    justify-content: flex-end !important;
+    /* จัดตำแหน่งให้อยู่ฝั่งขวา */
+    transition: all 0.3s ease;
+    /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
 }
 
 #Size_info:hover {
-    background-color: #e9ecef; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    border-color: #ced4da; /* เปลี่ยนสีขอบเมื่อ hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเมื่อ hover */
-    transform: scale(1.01); /* เพิ่มเอฟเฟกต์ zoom เมื่อ hover */
+    background-color: #e9ecef;
+    /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    border-color: #ced4da;
+    /* เปลี่ยนสีขอบเมื่อ hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเมื่อ hover */
+    transform: scale(1.01);
+    /* เพิ่มเอฟเฟกต์ zoom เมื่อ hover */
 }
 
 /* ============================= */
@@ -1008,7 +1286,8 @@ body {
     }
 
     .navbar-nav {
-        justify-content: center !important; /* Center align items */
+        justify-content: center !important;
+        /* Center align items */
         gap: 10px;
     }
 
@@ -1314,7 +1593,8 @@ body {
     }
 
     .navbar-nav {
-        justify-content: center !important; /* Center align items */
+        justify-content: center !important;
+        /* Center align items */
         gap: 10px;
     }
 
@@ -1565,12 +1845,20 @@ body {
     .card-header {
         width: 91% !important;
     }
+
     .card-header .card-title {
-        font-size: 16px !important; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
+        font-size: 16px !important;
+        /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
+    }
+
+    .card-title {
+        font-size: 16px !important;
+        /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอเล็ก */
     }
 
     .card-header .card-subtitle {
-        font-size: 14px !important; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
+        font-size: 14px !important;
+        /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอเล็ก */
     }
 }
 
@@ -1579,12 +1867,20 @@ body {
     .card-header {
         width: 93%;
     }
+
     .card-header .card-title {
-        font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
+        font-size: 18px;
+        /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
+    }
+
+    .card-title {
+        font-size: 18px;
+        /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอแท็บเล็ต */
     }
 
     .card-header .card-subtitle {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
+        font-size: 16px;
+        /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอแท็บเล็ต */
     }
 }
 
@@ -1595,85 +1891,112 @@ body {
     }
 
     .card-header .card-title {
-        font-size: 18px; /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
+        font-size: 18px;
+        /* ขนาดตัวอักษรสำหรับหัวข้อในหน้าจอ Desktop */
     }
 
     .card-header .card-subtitle {
-        font-size: 16px; /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
+        font-size: 16px;
+        /* ขนาดตัวอักษรสำหรับคำบรรยายในหน้าจอ Desktop */
     }
 }
 
 /* ============================= */
 /* Responsive Design for File Data */
 .file-data {
-    vertical-align: middle; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    text-align: center !important; /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้าต้องการ) */
+    vertical-align: middle;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    text-align: center !important;
+    /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้าต้องการ) */
 }
+
 /* Responsive Design for File Actions */
 .file-actions {
     display: flex;
-    gap: 8px; /* ลดช่องว่างระหว่างปุ่ม */
-    justify-content: center; /* จัดวางปุ่มตรงกลาง */
-    align-items: center; /* จัดให้ปุ่มอยู่ในแนวเดียวกัน */
-    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่หากพื้นที่ไม่พอ */
+    gap: 8px;
+    /* ลดช่องว่างระหว่างปุ่ม */
+    justify-content: center;
+    /* จัดวางปุ่มตรงกลาง */
+    align-items: center;
+    /* จัดให้ปุ่มอยู่ในแนวเดียวกัน */
+    flex-wrap: wrap;
+    /* ให้ปุ่มขึ้นบรรทัดใหม่หากพื้นที่ไม่พอ */
 }
 
 .file-actions .btn-preview,
 .file-actions .btn-delete {
-    font-size: 0.85rem; /* ขนาดตัวอักษรเล็กลง */
-    padding: 5px 8px; /* ปรับ padding ให้ปุ่มเล็กลง */
-    border-radius: 4px; /* ทำให้มุมปุ่มโค้งมน */
-    width: 100px; /* กำหนดความกว้างของปุ่ม */
+    font-size: 0.85rem;
+    /* ขนาดตัวอักษรเล็กลง */
+    padding: 5px 8px;
+    /* ปรับ padding ให้ปุ่มเล็กลง */
+    border-radius: 4px;
+    /* ทำให้มุมปุ่มโค้งมน */
+    width: 100px;
+    /* กำหนดความกว้างของปุ่ม */
     text-align: center;
 }
 
 /* Mobile Devices (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     .file-actions {
-        flex-direction: column; /* เรียงปุ่มแนวตั้งบนจอเล็ก */
-        gap: 4px; /* ลดช่องว่างระหว่างปุ่ม */
-        
+        flex-direction: column;
+        /* เรียงปุ่มแนวตั้งบนจอเล็ก */
+        gap: 4px;
+        /* ลดช่องว่างระหว่างปุ่ม */
     }
 
     .btn-preview,
     .btn-delete {
-        font-size: 0.75rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
-        padding: 2px 4px; /* ปรับ padding ให้เหมาะสม */
-        width: 80px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
-        
+        font-size: 0.75rem !important;
+        /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        padding: 2px 4px;
+        /* ปรับ padding ให้เหมาะสม */
+        width: 80px;
+        /* ปรับความกว้างของปุ่มให้เหมาะสม */
+
     }
 
     .file-data {
-        vertical-align: middle; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-        text-align: center; /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้าต้องการ) */
+        vertical-align: middle;
+        /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+        text-align: center;
+        /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้าต้องการ) */
     }
 }
 
 /* Tablets (576px - 991.98px) */
 @media (min-width: 576px) and (max-width: 991.98px) {
     .file-actions {
-        gap: 6px; /* ปรับช่องว่างสำหรับแท็บเล็ต */
+        gap: 6px;
+        /* ปรับช่องว่างสำหรับแท็บเล็ต */
     }
 
     .btn-preview,
     .btn-delete {
-        font-size: 0.85rem !important; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
-        padding: 5px 8px; /* ปรับ padding */
-        width: 100px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
+        font-size: 0.85rem !important;
+        /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
+        padding: 5px 8px;
+        /* ปรับ padding */
+        width: 100px;
+        /* ปรับความกว้างของปุ่มให้เหมาะสม */
     }
 }
 
 /* Desktops (min-width: 992px) */
 @media (min-width: 992px) {
     .file-actions {
-        gap: 10px; /* ช่องว่างระหว่างปุ่มสำหรับเดสก์ท็อป */
+        gap: 10px;
+        /* ช่องว่างระหว่างปุ่มสำหรับเดสก์ท็อป */
     }
 
     .btn-preview,
     .btn-delete {
-        font-size: 0.95rem !important; /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
-        padding: 6px 10px; /* ปรับ padding */
-        width: 120px; /* ปรับความกว้างของปุ่มให้เหมาะสม */
+        font-size: 0.95rem !important;
+        /* ขนาดตัวอักษรสำหรับเดสก์ท็อป */
+        padding: 6px 10px;
+        /* ปรับ padding */
+        width: 120px;
+        /* ปรับความกว้างของปุ่มให้เหมาะสม */
     }
 }
 
@@ -1681,69 +2004,97 @@ body {
 /* Extra Small Screens (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     .btn-custom {
-        font-size: 0.7rem; /* Smaller font size for mobile */
-        padding: 6px 12px; /* Adjust padding */
-        width: 60% !important; /* Full width on small screens */
-        min-width: 60% !important; /* Ensure a minimum width */
+        font-size: 0.7rem;
+        /* Smaller font size for mobile */
+        padding: 6px 12px;
+        /* Adjust padding */
+        width: 60% !important;
+        /* Full width on small screens */
+        min-width: 60% !important;
+        /* Ensure a minimum width */
     }
 }
 
 /* Small Screens (576px - 767.98px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .btn-custom {
-        font-size: 0.75rem; /* Medium font size */
+        font-size: 0.75rem;
+        /* Medium font size */
         padding: 7px 14px;
-        width: 50% !important; /* 80% width on small screens */
-        min-width: 50% !important; /* Ensure a minimum width */
+        width: 50% !important;
+        /* 80% width on small screens */
+        min-width: 50% !important;
+        /* Ensure a minimum width */
     }
 
-   /* จัด Navbar ให้อยู่ตรงกลาง */
+    /* จัด Navbar ให้อยู่ตรงกลาง */
     .navbar-nav {
-        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
-        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
-        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
-        width: 100% !important; 
+        margin: 0 auto !important;
+        /* จัดวางตรงกลางโดยใช้ margin */
+        justify-content: center !important;
+        /* จัดวางตรงกลางแนวนอน */
+        align-items: center !important;
+        /* จัดวางตรงกลางแนวตั้ง */
+        width: 100% !important;
     }
-    
+
     .dropdown-menu {
-        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
-        width: 120px !important; /* กำหนดความกว้างของเมนู dropdown */ 
-        margin-top: 56px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
-        margin-left: 100px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
-        font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        position: fixed !important;
+        /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 120px !important;
+        /* กำหนดความกว้างของเมนู dropdown */
+        margin-top: 56px !important;
+        /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 100px !important;
+        /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        font-size: 0.9rem !important;
+        /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
     }
 }
 
 /* Medium Screens (768px - 991.98px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .btn-custom {
-        font-size: 0.8rem; /* Slightly larger font */
+        font-size: 0.8rem;
+        /* Slightly larger font */
         padding: 8px 16px;
-        width: 60% !important; /* 60% width on medium screens */
-        min-width: 60% !important; /* Ensure a minimum width */
+        width: 60% !important;
+        /* 60% width on medium screens */
+        min-width: 60% !important;
+        /* Ensure a minimum width */
     }
 
     .navbar-nav {
-        margin: 0 auto !important; /* จัดวางตรงกลางโดยใช้ margin */
-        justify-content: center !important; /* จัดวางตรงกลางแนวนอน */
-        align-items: center !important; /* จัดวางตรงกลางแนวตั้ง */
+        margin: 0 auto !important;
+        /* จัดวางตรงกลางโดยใช้ margin */
+        justify-content: center !important;
+        /* จัดวางตรงกลางแนวนอน */
+        align-items: center !important;
+        /* จัดวางตรงกลางแนวตั้ง */
         width: 100% !important;
     }
 
     .dropdown-menu {
-        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
-        width: 120px !important; /* กำหนดความกว้างของเมนู dropdown */ 
-        margin-top: 56px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
-        margin-left: 100px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
-        font-size: 0.9rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        position: fixed !important;
+        /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 120px !important;
+        /* กำหนดความกว้างของเมนู dropdown */
+        margin-top: 56px !important;
+        /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 100px !important;
+        /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        font-size: 0.9rem !important;
+        /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
     }
 
     .nav-link.text-logout {
-        padding-left:  14px !important; /* ย้ายข้อความไปทางซ้าย */
+        padding-left: 14px !important;
+        /* ย้ายข้อความไปทางซ้าย */
     }
 
     .nav-link.dropdown-toggle {
-        padding: 5px 17px !important; /* ปรับ padding ให้เหมาะสม */
+        padding: 5px 17px !important;
+        /* ปรับ padding ให้เหมาะสม */
     }
 
 }
@@ -1753,63 +2104,86 @@ body {
     .btn-custom {
         font-size: 0.9rem;
         padding: 8px 18px;
-        width: 70% !important; /* 50% width on large screens */
-        min-width: 70% !important; /* Ensure a minimum width */
+        width: 70% !important;
+        /* 50% width on large screens */
+        min-width: 70% !important;
+        /* Ensure a minimum width */
     }
 }
 
 /* Extra Large Screens (min-width: 1200px) */
 @media (min-width: 1200px) {
     .btn-custom {
-        font-size: 1rem; /* Larger font size for extra large screens */
-        padding: 10px 20px; /* Larger padding */
-        width: 90% !important; /* 50% width on extra large screens */
-        min-width: 90% !important; /* Ensure a minimum width */
+        font-size: 1rem;
+        /* Larger font size for extra large screens */
+        padding: 10px 20px;
+        /* Larger padding */
+        width: 90% !important;
+        /* 50% width on extra large screens */
+        min-width: 90% !important;
+        /* Ensure a minimum width */
     }
 }
 
 /* ปรับสำหรับจอเล็ก (Mobile) */
 @media (max-width: 575.98px) {
     .navbar-nav .nav-item .nav-link {
-        font-size: 0.85rem !important; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
-        padding: 3px 6px; /* ลด padding ให้เหมาะสม */
+        font-size: 0.85rem !important;
+        /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+        padding: 3px 6px;
+        /* ลด padding ให้เหมาะสม */
     }
 
     .navbar-nav .nav-item .nav-link i {
-        font-size: 0.9rem !important; /* ลดขนาดไอคอนบนจอเล็ก */
+        font-size: 0.9rem !important;
+        /* ลดขนาดไอคอนบนจอเล็ก */
     }
 
-    .text-user, .text-logout {
-        font-size: 0.75rem !important; /* ลดขนาดข้อความเพิ่มเติม */
+    .text-user,
+    .text-logout {
+        font-size: 0.75rem !important;
+        /* ลดขนาดข้อความเพิ่มเติม */
     }
 
     /* จัดการ nav-link แต่ละตัว */
-    .navbar-nav > .nav-item > .nav-link.text-user,
-    .navbar-nav > .nav-item > .nav-link.dropdown-toggle,
-    .navbar-nav > .nav-item > .nav-link.text-logout {
-        width: 90px !important; /* กว้างเต็มพื้นที่ */
-        max-width: none !important; /* ยกเลิกข้อจำกัด max-width */
-        text-align: center !important; /* จัดข้อความตรงกลาง */
-        margin-left: 160px !important; /* ย้ายข้อความไปทางขวา */
+    .navbar-nav>.nav-item>.nav-link.text-user,
+    .navbar-nav>.nav-item>.nav-link.dropdown-toggle,
+    .navbar-nav>.nav-item>.nav-link.text-logout {
+        width: 90px !important;
+        /* กว้างเต็มพื้นที่ */
+        max-width: none !important;
+        /* ยกเลิกข้อจำกัด max-width */
+        text-align: center !important;
+        /* จัดข้อความตรงกลาง */
+        margin-left: 160px !important;
+        /* ย้ายข้อความไปทางขวา */
     }
 
     .nav-link.text-logout {
-        padding-left:  10px !important; /* ย้ายข้อความไปทางซ้าย */
+        padding-left: 10px !important;
+        /* ย้ายข้อความไปทางซ้าย */
     }
 
     .nav-link.dropdown-toggle {
-        padding: 5px 15px !important; /* ปรับ padding ให้เหมาะสม */
-    }
-    
-    .dropdown-menu {
-        position: fixed !important; /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
-        width: 90px !important; /* กำหนดความกว้างของเมนู dropdown */ 
-        margin-top: 31px !important; /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
-        margin-left: 90px !important; /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+        padding: 5px 15px !important;
+        /* ปรับ padding ให้เหมาะสม */
     }
 
-    .dropdown-item,.dropdown-item i {
-        font-size: 0.75rem !important; /* ขนาดไอคอนเล็กลง */
+    .dropdown-menu {
+        position: fixed !important;
+        /* ตั้งค่าเมนู dropdown ให้อยู่ในตำแหน่งคงที่ */
+        width: 90px !important;
+        /* กำหนดความกว้างของเมนู dropdown */
+        margin-top: 31px !important;
+        /* จัดตำแหน่งเมนู dropdown ไปทางล่าง */
+        margin-left: 90px !important;
+        /* จัดตำแหน่งเมนู dropdown ไปทางขวา */
+    }
+
+    .dropdown-item,
+    .dropdown-item i {
+        font-size: 0.75rem !important;
+        /* ขนาดไอคอนเล็กลง */
     }
 }
 
@@ -1831,7 +2205,7 @@ body {
 
 /* Small Screens (576px - 767.98px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .responsive-header{
+    .responsive-header {
         font-size: 14px;
         padding: 5px;
     }
@@ -1848,32 +2222,40 @@ body {
 /* Extra Small Screens (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     .dataTables_info {
-        font-size: 12px !important; /* Smaller font size for mobile */
-        padding: 5px !important; /* Smaller padding for mobile */
+        font-size: 12px !important;
+        /* Smaller font size for mobile */
+        padding: 5px !important;
+        /* Smaller padding for mobile */
     }
 }
 
 /* Small Screens (576px - 767.98px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .dataTables_info {
-        font-size: 14px !important; /* Medium font size */
-        padding: 8px !important; /* Medium padding */
+        font-size: 14px !important;
+        /* Medium font size */
+        padding: 8px !important;
+        /* Medium padding */
     }
 }
 
 /* Medium Screens (768px - 991.98px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .dataTables_info {
-        font-size: 15px !important; /* Slightly larger font */
-        padding: 9px !important; /* Slightly larger padding */
+        font-size: 15px !important;
+        /* Slightly larger font */
+        padding: 9px !important;
+        /* Slightly larger padding */
     }
 }
 
 /* Large Screens (992px and above) */
 @media (min-width: 992px) {
     .dataTables_info {
-        font-size: 16px !important; /* Default font size */
-        padding: 10px !important; /* Default padding */
+        font-size: 16px !important;
+        /* Default font size */
+        padding: 10px !important;
+        /* Default padding */
     }
 }
 
@@ -1901,7 +2283,8 @@ body {
     line-height: 1.5;
     background-color: #fff;
     border: 1px solid #ced4da;
-    border-radius: 6px; /* เพิ่มความโค้งมน */
+    border-radius: 6px;
+    /* เพิ่มความโค้งมน */
 }
 
 #fileName {
@@ -1912,114 +2295,158 @@ body {
     line-height: 1.5;
     background-color: #fff;
     border: 1px solid #ced4da;
-    border-radius: 6px; /* เพิ่มความโค้งมน */
+    border-radius: 6px;
+    /* เพิ่มความโค้งมน */
 }
 
 /* Extra Small Screens (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     .form-control {
-        font-size: 0.85rem !important; /* Smaller font size for mobile */
-        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+        font-size: 0.85rem !important;
+        /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important;
+        /* Smaller padding for mobile */
     }
 
     .form-check-input {
-        width: 0.85rem !important; /* Smaller width for mobile */
-        height: 0.85rem !important; /* Smaller height for mobile */
+        width: 0.85rem !important;
+        /* Smaller width for mobile */
+        height: 0.85rem !important;
+        /* Smaller height for mobile */
     }
 
     .form-check-label {
-        font-size: 0.75rem !important; /* Smaller font size for mobile */
+        font-size: 0.75rem !important;
+        /* Smaller font size for mobile */
     }
 
     #fileUpload {
-        font-size: 0.75rem !important; /* Smaller font size for mobile */
-        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+        font-size: 0.75rem !important;
+        /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important;
+        /* Smaller padding for mobile */
     }
 
     #fileName {
-        font-size: 0.75rem !important; /* Smaller font size for mobile */
-        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+        font-size: 0.75rem !important;
+        /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important;
+        /* Smaller padding for mobile */
     }
 }
 
 /* Small Screens (576px - 767.98px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .form-control {
-        font-size: 0.9rem !important; /* Medium font size */
-        padding: 0.3rem 0.6rem !important; /* Medium padding */
+        font-size: 0.9rem !important;
+        /* Medium font size */
+        padding: 0.3rem 0.6rem !important;
+        /* Medium padding */
     }
 
     .form-check-input {
-        width: 0.95rem !important; /* Medium width */
-        height: 0.95rem !important; /* Medium height */
+        width: 0.95rem !important;
+        /* Medium width */
+        height: 0.95rem !important;
+        /* Medium height */
     }
 
     .form-check-label {
-        font-size: 0.85rem !important; /* Smaller font size for mobile */
+        font-size: 0.85rem !important;
+        /* Smaller font size for mobile */
     }
 
     #fileUpload {
-        font-size: 0.85rem !important; /* Smaller font size for mobile */
-        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */  
+        font-size: 0.85rem !important;
+        /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important;
+        /* Smaller padding for mobile */
     }
 
     #fileName {
-        font-size: 0.85rem !important; /* Smaller font size for mobile */
-        padding: 0.25rem 0.5rem !important; /* Smaller padding for mobile */
+        font-size: 0.85rem !important;
+        /* Smaller font size for mobile */
+        padding: 0.25rem 0.5rem !important;
+        /* Smaller padding for mobile */
     }
 }
 
 /* Medium Screens (768px - 991.98px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .form-control {
-        font-size: 0.95rem !important; /* Default font size */
-        padding: 0.375rem 0.75rem !important; /* Default padding */
+        font-size: 0.95rem !important;
+        /* Default font size */
+        padding: 0.375rem 0.75rem !important;
+        /* Default padding */
     }
 
     .form-check-input {
-        width: 1rem !important; /* Default width */
-        height: 1rem !important; /* Default height */
+        width: 1rem !important;
+        /* Default width */
+        height: 1rem !important;
+        /* Default height */
     }
 
     .form-check-label {
-        font-size: 0.95rem !important; /* Medium font size for mobile */
+        font-size: 0.95rem !important;
+        /* Medium font size for mobile */
     }
 
     #fileUpload {
-        font-size: 0.95rem !important; /* Medium font size for tablet */
-        padding: 0.3rem 0.6rem !important; /* Medium padding for tablet */
+        font-size: 0.95rem !important;
+        /* Medium font size for tablet */
+        padding: 0.3rem 0.6rem !important;
+        /* Medium padding for tablet */
     }
 
     #fileName {
-        font-size: 0.95rem !important; /* Medium font size for tablet */
-        padding: 0.3rem 0.6rem !important; /* Medium padding for tablet */
+        font-size: 0.95rem !important;
+        /* Medium font size for tablet */
+        padding: 0.3rem 0.6rem !important;
+        /* Medium padding for tablet */
     }
 }
 
 /* Large Screens (992px and above) */
 @media (min-width: 992px) {
     .form-control {
-        font-size: 1rem !important; /* Larger font size for large screens */
-        padding: 0.4rem 0.8rem !important; /* Larger padding for large screens */
+        font-size: 1rem !important;
+        /* Larger font size for large screens */
+        padding: 0.4rem 0.8rem !important;
+        /* Larger padding for large screens */
     }
 
     .form-check-input {
-        width: 1.1rem !important; /* Larger width for large screens */
-        height: 1.1rem !important; /* Larger height for large screens */
+        width: 1.1rem !important;
+        /* Larger width for large screens */
+        height: 1.1rem !important;
+        /* Larger height for large screens */
     }
 
     .form-check-label {
-        font-size: 1rem !important; /* Smaller font size for mobile */
+        font-size: 1rem !important;
+        /* Smaller font size for mobile */
     }
 
     #fileUpload {
-        font-size: 1rem !important; /* Larger font size for desktop */
-        padding: 0.4rem 0.8rem !important; /* Larger padding for desktop */
+        font-size: 1rem !important;
+        /* Larger font size for desktop */
+        padding: 0.4rem 0.8rem !important;
+        /* Larger padding for desktop */
     }
 
     #fileName {
-        font-size: 1rem !important; /* Larger font size for desktop */
-        padding: 0.4rem 0.8rem !important; /* Larger padding for desktop */
+        font-size: 1rem !important;
+        /* Larger font size for desktop */
+        padding: 0.4rem 0.8rem !important;
+        /* Larger padding for desktop */
+    }
+}
+
+/* Screens smaller than 433px */
+@media (max-width: 433px) {
+    .alert {
+        display: none; /* ซ่อน alert เมื่อหน้าจอเล็กกว่า 433px */
     }
 }
 
@@ -2027,10 +2454,11 @@ body {
 /* Extra Small Screens (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     .alert {
-        font-size: 0.85rem; /* Smaller font size for mobile */
-        padding: 10px; /* Smaller padding for mobile */
+        font-size: 0.75rem; /* Smaller font size for mobile */
+        padding: 12px; /* Smaller padding for mobile */
         margin: 5px 0; /* Smaller margin for mobile */
         width: 50%; /* Half width for mobile */
+        top: 45px; /* Position of alert from the top */
     }
 
     .btn-close {
@@ -2041,10 +2469,11 @@ body {
 /* Small Screens (576px - 767.98px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .alert {
-        font-size: 0.9rem; /* Medium font size */
-        padding: 12px; /* Medium padding */
+        font-size: 0.85rem; /* Medium font size */
+        padding: 14px; /* Medium padding */
         margin: 8px 0; /* Medium margin */
         width: 60%; /* 60% width */
+        top: 65px; /* Position of alert from the top */
     }
 
     .btn-close {
@@ -2052,31 +2481,16 @@ body {
     }
 }
 
-/* Medium Screens (768px - 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .alert {
-        font-size: 0.95rem; /* Slightly larger font */
-        padding: 14px; /* Slightly larger padding */
-        margin: 9px 0; /* Slightly larger margin */
-        width: 70%; /* 70% width */
-    }
-
-    .btn-close {
-        font-size: 0.85rem !important; /* Smaller font size for mobile */
-    }
-}
-
-/* Large Screens (992px and above) */
+/* Large Screens (min-width: 992px) */
 @media (min-width: 992px) {
     .alert {
-        font-size: 1rem; /* Default font size */
-        padding: 15px; /* Default padding */
-        margin: 10px 0; /* Default margin */
-        width: 80%; /* 80% width */
+        font-size: 1rem; /* Larger font size for desktop */
+        padding: 20px; /* Larger padding for desktop */
+        top: 14% !important; /* Position of alert from the top */
     }
 
     .btn-close {
-        font-size: 0.95rem !important; /* Smaller font size for mobile */
+        font-size: 1rem !important; /* Larger font size for desktop */
     }
 }
 
@@ -2084,50 +2498,60 @@ body {
 /* Extra Small Screens (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     .table-bordered {
-        border: 0.5px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+        border: 0.5px solid #dee2e6;
+        /* ลดความหนาของเส้นขอบ */
     }
 
     .table-bordered th,
     .table-bordered td {
-        border: 0.5px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
-        font-size: 0.75rem; /* ลดขนาดฟอนต์ */
-        padding: 5px; /* ลด padding */
+        border: 0.5px solid #dee2e6;
+        /* ลดความหนาของเส้นขอบ */
+        font-size: 0.75rem;
+        /* ลดขนาดฟอนต์ */
+        padding: 5px;
+        /* ลด padding */
     }
 }
 
 /* Small Screens (576px - 767.98px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .table-bordered {
-        border: 0.75px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+        border: 0.75px solid #dee2e6;
+        /* ลดความหนาของเส้นขอบ */
     }
 
     .table-bordered th,
     .table-bordered td {
-        border: 0.75px solid #dee2e6; /* ลดความหนาของเส้นขอบ */
+        border: 0.75px solid #dee2e6;
+        /* ลดความหนาของเส้นขอบ */
     }
 }
 
 /* Medium Screens (768px - 991.98px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .table-bordered {
-        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+        border: 1px solid #dee2e6;
+        /* ความหนาของเส้นขอบปกติ */
     }
 
     .table-bordered th,
     .table-bordered td {
-        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+        border: 1px solid #dee2e6;
+        /* ความหนาของเส้นขอบปกติ */
     }
 }
 
 /* Large Screens (992px and above) */
 @media (min-width: 992px) {
     .table-bordered {
-        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+        border: 1px solid #dee2e6;
+        /* ความหนาของเส้นขอบปกติ */
     }
 
     .table-bordered th,
     .table-bordered td {
-        border: 1px solid #dee2e6; /* ความหนาของเส้นขอบปกติ */
+        border: 1px solid #dee2e6;
+        /* ความหนาของเส้นขอบปกติ */
     }
 }
 
@@ -2150,10 +2574,10 @@ body {
         font-size: 11px;
     }
 }
-    
+
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .footer  {
+    .footer {
         font-size: 19px;
     }
 

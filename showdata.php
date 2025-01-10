@@ -32,7 +32,7 @@ $totalRows = count($tableData);
 $totalPages = ceil($totalRows / $rowsPerPage);
 
 // หน้าปัจจุบัน
-$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $currentPage = max(1, min($currentPage, $totalPages)); // ตรวจสอบหน้าให้ไม่เกินจำนวนหน้า
 
 // คำนวณแถวที่เริ่มต้นและข้อมูลที่แสดงในหน้าปัจจุบัน
@@ -43,6 +43,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,45 +52,50 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="container-lg my-3 mb-3">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-        <div class="container-lg">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                <span class="fw-bold custom-text">Form for uploading CSV files</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <span class="nav-link text-user fw-bold">
-                            <i class="bi bi-person-circle" style="-webkit-text-stroke: 0.7px"></i>
-                            <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
-                        </span>
-                    </li>
-                    
-                    <!-- Dropdown Menu -->
-                    <li class="nav-item dropdown" id="dropdownNav">
-                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-menu-button-wide me-1" style="-webkit-text-stroke: 0.7px"></i> Menu
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2" style="-webkit-text-stroke: 0.7px"></i> Show Data</a></li>
-                            <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2" style="-webkit-text-stroke: 0.7px"></i> Home</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link text-logout" href="login.php">
-                            <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container-lg my-3 mb-3">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container-lg">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
+                    <span class="fw-bold custom-text">Form for uploading CSV files</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <span class="nav-link text-user fw-bold">
+                                <i class="bi bi-person-circle" style="-webkit-text-stroke: 0.7px"></i>
+                                <?= htmlspecialchars($_SESSION['username'] ?? 'Guest', ENT_QUOTES, 'UTF-8'); ?>
+                            </span>
+                        </li>
+
+                        <!-- Dropdown Menu -->
+                        <li class="nav-item dropdown" id="dropdownNav">
+                            <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-menu-button-wide me-1" style="-webkit-text-stroke: 0.7px"></i> Menu
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="showdata.php"><i class="bi bi-table me-2"
+                                            style="-webkit-text-stroke: 0.7px"></i> Show Data</a></li>
+                                <li><a class="dropdown-item" href="upload.php"><i class="bi bi-house-door me-2"
+                                            style="-webkit-text-stroke: 0.7px"></i> Home</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-logout" href="login.php">
+                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </div>
@@ -113,7 +119,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
             dropdownMenu.style.top = `${rect.bottom}px`;
         });
     </script>
-    
+
     <div class="container-lg">
         <!-- Table Section -->
         <?php if (!empty($tableHeaders) && !empty($currentData)): ?>
@@ -145,21 +151,22 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                     </div>
                     <!-- Display the total number of records after the table -->
                     <div class="dataTables_info text-end" id="Size_info" role="status" aria-live="polite">
-                        Showing <?= $startRow + 1 ?> to <?= min($startRow + $rowsPerPage, $totalRows) ?> of <?= $totalRows ?> entries
+                        Showing <?= $startRow + 1 ?> to <?= min($startRow + $rowsPerPage, $totalRows) ?> of
+                        <?= $totalRows ?> entries
                     </div>
                 </div>
             </div>
 
-            <!-- Pagination -->    
+            <!-- Pagination -->
             <nav class="mt-4">
                 <div class="row">
                     <div class="text-center">
                         <div class="dataTables_paginate paging_simple_numbers" id="Size_paginate">
-                        <ul class="pagination justify-content-center">
+                            <ul class="pagination justify-content-center">
                                 <?php if ($currentPage > 1): ?>
                                     <li class="paginate_button page-item previous">
                                         <a class="page-link" href="?page=<?= $currentPage - 1 ?>">
-                                            <i class="bi bi-chevron-left"style="-webkit-text-stroke: 0.7px"></i> Previous
+                                            <i class="bi bi-chevron-left" style="-webkit-text-stroke: 0.7px"></i> Previous
                                         </a>
                                     </li>
                                 <?php else: ?>
@@ -177,7 +184,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                                 <?php if ($currentPage < $totalPages): ?>
                                     <li class="paginate_button page-item next">
                                         <a class="page-link" href="?page=<?= $currentPage + 1 ?>">
-                                            Next <i class="bi bi-chevron-right"style="-webkit-text-stroke: 0.7px"></i>
+                                            Next <i class="bi bi-chevron-right" style="-webkit-text-stroke: 0.7px"></i>
                                         </a>
                                     </li>
                                 <?php endif; ?>
@@ -186,23 +193,26 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                     </div>
                 </div>
             </nav>
-            
+
             <!-- Action Buttons -->
             <div class="mt-4 text-center">
                 <a href="upload.php" class="btn btn-back">
-                    <i class="bi bi-arrow-left"style="-webkit-text-stroke: 0.7px"></i> Back to Upload
+                    <i class="bi bi-arrow-left" style="-webkit-text-stroke: 0.7px"></i> Back to Upload
                 </a>
             </div>
-            <?php else: ?>
-                <div class="alert alert-warning text-center">No data available to preview.</div>
-            <?php endif; ?>
-        </div>
+        <?php else: ?>
+            <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                No data available to preview.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
+    </div>
 
-        <!-- Footer -->
-        <div class="container-lg my-1">
-            <footer class="footer mt-5 py-4">
-                <div class="container">
-                    <div class="row">
+    <!-- Footer -->
+    <div class="container-lg my-1">
+        <footer class="footer mt-5 py-4">
+            <div class="container">
+                <div class="row">
                     <!-- Footer Branding -->
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start">
@@ -212,10 +222,10 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                         </div>
                     </div>
                 </div>
-            </footer>                                  
-        </div>
+        </footer>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
 
+</html>

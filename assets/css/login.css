@@ -6,6 +6,7 @@ body {
     font-weight: bold; /* ทำให้คำว่า "plate" ดูโดดเด่น */
     margin: 0;
     padding: 0;
+    min-width: 436px !important; /* ห้ามหดต่ำกว่า 436px */
 }
 
 /* Centering and Styling the Container */
@@ -58,8 +59,14 @@ h2 {
 
 /* Remember me checkbox */
 .form-check-label {
-    font-size: 1rem;
-    color: #424242;
+    vertical-align: middle; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    font-size: 1rem; /* ขนาดข้อความ */
+    color: #424242;;
+    margin-top: 3px; /* ระยะห่างด้านบน */
+}
+
+.form-check {
+    display: inline-block; /* คงลักษณะบล็อกของ form-check */
 }
 
 .form-check-input {
@@ -68,6 +75,8 @@ h2 {
     margin-right: 10px;
     background-color: #f7f2f2; /* Set background color */
     border: 2px solid #ccc; /* Set border color */
+    vertical-align: middle; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    margin-right: 10px; /* ระยะห่างระหว่าง input และ label */
 }
 
 .form-check-input:hover {
@@ -198,6 +207,124 @@ p {
     opacity: 1;
     background-color: none; /* Light gray hover */
     transform: scale(1.1); /* Slight zoom effect on close button */
+}
+
+/* Responsive Design */
+
+/* สำหรับหน้าจอขนาดใหญ่ (Desktop) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px; /* เพิ่มขนาดความกว้างสำหรับหน้าจอขนาดใหญ่ */
+        padding: 50px;
+    }
+
+    h2 {
+        font-size: 3rem; /* ขยายขนาดหัวข้อ */
+    }
+
+    .btn {
+        font-size: 1.2rem; /* เพิ่มขนาดปุ่ม */
+    }
+}
+
+/* สำหรับแท็บเล็ตแนวนอน (Tablet Landscape) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%; /* ลดขนาดความกว้างเล็กน้อย */
+        padding: 35px;
+    }
+
+    h2 {
+        font-size: 2.2rem; /* ปรับขนาดหัวข้อให้เหมาะสม */
+    }
+
+    .btn {
+        font-size: 1.05rem; /* ลดขนาดปุ่มเล็กน้อย */
+    }
+}
+
+/* สำหรับแท็บเล็ตแนวตั้งและมือถือขนาดใหญ่ */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        width: 90%; /* ลดความกว้างสำหรับหน้าจอขนาดเล็ก */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* ปรับขนาดหัวข้อให้เล็กลง */
+    }
+
+    .form-control {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
+
+/* สำหรับหน้าจอขนาดเล็กสุด (433px และต่ำกว่า) */
+@media (max-width: 433px) {
+    .container {
+        max-width: 95%; /* ใช้ความกว้าง 95% ของหน้าจอ */
+        padding: 15px; /* ลด Padding ให้เหมาะสม */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* ลดขนาดหัวข้อ */
+    }
+
+    p {
+        font-size: 0.95rem; /* ลดขนาดข้อความ */
+    }
+
+    .form-label {
+        font-size: 0.9rem; /* ลดขนาดข้อความในฟอร์ม */
+        margin-top: 10px; /* ลดระยะห่างด้านบน */
+    }
+
+    .btn {
+        font-size: 0.85rem; /* ลดขนาดข้อความในปุ่ม */
+        padding: 10px; /* ลด Padding ในปุ่ม */
+    }
+
+    .form-control {
+        font-size: 0.85rem; /* ลดขนาดข้อความในช่องป้อนข้อมูล */
+        padding: 10px; /* ลด Padding */
+        height: 35px; /* ลดความสูง */
+
+    }
+
+    .input-group-text {
+        font-size: 0.65rem; /* ลดขนาดไอคอน */
+        padding: 0 10px; /* ลด Padding */
+        height: 35px; /* ลดความสูง */
+    }
+
+    .form-check-input  {
+        width: 15px; /* ลดขนาด Checkbox */
+        height: 15px; /* ลดขนาด Checkbox */
+        font-size: 0.8rem; /* ลดขนาดข้อความ */
+        position: relative; /* ปรับตำแหน่งให้ตรงกลาง */
+        top: 8px; /* ปรับตำแหน่งให้ตรงกลาง */
+
+    }
+
+    .form-check-label {
+        font-size: 0.85rem; /* ลดขนาดข้อความ */
+        margin-top: 9px; /* ลดระยะห่างด้านบน */
+    }
+
+    .input-group .form-control{
+        height: 35px; /* ลดความสูง */
+        margin: 0; /* ลดระยะห่าง */
+    }
+}
+
+.input-group-text i {
+   font-size: 16px;
+
+
 }
 
 
