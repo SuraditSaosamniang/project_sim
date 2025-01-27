@@ -34,16 +34,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $conn->beginTransaction();
 
-        // ลบข้อมูลเก่าออกจากตาราง slab1
-        $conn->exec("DELETE FROM slab1");
+        // ลบข้อมูลเก่าออกจากตาราง slab
+        $conn->exec("DELETE FROM slab");
 
         // เตรียม statement สำหรับการแทรกข้อมูลลงใน slab1
         $insertStmt = $conn->prepare(
-            "INSERT INTO slab1 (item, IdSlab, grade, Thick, Width, Length, Weight, Location, lot, Heatsup, HeatLpn)
+            "INSERT INTO slab (item, IdSlab, grade, Thick, Width, Length, Weight, Location, lot, Heatsup, HeatLpn)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
-        // แทรกข้อมูลลงในตาราง slab1
+        // แทรกข้อมูลลงในตาราง slab
         foreach ($tableData as $row) {
             if (count($row) < 11) {
                 continue; // ข้ามแถวที่ข้อมูลไม่ครบ

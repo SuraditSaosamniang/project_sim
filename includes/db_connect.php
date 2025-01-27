@@ -1,7 +1,7 @@
 <?php
 // ตั้งค่าการเชื่อมต่อฐานข้อมูล
 $host = 'localhost';    
-$dbname = 'test';  
+$dbname = 'lpnpm_sim';  
 $username = 'lpnpm_aing';     
 $password = ',:4_kn.LTZtwBE';         
 

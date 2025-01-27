@@ -8,7 +8,7 @@ if (!isset($conn)) {
 
 try {
     // ดึงข้อมูลจากฐานข้อมูลและเก็บไว้ในตัวแปร $tableData
-    $stmt = $conn->prepare("SELECT * FROM slab1");
+    $stmt = $conn->prepare("SELECT * FROM slab");
     $stmt->execute();
     $tableData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
