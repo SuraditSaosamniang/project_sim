@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ตรวจสอบ CSRF Token
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         $_SESSION['status'] = 'error';
-        $_SESSION['message'] = 'Invalid CSRF token.';
+        $_SESSION['message'] = 'โทเค็น CSRF ไม่ถูกต้อง.';
         header("Location: upload.php");
         exit;
     }
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ตรวจสอบข้อมูลที่ส่งมา
     if (!isset($_POST['data']) || empty($_POST['data'])) {
         $_SESSION['status'] = 'error';
-        $_SESSION['message'] = 'No data received for insertion.';
+        $_SESSION['message'] = 'ไม่ได้รับข้อมูลสําหรับ insert.';
         header("Location: upload.php");
         exit;
     }
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // ลบข้อมูลเก่าออกจากตาราง slab
         $conn->exec("DELETE FROM slab");
 
-        // เตรียม statement สำหรับการแทรกข้อมูลลงใน slab1
+        // เตรียม statement สำหรับการแทรกข้อมูลลงใน slab
         $insertStmt = $conn->prepare(
             "INSERT INTO slab (item, IdSlab, grade, Thick, Width, Length, Weight, Location, lot, Heatsup, HeatLpn)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->commit();
 
         $_SESSION['status'] = 'success';
-        $_SESSION['message'] = "Data successfully inserted into slab1. Total records: $totalRecords.";
+        $_SESSION['message'] = "ข้อมูลถูก insert ลงในตารางเรียบร้อยแล้ว จำนวนข้อมูลทั้งหมด: $totalRecords.";
         header("Location: upload.php");
         exit;
 
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $_SESSION['status'] = 'error';
-        $_SESSION['message'] = "Error while inserting into slab1: " . $e->getMessage();
+        $_SESSION['message'] = "เกิดข้อผิดพลาดขณะ insert ข้อมูลลงในตาราง: " . $e->getMessage();
         header("Location: upload.php");
         exit;
     }

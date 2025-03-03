@@ -1,9 +1,8 @@
 /* General Styling */
 body {
     background-color: #ececeb;
-    font-family: 'Poppins', sans-serif, 'Kanit', sans-serif !important;
+    font-family:'Kanit', sans-serif !important;
     /* ใช้ฟอนต์ทันสมัย */
-    font-weight: bold;
     /* ทำให้คำว่า "plate" ดูโดดเด่น */
     min-width: 433px;
 }

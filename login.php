@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         $error = "Invalid CSRF token.";
     } elseif (empty($username) || empty($password)) {
-        $error = "Please enter both username and password.";
+        $error = "กรุณากรอกทั้งชื่อผู้ใช้และรหัสผ่าน.";
     } else {
         try {
             // ตรวจสอบว่ามี username ในฐานข้อมูลหรือไม่
@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($user['password'] === $hashed_password) {
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['status'] = 'success';
-                    $_SESSION['message'] = 'Login successful.';
+                    $_SESSION['message'] = 'เข้าสู่ระบบสําเร็จ.';
                     header("Location: upload.php");
                     exit;
                 } else {
-                    $error = "Incorrect password.";
+                    $error = "รหัสผ่านไม่ถูกต้อง.";
                 }
             } else {
                 // หากไม่มีข้อมูลผู้ใช้ในฐานข้อมูล ให้เพิ่มใหม่
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $_SESSION['username'] = $username; // เก็บ username ใน Session
                 $_SESSION['status'] = 'success';
-                $_SESSION['message'] = 'User registered and logged in successfully.';
+                $_SESSION['message'] = 'ผู้ใช้ลงทะเบียนและเข้าสู่ระบบสําเร็จ.';
                 header("Location: upload.php");
                 exit;
             }
@@ -62,11 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> <!-- Add Bootstrap Icons -->
     <link href="assets/css/login.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h2 style="-webkit-text-stroke: 0.7px">Login</h2>
-        <p style="-webkit-text-stroke: 0.7px">System for uploading Slab data files</p>
+        <h3 style="-webkit-text-stroke: 0.7px; font-family: 'Kanit', sans-serif; text-align: center;">ยินดีต้อนรับเข้าสู่</h3>
+        <p style="-webkit-text-stroke: 0.7px; font-family: 'Kanit', sans-serif;">ระบบอัปโหลดไฟล์ข้อมูล Slab</p>
         <?php if (isset($error)): ?>
             <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
                 <?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
@@ -85,14 +86,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="login.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <div class="mb-1 mt-1">
-                <label for="username" class="form-label" style="-webkit-text-stroke: 0.7px">User Name:</label>
+                <label for="username" class="form-label" style="-webkit-text-stroke: 0.7px; font-family: 'Kanit', sans-serif;">ชื่อผู้ใช้:</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-person"style="-webkit-text-stroke: 0.5px"></i></span>
                     <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
                 </div>
             </div>
             <div class="mb-1">
-                <label for="password" class="form-label"style="-webkit-text-stroke: 0.7px">Password:</label>
+                <label for="password" class="form-label"style="-webkit-text-stroke: 0.7px; font-family: 'Kanit', sans-serif;">รหัสผ่าน:</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-lock"style="-webkit-text-stroke: 0.5px"></i></span>
                     <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
@@ -100,9 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                <label class="form-check-label" for="remember"style="-webkit-text-stroke: 0.5px">Remember me</label>
+                <label class="form-check-label" for="remember"style="-webkit-text-stroke: 0.5px; font-family: 'Kanit', sans-serif;">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary w-100" style="-webkit-text-stroke: 0.5px">Submit</button>
+            <button type="submit" class="btn btn-primary w-100" style="-webkit-text-stroke: 0.5px; font-family: 'Kanit', sans-serif;">เข้าสู่ระบบ</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

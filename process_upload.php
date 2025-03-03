@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // กรณีอัปโหลดไฟล์สำเร็จ
                 $_SESSION['upload_status'] = [
                     'type' => 'alert-success', 
-                    'message' => 'File uploaded successfully!',
+                    'message' => 'อัปโหลดไฟล์สําเร็จแล้ว!',
                 ];
 
                 // ฟังก์ชันสำหรับบันทึกประวัติการอัปโหลด
@@ -37,21 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // กรณีเกิดข้อผิดพลาดในการย้ายไฟล์
                 $_SESSION['upload_status'] = [
                     'type' => 'alert-danger', 
-                    'message' => 'Failed to move the uploaded file.',
+                    'message' => 'ย้ายไฟล์ที่อัปโหลดไม่สําเร็จ.',
                 ];
             }
         } else {
             // กรณีเกิดข้อผิดพลาดในการอัปโหลด
             $_SESSION['upload_status'] = [
                 'type' => 'alert-danger', 
-                'message' => 'An error occurred during file upload.',
+                'message' => 'เกิดข้อผิดพลาดระหว่างการอัปโหลดไฟล์.',
             ];
         }
     } else {
         // กรณีไม่มีไฟล์ถูกเลือก
         $_SESSION['upload_status'] = [
             'type' => 'alert-warning', 
-            'message' => 'No file was selected for upload.',
+            'message' => 'ไม่มีการเลือกไฟล์สําหรับการอัปโหลด.',
         ];
     }
 }

@@ -21,12 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // ตรวจสอบประเภทไฟล์
             if ($fileExt !== 'csv') {
-                throw new Exception('Please upload a valid CSV file.');
+                throw new Exception('โปรดอัปโหลดไฟล์ CSV ที่ถูกต้อง.');
             }
 
             // ตรวจสอบขนาดไฟล์ (ไม่เกิน 10MB) //
             if ($_FILES['uploads']['size'] > 10 * 1024 * 1024) {
-                throw new Exception('File size exceeds 10MB limit.');
+                throw new Exception('ขนาดไฟล์เกินขีดจํากัด 10MB.');
             }
 
             // สร้างชื่อไฟล์ใหม่
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // ตรวจสอบชื่อไฟล์สำหรับอักขระพิเศษ
             if (preg_match('/[\/:*?"<>|]/', $customFileName)) {
-                throw new Exception('File name contains invalid characters.');
+                throw new Exception('ชื่อไฟล์มีอักขระที่ไม่ถูกต้อง.');
             }
 
             $newFileName = $customFileName . '.' . $fileExt;
@@ -48,20 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // ตรวจสอบการเขียนทับ
             $newFilePath = $uploadDir . $newFileName;
             if (file_exists($newFilePath) && !isset($_POST['overwrite'])) {
-                throw new Exception('A file with the same name already exists. You can choose to overwrite it.');
+                throw new Exception('มีไฟล์ที่มีชื่อเดียวกันอยู่แล้ว คุณสามารถเลือกเขียนทับได้.');
             }
 
             // ย้ายไฟล์ที่อัปโหลด
             if (!move_uploaded_file($fileTmpName, $newFilePath)) {
-                throw new Exception('Failed to upload the file.');
+                throw new Exception('อัปโหลดไฟล์ไม่สําเร็จ.');
             }
 
             $_SESSION['status'] = 'success';
-            $_SESSION['message'] = 'File uploaded successfully.';
+            $_SESSION['message'] = 'อัปโหลดไฟล์สําเร็จแล้ว.';
             header('Location: upload.php');
             exit;
         } else {
-            throw new Exception('No file uploaded.');
+            throw new Exception('ไม่มีไฟล์ที่อัปโหลด.');
         }
     } catch (Exception $e) {
         $_SESSION['status'] = 'error';
@@ -117,6 +117,7 @@ if (!isset($_SESSION['username'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -126,7 +127,7 @@ if (!isset($_SESSION['username'])) {
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="upload.php">
                     <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">Form for uploading CSV files</span>
+                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab </span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,7 +143,7 @@ if (!isset($_SESSION['username'])) {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-logout" href="login.php">
-                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
+                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> ออกจากระบบ
                             </a>
                         </li>
                     </ul>
@@ -164,25 +165,24 @@ if (!isset($_SESSION['username'])) {
 
         <div class="card shadow-sm">
             <div class="card-body">
-                <h2 class="card-title text-center mb-4">Upload Your File</h2>
+                <h2 class="card-title text-center mb-4">อัปโหลดไฟล์</h2>
                 <form method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="fileUpload" class="form-label">Select File <span class="text-muted">(CSV
-                                only)</span></label>
+                        <label for="fileUpload" class="form-label">เลือกไฟล์<span class="text-muted">(CSV เท่านั้น)</span></label>
                         <input type="file" class="form-control" name="uploads" id="fileUpload" accept=".csv" required>
                     </div>
                     <div class="mb-3">
-                        <label for="fileName" class="form-label">Custom File Name</label>
+                        <label for="fileName" class="form-label">ตั้งชื่อไฟล์</label>
                         <input type="text" class="form-control" name="fileName" id="fileName"
                             placeholder="Enter file name" required>
-                        <small class="form-text text-characters">Avoid special characters like /:*?"<>|.</small>
+                        <small class="form-text text-characters">หลีกเลี่ยงอักขระพิเศษเช่น /:*?" <>|.</small>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="overwrite" id="overwrite">
-                        <label class="form-check-label" for="overwrite">Overwrite Existing Files</label>
+                        <label class="form-check-label" style="font-family: kanit; fw-3 " for="overwrite">เขียนทับไฟล์ที่มีอยู่</label>
                     </div>
                     <button type="submit" class="btn btn-custom w-100 mt-3">
-                        <i class="bi bi-upload" style="-webkit-text-stroke: 0.7px"></i> Upload
+                        <i class="bi bi-upload" style="-webkit-text-stroke: 0.7px"></i> อัปโหลด
                     </button>
                 </form>
             </div>
@@ -193,7 +193,7 @@ if (!isset($_SESSION['username'])) {
     <div class="container-lg my-5">
         <div class="card shadow-sm" style="margin-top: 20px;">
             <div class="card-body">
-                <h3 class="card-title text-center mb-4">Uploaded Files</h3>
+                <h3 class="card-title text-center mb-4">ไฟล์ที่อัปโหลด</h3>
 
                 <!-- Sort Dropdown -->
                 <div class="form-wrapper">
@@ -201,11 +201,11 @@ if (!isset($_SESSION['username'])) {
                         <label for="sort">Sort by:</label>
                         <!-- Custom Select -->
                         <div class="custom-select" id="custom-select">
-                            <div class="select-selected">Name</div>
+                            <div class="select-selected">ชื่อ</div>
                             <div class="select-items select-hide">
-                                <div data-value="date">Date</div>
-                                <div data-value="name">Name</div>
-                                <div data-value="size">Size</div>
+                                <div data-value="date">วันที่</div>
+                                <div data-value="name">ชื่อ</div>
+                                <div data-value="size">ขนาด</div>
                             </div>
                         </div>
                     </form>
@@ -265,16 +265,16 @@ if (!isset($_SESSION['username'])) {
                             <thead class="bg-dark text-white">
                                 <tr>
                                     <th>No</th>
-                                    <th>File Name</th>
-                                    <th>Size</th>
-                                    <th>Upload Date</th>
+                                    <th>ชื่อไฟล์</th>
+                                    <th>ขนาด</th>
+                                    <th>วันที่อัปโหลด</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php if (empty($uploadedFiles)): ?>
                                     <tr>
-                                        <td colspan="5" class="text-center text-muted">No files uploaded yet.</td>
+                                        <td colspan="5" class="text-center text-muted">ยังไม่มีไฟล์ที่อัปโหลด.</td>
                                     </tr>
                                 <?php else: ?>
                                     <?php foreach ($uploadedFiles as $index => $file): ?>
@@ -289,13 +289,13 @@ if (!isset($_SESSION['username'])) {
                                                 <a href="preview.php?file=<?= urlencode($file['name']) ?>"
                                                     class="btn btn-preview">
                                                     <i class="bi-file-earmark-text" style="-webkit-text-stroke: 0.7px"></i>
-                                                    Preview
+                                                    ดูตัวอย่าง
                                                 </a>
                                                 <!-- ปุ่ม Delete -->
                                                 <a href="delete-file.php?delete=<?= urlencode($file['name']) ?>"
                                                     class="btn btn-delete">
                                                     <i class="bi bi-trash fw-bold" style="-webkit-text-stroke: 0.7px"></i>
-                                                    Delete
+                                                    ลบ
                                                 </a>
                                             </td>
                                         </tr>

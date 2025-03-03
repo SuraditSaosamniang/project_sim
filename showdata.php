@@ -3,7 +3,7 @@ session_start();
 require_once(__DIR__ . "/includes/db_connect.php");
 
 if (!isset($conn)) {
-    die("Connection to the database failed.");
+    die("การเชื่อมต่อกับฐานข้อมูลล้มเหลว.");
 }
 
 try {
@@ -51,6 +51,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -60,7 +61,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">Form for uploading CSV files</span>
+                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +92,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 
                         <li class="nav-item">
                             <a class="nav-link text-logout" href="login.php">
-                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> Logout
+                                <i class="bi bi-box-arrow-right" style="-webkit-text-stroke: 0.7px"></i> ออกจากระบบ
                             </a>
                         </li>
                     </ul>
@@ -125,8 +126,8 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
         <?php if (!empty($tableHeaders) && !empty($currentData)): ?>
             <div class="card shadow-sm">
                 <div class="card-header bg-gradient text-center p-4">
-                    <h2 class="card-title mb-2">Show Available Information Slab Table</h2>
-                    <p class="card-subtitle text-black">Display the data available in the Slab table.</p>
+                    <h2 class="card-title mb-2">ดึงข้อมูลจากฐานข้อมูลมาแสดง</h2>
+                    <p class="card-subtitle text-black">ข้อมูลปัจจุบันที่มีอยู่ในตาราง Slab.</p>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -151,8 +152,8 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                     </div>
                     <!-- Display the total number of records after the table -->
                     <div class="dataTables_info text-end" id="Size_info" role="status" aria-live="polite">
-                        Showing <?= $startRow + 1 ?> to <?= min($startRow + $rowsPerPage, $totalRows) ?> of
-                        <?= $totalRows ?> entries
+                        แสดง <?= $startRow + 1 ?> ถึง <?= min($startRow + $rowsPerPage, $totalRows) ?> จาก
+                        <?= $totalRows ?> แถว
                     </div>
                 </div>
             </div>
@@ -160,31 +161,44 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
             <!-- Pagination -->
             <nav class="mt-4">
                 <div class="row">
-                    <div class="text-center">
+                    <div class="col-12">
                         <div class="dataTables_paginate paging_simple_numbers" id="Size_paginate">
                             <ul class="pagination justify-content-center">
                                 <?php if ($currentPage > 1): ?>
                                     <li class="paginate_button page-item previous">
-                                        <a class="page-link" href="?page=<?= $currentPage - 1 ?>">
-                                            <i class="bi bi-chevron-left" style="-webkit-text-stroke: 0.7px"></i> Previous
+                                        <a class="page-link"
+                                            href="?file=<?= urlencode($fileName) ?>&page=<?= $currentPage - 1 ?>"
+                                            style="font-family: 'Kanit', sans-serif;">
+                                            <i class="bi bi-chevron-left" style="-webkit-text-stroke: 0.7px"></i> ก่อนหน้า
                                         </a>
                                     </li>
                                 <?php else: ?>
                                     <li class="paginate_button page-item previous disabled">
-                                        <a class="page-link" href="#">Previous</a>
+                                        <a class="page-link" href="#" style="font-family: 'Kanit', sans-serif;">ก่อนหน้า</a>
                                     </li>
                                 <?php endif; ?>
 
                                 <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                                     <li class="paginate_button page-item <?= $i == $currentPage ? 'active' : '' ?>">
-                                        <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                                        <a class="page-link" href="?file=<?= urlencode($fileName) ?>&page=<?= $i ?>"
+                                            style="font-family: 'Kanit', sans-serif;">
+                                            <?= $i ?>
+                                        </a>
                                     </li>
                                 <?php endfor; ?>
 
                                 <?php if ($currentPage < $totalPages): ?>
                                     <li class="paginate_button page-item next">
-                                        <a class="page-link" href="?page=<?= $currentPage + 1 ?>">
-                                            Next <i class="bi bi-chevron-right" style="-webkit-text-stroke: 0.7px"></i>
+                                        <a class="page-link"
+                                            href="?file=<?= urlencode($fileName) ?>&page=<?= $currentPage + 1 ?>"
+                                            style="font-family: 'Kanit', sans-serif;">
+                                            ถัดไป <i class="bi bi-chevron-right" style="-webkit-text-stroke: 0.7px;"></i>
+                                        </a>
+                                    </li>
+                                <?php else: ?>
+                                    <li class="paginate_button page-item next disabled">
+                                        <a class="page-link" href="#" style="font-family: 'Kanit', sans-serif;">
+                                            ถัดไป <i class="bi bi-chevron-right" style="-webkit-text-stroke: 0.7px;"></i>
                                         </a>
                                     </li>
                                 <?php endif; ?>

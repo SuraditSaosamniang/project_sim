@@ -12,18 +12,18 @@ if (isset($_GET['delete'])) {
     if (file_exists($filePath)) {
         if (unlink($filePath)) {
             $_SESSION['status'] = 'success';
-            $_SESSION['message'] = 'File deleted successfully.';
+            $_SESSION['message'] = 'ไฟล์ถูกลบสําเร็จ.';
         } else {
             $_SESSION['status'] = 'error';
-            $_SESSION['message'] = 'Failed to delete the file.';
+            $_SESSION['message'] = 'ลบไฟล์ไม่สําเร็จ.';
         }
     } else {
         $_SESSION['status'] = 'error';
-        $_SESSION['message'] = 'File not found.';
+        $_SESSION['message'] = 'ไม่พบไฟล์.';
     }
 } else {
     $_SESSION['status'] = 'error';
-    $_SESSION['message'] = 'Invalid request.';
+    $_SESSION['message'] = 'คําขอไม่ถูกต้อง.';
 }
 
 // Redirect back to the upload page
