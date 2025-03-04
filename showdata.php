@@ -166,10 +166,9 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                             <ul class="pagination justify-content-center">
                                 <?php if ($currentPage > 1): ?>
                                     <li class="paginate_button page-item previous">
-                                        <a class="page-link"
-                                            href="?file=<?= urlencode($fileName) ?>&page=<?= $currentPage - 1 ?>"
+                                        <a class="page-link" href="?page=<?= $currentPage - 1 ?>"
                                             style="font-family: 'Kanit', sans-serif;">
-                                            <i class="bi bi-chevron-left" style="-webkit-text-stroke: 0.7px"></i> ก่อนหน้า
+                                            <i class="bi bi-chevron-left"></i> ก่อนหน้า
                                         </a>
                                     </li>
                                 <?php else: ?>
@@ -180,8 +179,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 
                                 <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                                     <li class="paginate_button page-item <?= $i == $currentPage ? 'active' : '' ?>">
-                                        <a class="page-link" href="?file=<?= urlencode($fileName) ?>&page=<?= $i ?>"
-                                            style="font-family: 'Kanit', sans-serif;">
+                                        <a class="page-link" href="?page=<?= $i ?>" style="font-family: 'Kanit', sans-serif;">
                                             <?= $i ?>
                                         </a>
                                     </li>
@@ -189,16 +187,15 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 
                                 <?php if ($currentPage < $totalPages): ?>
                                     <li class="paginate_button page-item next">
-                                        <a class="page-link"
-                                            href="?file=<?= urlencode($fileName) ?>&page=<?= $currentPage + 1 ?>"
+                                        <a class="page-link" href="?page=<?= $currentPage + 1 ?>"
                                             style="font-family: 'Kanit', sans-serif;">
-                                            ถัดไป <i class="bi bi-chevron-right" style="-webkit-text-stroke: 0.7px;"></i>
+                                            ถัดไป <i class="bi bi-chevron-right"></i>
                                         </a>
                                     </li>
                                 <?php else: ?>
                                     <li class="paginate_button page-item next disabled">
                                         <a class="page-link" href="#" style="font-family: 'Kanit', sans-serif;">
-                                            ถัดไป <i class="bi bi-chevron-right" style="-webkit-text-stroke: 0.7px;"></i>
+                                            ถัดไป <i class="bi bi-chevron-right"></i>
                                         </a>
                                     </li>
                                 <?php endif; ?>
@@ -230,9 +227,11 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
                     <!-- Footer Branding -->
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start">
-                            <h5 class="fw-bold text-dark-custom">File Manager</h5>
-                            <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
-                            <p class="text-dark-custom small mb-0">&copy; 2024 File Manager. All Rights Reserved.</p>
+                            <h5 class="fw-bold text-dark-custom" style="font-family: 'Kanit', sans-serif;;">Slab File
+                                Uploader</h5>
+                            <p class="text-dark-custom small mb-0">ระบบจัดการและอัปโหลดไฟล์ข้อมูล Slab
+                                อย่างมีประสิทธิภาพและปลอดภัย.</p>
+                            <p class="text-dark-custom small mb-0">&copy; 2024 Slab File Uploader. สงวนลิขสิทธิ์.</p>
                         </div>
                     </div>
                 </div>

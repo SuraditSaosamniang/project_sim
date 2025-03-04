@@ -7,6 +7,11 @@ body {
     min-width: 433px;
 }
 
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
 /* Table Styling */
 .table {
     width: 100%;
@@ -122,9 +127,9 @@ body {
 }
 
 .card-title {
-    font-size: 22px;
+    font-size: 23.5px;
     /* Larger title font size */
-    font-weight: 600;
+    font-weight: 550;
     /* Semi-bold font */
     margin-bottom: 8px;
     /* Space between title and subtitle */
@@ -255,6 +260,10 @@ body {
     /* Fix invalid value */
 }
 
+#fileNameDisplay {
+    border-top-right-radius: 8px; 
+    border-bottom-right-radius: 8px;
+}
 /* Pagination Styling */
 .pagination {
     display: flex;
@@ -534,12 +543,13 @@ body {
 }
 
 .footer h5 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kanit', sans-serif;
     /* ใช้ฟอนต์ทันสมัย */
 }
 
 .footer p {
     font-size: 0.9rem;
+    font-family: 'Kanit', sans-serif;
     /* ขนาดข้อความที่เล็กลง */
     font-style: oblique;
     /* ตัวเอียง */
@@ -2265,10 +2275,10 @@ body {
 /* Default styles for .form-control */
 .form-control {
     display: block !important;
-    width: 100% !important;
+    width: 100%;
     padding: 0.375rem 0.75rem !important;
     font-size: 0.85rem !important;
-    font-weight: 550 !important;
+    font-weight: 400 !important;
     line-height: 1.5 !important;
     color: #424242 !important;
     background-color: #fff !important;

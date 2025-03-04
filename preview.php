@@ -271,10 +271,9 @@ if ($sort === 'name') {
                 <div class="row">
                     <!-- Footer Branding -->
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <h5 class="fw-bold text-dark-custom">File Manager</h5>
-                        <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
-                        <p class="text-dark-custom small mb-0">&copy; 2024 System for uploading CSV files. All Rights
-                            Reserved.</p>
+                    <h5 class="fw-bold text-dark-custom" style="font-family: 'Kanit', sans-serif;;">Slab File Uploader</h5>
+                        <p class="text-dark-custom small mb-0">ระบบจัดการและอัปโหลดไฟล์ข้อมูล Slab อย่างมีประสิทธิภาพและปลอดภัย.</p>
+                        <p class="text-dark-custom small mb-0">&copy; 2024 Slab File Uploader. สงวนลิขสิทธิ์.</p>                         
                     </div>
                 </div>
             </div>

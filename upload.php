@@ -127,7 +127,7 @@ if (!isset($_SESSION['username'])) {
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="upload.php">
                     <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab </span>
+                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -168,18 +168,25 @@ if (!isset($_SESSION['username'])) {
                 <h2 class="card-title text-center mb-4">อัปโหลดไฟล์</h2>
                 <form method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="fileUpload" class="form-label">เลือกไฟล์<span class="text-muted">(CSV เท่านั้น)</span></label>
-                        <input type="file" class="form-control" name="uploads" id="fileUpload" accept=".csv" required>
+                        <label for="fileUpload" class="form-label">ประเภทไฟล์<span class="text-muted">(CSV
+                                เท่านั้น)</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button" id="fileButton" style="padding: 0.375rem 0.75rem; color:#595c5f;">
+                                <i class="bi bi-folder2-open me-2"></i> เลือกไฟล์
+                            </button>
+                            <input type="text" class="form-control w-60" id="fileNameDisplay" placeholder="กรุณาเลือกไฟล์" style="color:#424242;" readonly>   
+                            <input type="file" class="d-none" name="uploads" id="fileUpload" accept=".csv" required>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="fileName" class="form-label">ตั้งชื่อไฟล์</label>
                         <input type="text" class="form-control" name="fileName" id="fileName"
-                            placeholder="Enter file name" required>
+                            placeholder="กรุณาป้อนชื่อไฟล์" required>
                         <small class="form-text text-characters">หลีกเลี่ยงอักขระพิเศษเช่น /:*?" <>|.</small>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="overwrite" id="overwrite">
-                        <label class="form-check-label" style="font-family: kanit; fw-3 " for="overwrite">เขียนทับไฟล์ที่มีอยู่</label>
+                        <label class="form-check-label" style="font-family: kanit; margin-bottom:4px;" for="overwrite">เขียนทับไฟล์ที่มีอยู่</label>
                     </div>
                     <button type="submit" class="btn btn-custom w-100 mt-3">
                         <i class="bi bi-upload" style="-webkit-text-stroke: 0.7px"></i> อัปโหลด
@@ -198,7 +205,7 @@ if (!isset($_SESSION['username'])) {
                 <!-- Sort Dropdown -->
                 <div class="form-wrapper">
                     <form method="get">
-                        <label for="sort">Sort by:</label>
+                        <label for="sort">จัดเรียงตาม:</label>
                         <!-- Custom Select -->
                         <div class="custom-select" id="custom-select">
                             <div class="select-selected">ชื่อ</div>
@@ -252,10 +259,19 @@ if (!isset($_SESSION['username'])) {
                 <script>
                     // Map for selected values
                     const optionsArray = {
-                        'date': 'Date',
-                        'name': 'Name',
-                        'size': 'Size'
+                        'date': 'วันที่',
+                        'name': 'ชื่อ',
+                        'size': 'ขนาด'
                     };
+
+                    document.getElementById("fileButton").addEventListener("click", function () {
+                        document.getElementById("fileUpload").click();
+                    });
+
+                    document.getElementById("fileUpload").addEventListener("change", function () {
+                        let fileName = this.files.length > 0 ? this.files[0].name : "ยังไม่ได้เลือกไฟล์";
+                        document.getElementById("fileNameDisplay").value = fileName;
+                    });
                 </script>
 
                 <!-- Files Table -->
@@ -315,9 +331,9 @@ if (!isset($_SESSION['username'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start">
-                        <h5 class="fw-bold text-dark-custom">File Manager</h5>
-                        <p class="text-dark-custom small mb-0">Manage your files efficiently and securely.</p>
-                        <p class="text-dark-custom small mb-0">&copy; 2024 File Manager. All Rights Reserved.</p>
+                        <h5 class="fw-bold text-dark-custom" style="font-family: 'Kanit', sans-serif;;">Slab File Uploader</h5>
+                        <p class="text-dark-custom small mb-0">ระบบจัดการและอัปโหลดไฟล์ข้อมูล Slab อย่างมีประสิทธิภาพและปลอดภัย.</p>
+                        <p class="text-dark-custom small mb-0">&copy; 2024 Slab File Uploader. สงวนลิขสิทธิ์.</p>
                     </div>
                 </div>
             </div>
