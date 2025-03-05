@@ -75,7 +75,8 @@ if ($sort === 'name') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview Data</title>
+    <title>แสดงข้อมูลในไฟล์</title>
+    <link rel="icon" type="image/x-icon" href="assets/css/image/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
@@ -88,8 +89,8 @@ if ($sort === 'name') {
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
+                <img src="assets/css/image/gtul53k8.png" sizes="64x64"alt="Logo" class="me-2" style="width:40px; height:40px;">
+                    <span class="fw-bold custom-text" style="font-size:1.5rem;">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -486,7 +486,7 @@ body {
 
 /* Custom Text Styling */
 .custom-text {
-    font-size: 1.7rem !important;
+    font-size: 1.7rem ;
     /* Default font size */
     font-weight: 700;
     /* Bold weight for emphasis */
@@ -504,21 +504,21 @@ body {
 
 @media (max-width: 575.98px) {
     .custom-text {
-        font-size: 1rem !important;
+        font-size: 1rem ;
         /* Smaller font size for mobile */
     }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
     .custom-text {
-        font-size: 1.25rem !important;
+        font-size: 1.25rem ;
         /* Medium font size for tablet */
     }
 }
 
 @media (min-width: 992px) {
     .custom-text {
-        font-size: 1.7rem !important;
+        font-size: 1.7rem;
         /* Larger font size for desktop */
     }
 }

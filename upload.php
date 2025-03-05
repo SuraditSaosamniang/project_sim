@@ -112,8 +112,9 @@ if (!isset($_SESSION['username'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>ระบบอัปโหลดไฟล์ข้อมูล Slab</title>
+    <link rel="icon" type="image/x-icon" href="assets/css/image/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
@@ -126,8 +127,8 @@ if (!isset($_SESSION['username'])) {
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="upload.php">
-                    <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
+                    <img src="assets/css/image/gtul53k8.png" sizes="64x64"alt="Logo" class="me-2" style="width:40px; height:40px;">
+                    <span class="fw-bold custom-text" style="font-size:1.5rem;">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,7 +154,7 @@ if (!isset($_SESSION['username'])) {
     </div>
 
     <!-- Upload Section -->
-    <div class="container-lg my-3">
+    <div class="Uploads container-lg my-3" id="Uploads">
         <?php if (isset($_SESSION['status']) && isset($_SESSION['message'])): ?>
             <div class="alert <?= $_SESSION['status'] === 'success' ? 'alert-success' : 'alert-danger' ?> alert-dismissible fade show mt-4"
                 role="alert">
@@ -165,16 +166,18 @@ if (!isset($_SESSION['username'])) {
 
         <div class="card shadow-sm">
             <div class="card-body">
-                <h2 class="card-title text-center mb-4">อัปโหลดไฟล์</h2>
+                <h2 class="card-title text-center mb-4" style="-webkit-text-stroke: 0.7px">อัปโหลดไฟล์</h2>
                 <form method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="fileUpload" class="form-label">ประเภทไฟล์<span class="text-muted">(CSV
                                 เท่านั้น)</span></label>
                         <div class="input-group">
-                            <button class="btn btn-outline-secondary" type="button" id="fileButton" style="padding: 0.375rem 0.75rem; color:#595c5f;">
+                            <button class="btn btn-outline-secondary" type="button" id="fileButton"
+                                style="padding: 0.375rem 0.75rem; color:#595c5f;">
                                 <i class="bi bi-folder2-open me-2"></i> เลือกไฟล์
                             </button>
-                            <input type="text" class="form-control w-60" id="fileNameDisplay" placeholder="กรุณาเลือกไฟล์" style="color:#424242;" readonly>   
+                            <input type="text" class="form-control w-60" id="fileNameDisplay"
+                                placeholder="กรุณาเลือกไฟล์" style="color:#424242;" readonly>
                             <input type="file" class="d-none" name="uploads" id="fileUpload" accept=".csv" required>
                         </div>
                     </div>
@@ -186,7 +189,8 @@ if (!isset($_SESSION['username'])) {
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="overwrite" id="overwrite">
-                        <label class="form-check-label" style="font-family: kanit; margin-bottom:4px;" for="overwrite">เขียนทับไฟล์ที่มีอยู่</label>
+                        <label class="form-check-label" style="font-family: kanit; margin-bottom:4px;"
+                            for="overwrite">เขียนทับไฟล์ที่มีอยู่</label>
                     </div>
                     <button type="submit" class="btn btn-custom w-100 mt-3">
                         <i class="bi bi-upload" style="-webkit-text-stroke: 0.7px"></i> อัปโหลด
@@ -197,7 +201,7 @@ if (!isset($_SESSION['username'])) {
     </div>
 
     <!-- Uploaded Files Section -->
-    <div class="container-lg my-5">
+    <div class="container-lg my-5" id="FilesUploads">
         <div class="card shadow-sm" style="margin-top: 20px;">
             <div class="card-body">
                 <h3 class="card-title text-center mb-4">ไฟล์ที่อัปโหลด</h3>
@@ -227,7 +231,7 @@ if (!isset($_SESSION['username'])) {
 
                         // แสดงผลการเลือกจาก URL (ค่าของ 'sort')
                         const urlParams = new URLSearchParams(window.location.search);
-                        const sortValue = urlParams.get('sort') || 'name';  // กำหนด default เป็น 'name' ถ้าไม่มีค่า sort ใน URL
+                        const sortValue = urlParams.get('sort') || 'date';  // กำหนด default เป็น 'date' ถ้าไม่มีค่า sort ใน URL
 
                         // ตั้งค่าชื่อที่เลือกใน dropdown
                         selected.textContent = optionsArray[sortValue] || 'Name'; // ใช้ map ของตัวเลือก
@@ -276,7 +280,7 @@ if (!isset($_SESSION['username'])) {
 
                 <!-- Files Table -->
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="filesTable">
                         <table class="table table-bordered table-striped">
                             <thead class="bg-dark text-white">
                                 <tr>
@@ -331,14 +335,21 @@ if (!isset($_SESSION['username'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start">
-                        <h5 class="fw-bold text-dark-custom" style="font-family: 'Kanit', sans-serif;;">Slab File Uploader</h5>
-                        <p class="text-dark-custom small mb-0">ระบบจัดการและอัปโหลดไฟล์ข้อมูล Slab อย่างมีประสิทธิภาพและปลอดภัย.</p>
+                        <h5 class="fw-bold text-dark-custom" style="font-family: 'Kanit', sans-serif;;">Slab File
+                            Uploader</h5>
+                        <p class="text-dark-custom small mb-0">ระบบจัดการและอัปโหลดไฟล์ข้อมูล Slab
+                            อย่างมีประสิทธิภาพและปลอดภัย.</p>
                         <p class="text-dark-custom small mb-0">&copy; 2024 Slab File Uploader. สงวนลิขสิทธิ์.</p>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+    <script>
+        <?php if (empty($uploadedFiles)): ?>
+            document.getElementById('FilesUploads').style.display = 'none';
+        <?php endif; ?>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -12,11 +12,20 @@ try {
     $stmt->execute();
     $tableData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // ตรวจสอบว่าตาราง slab มีอยู่จริงในฐานข้อมูลหรือไม่
+    $databaseName = $conn->query("SELECT DATABASE()")->fetchColumn();
+    $query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->execute([$databaseName, 'slab']);
+    $tableExists = $stmt->fetchColumn();
+
+    $tableName = $tableExists ? 'slab' : 'ไม่มีตาราง slab';
+
     // ตรวจสอบว่าข้อมูลที่ดึงมามีอยู่หรือไม่
     if (empty($tableData)) {
         echo "ไม่พบข้อมูลในฐานข้อมูล.";
     } else {
-        // เตรียมตัวแปรสำหรับการแสดงผลใน HTML
+        // เตรียมตัวแปรสำหรับแสดงผลบนหน้าเว็บ
         $tableHeaders = ['Item', 'IdSlab', 'Grade', 'Thick', 'Width', 'Length', 'Weight', 'Location', 'Lot', 'Heatsup', 'HeatLpn'];
         $currentData = $tableData; // กำหนดให้ใช้ $tableData แทน $data
     }
@@ -47,7 +56,8 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Available Information - Slab Table</title>
+    <title>แสดงข้อมูลที่มีอยู่ของตาราง slab</title>
+    <link rel="icon" type="image/x-icon" href="assets/css/image/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/Professional Stylesheet.css" rel="stylesheet">
@@ -60,8 +70,8 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="assets/css/image/gtul53k8.svg" alt="Logo" width="100" height="100" class="me-2">
-                    <span class="fw-bold custom-text">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
+                <img src="assets/css/image/gtul53k8.png" sizes="64x64"alt="Logo" class="me-2" style="width:40px; height:40px;">
+                    <span class="fw-bold custom-text" style="font-size:1.5rem;">ระบบอัปโหลดไฟล์ข้อมูล Slab</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,8 +136,12 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
         <?php if (!empty($tableHeaders) && !empty($currentData)): ?>
             <div class="card shadow-sm">
                 <div class="card-header bg-gradient text-center p-4">
-                    <h2 class="card-title mb-2">ดึงข้อมูลจากฐานข้อมูลมาแสดง</h2>
-                    <p class="card-subtitle text-black">ข้อมูลปัจจุบันที่มีอยู่ในตาราง Slab.</p>
+                    <h2 class="card-title mb-2">ดึงข้อมูลจากฐานข้อมูล
+                    <?= htmlspecialchars($databaseName, ENT_QUOTES, 'UTF-8') ?> มาแสดง
+                    </h2>
+                    <p class="card-subtitle text-black">ข้อมูลปัจจุบันที่มีอยู่ในตาราง
+                        <?= htmlspecialchars($tableName, ENT_QUOTES, 'UTF-8') ?>
+                    </p>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
