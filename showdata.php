@@ -55,7 +55,7 @@ $currentData = array_slice($tableData, $startRow, $rowsPerPage);
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
     <title>แสดงข้อมูลที่มีอยู่ของตาราง slab</title>
     <link rel="icon" type="image/x-icon" href="assets/css/image/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">

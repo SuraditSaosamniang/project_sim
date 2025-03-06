@@ -1086,7 +1086,7 @@ body {
 .dropdown-menu {
     position: fixed !important;
     /* Make the menu fixed */
-    top: 98px !important;
+    top: 74px !important;
     /* Vertical position */
     right: 227px !important;
     /* Horizontal position */

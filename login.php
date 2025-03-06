@@ -10,23 +10,31 @@ if (empty($_SESSION['csrf_token'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-    $hashed_password = md5($password); // แฮชรหัสผ่านก่อนเก็บในฐานข้อมูล
-
+    
     // Verify CSRF token
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         $error = "Invalid CSRF token.";
     } elseif (empty($username) || empty($password)) {
         $error = "กรุณากรอกทั้งชื่อผู้ใช้และรหัสผ่าน.";
+    } elseif (strlen($password) < 8 || 
+              !preg_match('/[A-Z]/', $password) || 
+              !preg_match('/[a-z]/', $password) || 
+              !preg_match('/[0-9]/', $password) || 
+              !preg_match('/[\W_]/', $password)) {
+        $error = "รหัสผ่านต้องมี 8 ตัว รวมตัวเลข ตัวใหญ่ ตัวเล็ก และอักขระพิเศษ.";
     } else {
         try {
+            // แฮชรหัสผ่านแบบปลอดภัย
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
             // ตรวจสอบว่ามี username ในฐานข้อมูลหรือไม่
             $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
             $stmt->execute([$username]);
             $user = $stmt->fetch();
-        
+
             if ($user) {
                 // หากผู้ใช้มีอยู่แล้วในฐานข้อมูล ให้ตรวจสอบรหัสผ่าน
-                if ($user['password'] === $hashed_password) {
+                if (password_verify($password, $user['password'])) {
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['status'] = 'success';
                     $_SESSION['message'] = 'เข้าสู่ระบบสำเร็จ.';
@@ -39,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // หากไม่มีข้อมูลผู้ใช้ในฐานข้อมูล ให้เพิ่มใหม่
                 $insert_stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
                 $insert_stmt->execute([$username, $hashed_password]);
-        
+
                 $_SESSION['username'] = $username; // เก็บ username ใน Session
                 $_SESSION['status'] = 'success';
                 $_SESSION['message'] = 'ผู้ใช้ลงทะเบียนและเข้าสู่ระบบสำเร็จ.';
@@ -47,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             }
         } catch (PDOException $e) {
-            // ตรวจสอบว่าข้อผิดพลาดเป็นเกี่ยวกับตารางไม่พบหรือไม่
             if (strpos($e->getMessage(), 'SQLSTATE[42S02]') !== false) {
                 $error = "ไม่พบตารางที่ร้องขอในฐานข้อมูล (Table not found)";
             } else {
@@ -56,13 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }    
 }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
     <title>เข้าสู่ระบบ</title>
     <link rel="icon" type="image/x-icon" href="assets/css/image/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
